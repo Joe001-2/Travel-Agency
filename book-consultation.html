@@ -58,15 +58,26 @@
   
   <style>
     @layer base {
-      html, body {
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      body {
         margin: 0;
         padding: 0;
-        scroll-behavior: smooth;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
       }
     }
     input:focus, select:focus, textarea:focus {
       outline: none;
       box-shadow: 0 0 0 2px #fed65b;
+    }
+    @media (max-width: 640px) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
     }
   </style>
 </head>
@@ -75,13 +86,13 @@
 
   <!-- Top Global Header -->
   <header id="main-header" class="sticky top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-surface-container shadow-sm transition-transform duration-300 ease-in-out will-change-transform">
-    <div class="max-w-7xl mx-auto h-20 px-6 sm:px-10 flex items-center justify-between gap-4">
+    <div class="max-w-7xl mx-auto h-16 sm:h-20 px-4 sm:px-6 lg:px-10 flex items-center justify-between gap-2 sm:gap-4">
       <!-- Logo -->
-      <a href="index.html" class="flex items-center gap-3 shrink-0 group">
-        <img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-11 h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/>
+      <a href="index.html" class="flex items-center gap-2 sm:gap-3 shrink-0 group">
+        <img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 sm:w-11 sm:h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/>
         <div class="flex flex-col">
-          <span class="font-headline-sm text-2xl tracking-tight text-primary font-semibold leading-none">Express</span>
-          <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span>
+          <span class="font-headline-sm text-lg sm:text-2xl tracking-tight text-primary font-semibold leading-none">Express</span>
+          <span class="font-label-sm text-[10px] sm:text-[11px] uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span>
         </div>
       </a>
 
@@ -92,10 +103,10 @@
       </div>
 
       <!-- Right Contact & Back link -->
-      <div class="flex items-center gap-4">
-        <a href="index.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition-colors py-2 px-3 rounded-lg hover:bg-surface-container-low">
-          <span class="material-symbols-outlined text-lg">arrow_back</span>
-          <span>Back to Home</span>
+      <div class="flex items-center gap-2 sm:gap-4">
+        <a href="index.html" class="inline-flex items-center gap-1 text-xs sm:text-sm font-semibold text-primary hover:text-secondary transition-colors py-1.5 sm:py-2 px-2.5 sm:px-3 rounded-lg hover:bg-surface-container-low">
+          <span class="material-symbols-outlined text-base sm:text-lg">arrow_back</span>
+          <span>Home</span>
         </a>
         <a href="https://t.me/ExpressConsultancy" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#229ED9]/10 hover:bg-[#229ED9]/20 text-[#0088cc] px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all border border-[#229ED9]/30">
           <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>

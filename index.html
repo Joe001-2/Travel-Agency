@@ -1,49 +1,155 @@
 ﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0" name="viewport"/>
+  <title>Express Consultancy | Executive Global Travel &amp; Visa Advisory</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg"/>
+  <meta content="web_standard" name="shell-type"/>
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect"/>
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#030612",
+            "primary-container": "#1a1f2c",
+            "secondary": "#735c00",
+            "secondary-container": "#fed65b",
+            "on-secondary-fixed": "#241a00",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#828697",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "surface-bright": "#f8f9fa",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f4f5",
+            "surface-container": "#edeeef",
+            "surface-container-high": "#e7e8e9",
+            "surface-container-highest": "#e1e3e4",
+            "on-surface": "#191c1d",
+            "on-surface-variant": "#45464c",
+            "outline": "#76777c",
+            "outline-variant": "#c6c6cc"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "space-sm": "0.5rem",
+            "space-md": "1rem",
+            "space-lg": "1.5rem",
+            "space-xl": "2.5rem",
+            "gutter-mobile": "1rem",
+            "gutter": "1.5rem",
+            "margin-mobile": "1rem",
+            "margin": "3rem"
+          },
+          fontFamily: {
+            "headline-xl": ["EB Garamond", "serif"],
+            "headline-lg": ["EB Garamond", "serif"],
+            "headline-md": ["EB Garamond", "serif"],
+            "headline-sm": ["EB Garamond", "serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "body-sm": ["Manrope", "sans-serif"],
+            "title-lg": ["Manrope", "sans-serif"],
+            "title-md": ["Manrope", "sans-serif"],
+            "label-lg": ["Manrope", "sans-serif"],
+            "label-md": ["Manrope", "sans-serif"],
+            "label-sm": ["Manrope", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
 
-<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Express Consultancy | Executive Global Travel & Visa Advisory</title><link rel="icon" type="image/jpeg" href="assets/logo.jpg"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-container":"#745c00","on-surface":"#191c1d","background":"#f8f9fa","outline":"#76777c","surface-container":"#edeeef","on-primary-fixed-variant":"#424655","on-secondary-fixed":"#241a00","surface-variant":"#e1e3e4","primary-fixed":"#dee2f4","surface-container-highest":"#e1e3e4","secondary-fixed-dim":"#e9c349","surface-tint":"#595e6d","secondary":"#735c00","on-primary":"#ffffff","surface-container-low":"#f3f4f5","on-background":"#191c1d","inverse-on-surface":"#f0f1f2","on-surface-variant":"#45464c","inverse-surface":"#2e3132","error":"#ba1a1a","tertiary-fixed-dim":"#eac249","on-tertiary-fixed-variant":"#584400","on-error-container":"#93000a","on-tertiary-fixed":"#241a00","tertiary-fixed":"#ffe08b","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","secondary-container":"#fed65b","tertiary-container":"#cda72f","surface":"#f8f9fa","tertiary":"#745b00","on-tertiary":"#ffffff","on-tertiary-container":"#4f3d00","secondary-fixed":"#ffe088","surface-bright":"#f8f9fa","primary-container":"#1a1f2c","on-primary-fixed":"#161b28","surface-dim":"#d9dadb","surface-container-high":"#e7e8e9","primary-fixed-dim":"#c2c6d8","on-error":"#ffffff","on-secondary-fixed-variant":"#574500","inverse-primary":"#c2c6d8","error-container":"#ffdad6","primary":"#030612","on-primary-container":"#828697","outline-variant":"#c6c6cc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.25rem","space-xl":"2.5rem","space-sm":"0.5rem","space-md":"1rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","gutter":"1.5rem","space-lg":"1.5rem","margin":"3rem"},"fontFamily":{"headline-xl":["EB Garamond"],"label-md":["Manrope"],"headline-sm":["EB Garamond"],"body-lg":["Manrope"],"headline-lg":["EB Garamond"],"label-lg":["Manrope"],"body-md":["Manrope"],"headline-xl-mobile":["EB Garamond"],"headline-md":["EB Garamond"],"body-sm":["Manrope"],"title-md":["Manrope"],"title-lg":["Manrope"],"label-sm":["Manrope"],"headline-lg-mobile":["EB Garamond"]},"fontSize":{"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl-mobile":["34px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"title-lg":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"0em","fontWeight":"600"}]}}}};</script><style>
-/* Scroll-Linked Flight Radar Animation */
-#flight-animation-wrapper {
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  pointer-events: none;
-  z-index: 5; /* Strictly behind texts and buttons (which are z-10 / z-20) */
-  overflow: hidden;
-}
-.flight-waypoint-beacon {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  transition: all 0.3s ease;
-}
-@keyframes radar-ring {
-  0% { transform: scale(0.6); opacity: 1; }
-  100% { transform: scale(2.5); opacity: 0; }
-}
-.radar-pulse-ring {
-  animation: radar-ring 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-}
-</style>
-</head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased relative">
+  <style>
+    @layer base {
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        width: 100%;
+        max-width: 100vw;
+        position: relative;
+        -webkit-tap-highlight-color: transparent;
+      }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+
+    /* Hide scrollbars while preserving full scroll ability */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* Scroll-Linked Flight Radar Background Wrapper */
+    #flight-animation-wrapper {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      touch-action: none;
+      z-index: 5; /* Strictly behind page text, cards, and buttons */
+      overflow: hidden;
+    }
+
+    /* Radar Ping Animation */
+    @keyframes radar-ring {
+      0% { transform: scale(0.6); opacity: 1; }
+      100% { transform: scale(2.4); opacity: 0; }
+    }
+    .radar-pulse-ring {
+      animation: radar-ring 2.4s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+    }
+
+    /* Ensure iOS Safari does not zoom inputs by enforcing 16px min size on mobile */
+    @media (max-width: 640px) {
+      input, select, textarea {
+        font-size: 16px !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased relative selection:bg-secondary-container selection:text-primary">
 
 <!-- ======================================================== -->
 <!-- SCROLL-LINKED FLIGHT TRAJECTORY ANIMATION                -->
 <!-- ROUTE: ADDIS ABABA (BOLE INT'L) ➔ LONDON / GENEVA (HQ)   -->
 <!-- ======================================================== -->
-<div id="flight-animation-wrapper" class="fixed inset-0 w-screen h-screen overflow-hidden pointer-events-none z-[5]">
+<div id="flight-animation-wrapper">
   <svg id="flight-svg" class="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
     <defs>
       <!-- Sovereign Gold Gradient for Contrails -->
       <linearGradient id="contrail-fade" x1="100%" y1="0%" x2="0%" y2="0%">
-        <stop offset="0%" stop-color="#FED65B" stop-opacity="0.9"/>
-        <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.6"/>
+        <stop offset="0%" stop-color="#FED65B" stop-opacity="0.85"/>
+        <stop offset="35%" stop-color="#D4AF37" stop-opacity="0.55"/>
         <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
       </linearGradient>
 
       <!-- Golden Metallic Shading for Jet -->
       <linearGradient id="gold-metal" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stop-color="#FFF4CC"/>
+        <stop offset="0%" stop-color="#FFF8DC"/>
         <stop offset="35%" stop-color="#FED65B"/>
         <stop offset="70%" stop-color="#D4AF37"/>
         <stop offset="100%" stop-color="#8C6B10"/>
@@ -51,29 +157,41 @@
 
       <!-- Soft Glow Filters -->
       <filter id="gold-glow" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="3.5" result="blur"/>
+        <feGaussianBlur stdDeviation="3" result="blur"/>
         <feComposite in="SourceGraphic" in2="blur" operator="over"/>
       </filter>
       <filter id="jet-glow" x="-40%" y="-40%" width="180%" height="180%">
-        <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#D4AF37" flood-opacity="0.85"/>
+        <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#D4AF37" flood-opacity="0.75"/>
       </filter>
     </defs>
 
-    <!-- Twin Dynamic Engine Contrails -->
-    <path id="contrail-left" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.5" stroke-linecap="round" filter="url(#gold-glow)"/>
-    <path id="contrail-right" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.5" stroke-linecap="round" filter="url(#gold-glow)"/>
+    <!-- Faint Radar Navigation Airway Corridor Route in Background -->
+    <path id="flight-corridor-arc" d="" fill="none" stroke="rgba(212, 175, 55, 0.20)" stroke-width="1.5" stroke-dasharray="6 8"/>
 
-    <!-- Subtle Radar Waypoint Horizon Arc in Background -->
-    <path id="flight-corridor-arc" d="" fill="none" stroke="rgba(212, 175, 55, 0.12)" stroke-width="1.5" stroke-dasharray="6 8"/>
+    <!-- Waypoint Markers along Route -->
+    <g id="flight-waypoints" opacity="0.45" class="transition-opacity duration-300">
+      <circle id="wp-add-pt" cx="0" cy="0" r="3.5" fill="#FED65B"/>
+      <text id="wp-add-lbl" x="0" y="0" fill="#FED65B" font-family="monospace" font-size="8.5" font-weight="bold" letter-spacing="1">ADDIS ABABA (ADD)</text>
+      
+      <circle id="wp-mid-pt" cx="0" cy="0" r="3" fill="#D4AF37"/>
+      <text id="wp-mid-lbl" x="0" y="0" fill="#D4AF37" font-family="monospace" font-size="8" font-weight="bold" letter-spacing="1">RED SEA WAYPOINT</text>
+      
+      <circle id="wp-end-pt" cx="0" cy="0" r="3.5" fill="#FED65B"/>
+      <text id="wp-end-lbl" x="0" y="0" fill="#FED65B" font-family="monospace" font-size="8.5" font-weight="bold" letter-spacing="1">LONDON / GENEVA</text>
+    </g>
+
+    <!-- Twin Dynamic Engine Contrails -->
+    <path id="contrail-left" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.2" stroke-linecap="round" filter="url(#gold-glow)"/>
+    <path id="contrail-right" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.2" stroke-linecap="round" filter="url(#gold-glow)"/>
 
     <!-- The Supersonic Jet Aircraft Symbol -->
     <g id="flight-jet" filter="url(#jet-glow)" style="opacity: 0; transform-origin: 0px 0px;">
       <!-- Engine Exhaust Glowing Points -->
-      <circle cx="-19" cy="-7.5" r="3" fill="#FFF4CC" filter="url(#gold-glow)"/>
-      <circle cx="-19" cy="7.5" r="3" fill="#FFF4CC" filter="url(#gold-glow)"/>
+      <circle cx="-19" cy="-7.5" r="2.8" fill="#FFF8DC" filter="url(#gold-glow)"/>
+      <circle cx="-19" cy="7.5" r="2.8" fill="#FFF8DC" filter="url(#gold-glow)"/>
 
       <!-- Ambient Glow Halo -->
-      <circle cx="0" cy="0" r="34" fill="rgba(254, 214, 91, 0.12)" filter="url(#gold-glow)"/>
+      <circle cx="0" cy="0" r="32" fill="rgba(254, 214, 91, 0.10)" filter="url(#gold-glow)"/>
 
       <!-- Left Swept Wing -->
       <path d="M -4, -4 L -15, -30 L -3, -30 L 9, -4 Z" fill="url(#gold-metal)" stroke="#FFFFFF" stroke-width="0.8"/>
@@ -95,858 +213,1161 @@
       <ellipse cx="17" cy="0" rx="4.5" ry="2.2" fill="#1A1F2C"/>
 
       <!-- Live Flight Callout Tag Floating with Jet -->
-      <text x="0" y="-38" text-anchor="middle" fill="#FED65B" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="1" opacity="0.85">EC-901 • FL390</text>
+      <text x="0" y="-36" text-anchor="middle" fill="#FED65B" font-family="monospace" font-size="8.5" font-weight="bold" letter-spacing="1" opacity="0.9">EC-901 • FL390</text>
     </g>
   </svg>
-</div><header id="main-header" class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,31,44,0.06)] transition-transform duration-300 ease-in-out will-change-transform"><div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-11 h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold leading-none">Express</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span></div></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold border-b-2 border-secondary pb-1"><a aria-current="page" class="transition-colors py-1 text-primary font-semibold border-b-2 border-secondary pb-1" data-path="home" href="index.html">Home</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="services-and-visas" href="#services-grid">Services &amp; Visas</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="global-destinations" href="#destinations">Global Destinations</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="corporate-travel" href="book-consultation.html?service=corporate">Corporate Travel</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="about-us" href="#why-us">Why Us</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contact" href="#consultation-booking">Contact</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full border border-surface-variant/80"><span class="material-symbols-outlined text-secondary text-sm">headset_mic</span><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">24/7 Concierge</span><span class="font-label-md text-label-md font-semibold text-primary">+1 (800) 924-EXPR</span></div></div><a class="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-label-lg text-label-lg font-semibold px-space-lg py-space-sm rounded-lg transition-all shadow-sm" data-path="book-consultation" href="book-consultation.html">Book Consultation</a><button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-lg text-primary hover:bg-surface-container-low transition-colors ml-2" aria-label="Toggle navigation"><span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-secondary-container/40" src="https://lh3.googleusercontent.com/aida/ALJJyrDmmZhpI5OQ_kpw7jFJTm2KWIxL2dG-MsaXBf4rSbpMxujv6a8t9j0Nn3tTBpw99z4eho9TPHQPVCd_JiO6vqYLfRUiYOTPtJz1KfOaqCCGR_sGv4r0EQbqOmALz4Gk2uCWIc5V0FKKegsDANYnMdQSxfDNSi6qwGh4R4G5SziwPlbF7JfxaWlgdLwF73_dxdaoCQ24oyr_m4GOeCePRmutfmtu6L1MHczmv3QPOjfjR1WKcKC_H2LGJby6"/></div></div></div><div id="mobile-menu" class="hidden xl:hidden bg-surface-container-lowest/98 backdrop-blur-md border-b border-surface-container px-6 py-5 shadow-xl flex-col gap-3"><a class="text-sm font-bold text-primary py-1.5" href="index.html">Home</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#services-grid" onclick="toggleMobileMenu()">Services &amp; Visas</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#destinations" onclick="toggleMobileMenu()">Global Destinations</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#why-us" onclick="toggleMobileMenu()">Why Choose Us</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#testimonials" onclick="toggleMobileMenu()">Client Reviews</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#consultation-booking" onclick="toggleMobileMenu()">Contact</a><div class="pt-2 flex flex-col gap-2"><a href="book-consultation.html" class="w-full text-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-bold py-2.5 rounded-lg text-xs shadow-sm">Book Priority Consultation</a><a href="https://t.me/ExpressConsultancy" target="_blank" class="w-full text-center bg-[#229ED9]/10 text-[#0088cc] font-bold py-2 rounded-lg text-xs border border-[#229ED9]/30 flex items-center justify-center gap-1.5"><span>Telegram Official Desk</span></a></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
-<!-- Top Hero & Sovereign Crest Banner -->
-<section class="relative w-full -mt-20 pt-28 pb-20 bg-primary-container text-surface overflow-hidden">
-<!-- Atmospheric subtle ambient glows -->
-<div class="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
-<div class="absolute -bottom-40 right-10 w-[500px] h-[500px] rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center pt-8">
-<!-- Hero Text Content -->
-<div class="lg:col-span-7 flex flex-col gap-space-lg">
-<div class="inline-flex items-center gap-space-sm bg-surface-container-lowest/10 backdrop-blur-md px-space-md py-space-xs rounded-full w-fit">
-<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container font-bold">Diplomatic Excellence • Since 2009</span>
 </div>
-<div class="flex flex-col gap-space-sm">
-<h1 class="font-headline-xl text-headline-xl text-surface-container-lowest font-medium leading-tight">
-              Seamless Global Travel &amp; <br/>
-<span class="italic text-secondary-container font-normal">Executive Visa</span> Consultancy
-            </h1>
-<p class="font-body-lg text-body-lg text-on-primary-container max-w-xl">
-              Empowering international travelers, corporate leaders, and scholars with sovereign-tier visa facilitation, private air logistics, and bespoke cross-border mobility solutions.
-            </p>
-</div>
-<!-- Dual Executive CTAs -->
-<div class="flex flex-wrap items-center gap-space-md pt-space-xs">
-<a class="inline-flex items-center gap-space-sm bg-secondary-container text-on-secondary-fixed hover:bg-secondary hover:text-on-secondary px-space-xl py-space-md rounded-lg font-label-lg text-label-lg font-semibold shadow-md transition-all" href="#services-grid">
-<span>Explore Visa Services</span>
-<span class="material-symbols-outlined text-lg">arrow_forward</span>
-</a>
-<a class="inline-flex items-center gap-space-sm bg-surface-container-lowest/10 text-surface-container-lowest hover:bg-surface-container-lowest/20 px-space-lg py-space-md rounded-lg font-label-lg text-label-lg font-semibold backdrop-blur-sm transition-all" href="book-consultation.html">
-<span class="material-symbols-outlined text-secondary-container text-lg">calendar_month</span>
-<span>Schedule Free Consultation</span>
-</a>
-</div>
-<!-- Trust Badges Under Hero -->
-<div class="pt-space-md flex items-center gap-space-lg text-on-primary-container/80">
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-sm">verified_user</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider">Embassy Accredited</span>
-</div>
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-sm">lock</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider">Zero Data Leakage Protocol</span>
-</div>
-<div class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary-container text-sm">flight</span>
-<span class="font-label-sm text-label-sm uppercase tracking-wider">IATA Mobility Certified</span>
-</div>
-</div>
-</div>
-<!-- Visual Crest Display & Editorial Visual Stack -->
-<div class="lg:col-span-5 relative flex justify-center lg:justify-end">
-<div class="relative w-full max-w-md aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container-high/10">
-<img class="w-full h-full object-cover" data-alt="Refined executive in an upscale private airport departure lounge looking at global flight coordinates on a luxury tablet, soft golden daylight, cinematic architectural composition, warm prestige aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq0JmGb_38HSuYKbTe2WknbIq9bJCw38tk1jME-4DpLHycMqEAQ2BwotyUH2Ei-u035PrOypW2NEM0Io779kdAzGfx2t16-GKpwPC-44BGtqwj4RGfvUmLhfBq6cK43KYU0Es2gULmhZcFBocuOIhKEJSR7CiT9zD6Q3jXrcHgPvss6_xAdw9d8TQON0U22gvC4OmEdn3pZJcFwbEi-oFJQ-FDJiAp8XSl0xWi7Cdb"/>
-<div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/20 to-transparent"></div>
-<!-- Emblem Shield Overlay Badge inspired by the EC Crest -->
-<div class="absolute top-6 right-6 bg-primary-container/90 backdrop-blur-md p-space-md rounded-lg shadow-xl flex items-center gap-space-md">
-<img src="assets/logo.jpg" alt="Express Consultancy Crest" class="w-12 h-12 rounded-full object-contain bg-white p-0.5 shadow ring-2 ring-secondary-container/40"/>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container font-semibold">Priority Visa Desk</span>
-<span class="font-title-md text-title-md text-surface-container-lowest font-medium">99.4% Clearance</span>
-</div>
-</div>
-<!-- Bottom Floating Mobility Tag -->
-<div class="absolute bottom-6 left-6 right-6 bg-surface-container-lowest text-on-surface p-space-md rounded-lg shadow-xl flex items-center justify-between">
-<div class="flex items-center gap-space-sm">
-<span class="material-symbols-outlined text-secondary text-2xl">public</span>
-<div class="flex flex-col">
-<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-bold">Fast-Track Status</span>
-<span class="font-title-md text-title-md text-primary font-semibold">Express Pathway Active</span>
-</div>
-</div>
-<span class="font-label-md text-label-md bg-secondary-container/20 text-on-secondary-container px-space-sm py-1 rounded font-bold uppercase tracking-wider">Tier 1</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Metrics / Trust Stats Bar -->
-<section class="w-full bg-surface-container-low py-space-lg shadow-inner">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="grid grid-cols-2 lg:grid-cols-4 gap-space-lg">
-<div class="flex flex-col gap-1 p-space-sm">
-<span class="font-headline-lg text-headline-lg text-primary font-bold">99.4%</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Visa Approval Rate</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Validated through official consulate records</span>
-</div>
-<div class="flex flex-col gap-1 p-space-sm">
-<span class="font-headline-lg text-headline-lg text-primary font-bold">140+</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Countries Served</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Direct liaison with overseas embassies</span>
-</div>
-<div class="flex flex-col gap-1 p-space-sm">
-<span class="font-headline-lg text-headline-lg text-primary font-bold">25,000+</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Satisfied Travelers</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">C-Suite, diplomats &amp; premier academics</span>
-</div>
-<div class="flex flex-col gap-1 p-space-sm">
-<span class="font-headline-lg text-headline-lg text-primary font-bold">24/7</span>
-<span class="font-label-lg text-label-lg text-on-surface font-semibold">Priority Concierge</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Dedicated personal mobility manager</span>
-</div>
-</div>
-</div>
-</section>
-<!-- Interactive Visa & Flight Finder Search Widget -->
-<section class="max-w-7xl mx-auto w-full px-margin-mobile lg:px-margin -mt-8 relative z-20">
-<div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden">
-<!-- Tabs Navigation -->
-<div class="flex items-center bg-surface-container-low px-space-md pt-space-xs" id="widget-tabs">
-<button class="widget-tab active-tab flex items-center gap-space-xs px-space-lg py-space-md font-label-lg text-label-lg font-bold text-primary bg-surface-container-lowest rounded-t-lg transition-colors" id="tab-visa" onclick="switchWidgetTab('visa')" type="button">
-<span class="material-symbols-outlined text-secondary text-lg">verified</span>
-<span>Visa Inquiry &amp; Eligibility</span>
-</button>
-<button class="widget-tab flex items-center gap-space-xs px-space-lg py-space-md font-label-lg text-label-lg font-semibold text-on-surface-variant hover:text-on-surface transition-colors" id="tab-flight" onclick="switchWidgetTab('flight')" type="button">
-<span class="material-symbols-outlined text-lg">flight_takeoff</span>
-<span>Corporate Flight Booking</span>
-</button>
-<button class="widget-tab flex items-center gap-space-xs px-space-lg py-space-md font-label-lg text-label-lg font-semibold text-on-surface-variant hover:text-on-surface transition-colors" id="tab-concierge" onclick="switchWidgetTab('concierge')" type="button">
-<span class="material-symbols-outlined text-lg">room_service</span>
-<span>Executive Concierge Dispatch</span>
-</button>
-</div>
-<!-- Tab 1: Visa Inquiry (Default) -->
-<div class="p-space-lg flex flex-col gap-space-md" id="content-visa">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
-<!-- Destination Country -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Destination Country</label>
-<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">pin_drop</span>
-<select class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none cursor-pointer">
-<option value="UK">United Kingdom (UK)</option>
-<option value="USA">United States (USA)</option>
-<option value="Schengen">Schengen Area (EU)</option>
-<option value="Canada">Canada</option>
-<option value="Australia">Australia</option>
-<option value="UAE">United Arab Emirates (UAE)</option>
-<option value="Japan">Japan</option>
-<option value="Singapore">Singapore</option>
-</select>
-</div>
-</div>
-<!-- Visa Category -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Visa Category</label>
-<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">assignment_ind</span>
-<select class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none cursor-pointer">
-<option value="business">Executive Business Visa</option>
-<option value="tourist">VIP Tourism &amp; Leisure</option>
-<option value="student">Premier University Tier-4</option>
-<option value="work">Intra-Company &amp; Work Permit</option>
-<option value="diplomatic">Diplomatic &amp; Official Mission</option>
-</select>
-</div>
-</div>
-<!-- Departure / Intended Date -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Planned Travel Date</label>
-<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">calendar_today</span>
-<input id="search-visa-date" class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none cursor-pointer" type="date" value="2025-04-15"/>
-</div>
-</div>
-<!-- Fast-Track Level / Urgency -->
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Expedited Clearance</label>
-<div class="relative flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">bolt</span>
-<select class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none cursor-pointer">
-<option value="standard">Standard Priority (7-14 Days)</option>
-<option value="express">Diplomatic Courier (3-5 Days)</option>
-<option value="emergency">Emergency VIP (24-48 Hours)</option>
-</select>
-</div>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-xs">
-<div class="flex items-center gap-space-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-secondary text-sm">info</span>
-<span class="font-body-sm text-body-sm">Complimentary preliminary document pre-audit included with zero consular penalty risk.</span>
-</div>
-<button class="w-full sm:w-auto inline-flex items-center justify-center gap-space-sm bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary px-space-xl py-space-md rounded-lg font-label-lg text-label-lg font-semibold shadow transition-all" type="button">
-<span>Check Requirements &amp; Eligibility</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</button>
-</div>
-</div>
-<!-- Tab 2: Flight Booking (Hidden State) -->
-<div class="hidden p-space-lg flex-col gap-space-md" id="content-flight">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Departure Airport</label>
-<div class="flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">flight_takeoff</span>
-<input id="search-flight-from" class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none" placeholder="LHR, JFK, DXB or City" type="text" value="London Heathrow (LHR)"/>
-</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Arrival Destination</label>
-<div class="flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">flight_land</span>
-<input id="search-flight-to" class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none" placeholder="HND, SIN, CDG or City" type="text" value="Tokyo Haneda (HND)"/>
-</div>
-</div>
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Travel Class</label>
-<div class="flex items-center bg-surface-container-low rounded-lg px-space-md py-space-sm">
-<span class="material-symbols-outlined text-secondary mr-space-xs">airline_seat_recline_extra</span>
-<select class="w-full bg-transparent text-primary font-body-md text-body-md focus:outline-none cursor-pointer">
-<option>First Class / Private Suite</option>
-<option>Executive Business</option>
-<option>Charter Jet On-Demand</option>
-</select>
-</div>
-</div>
-<div class="flex flex-col justify-end">
-<button class="w-full inline-flex items-center justify-center gap-space-sm bg-primary text-on-primary hover:bg-primary-container px-space-lg py-space-md rounded-lg font-label-lg text-label-lg font-semibold shadow transition-all" type="button">
-<span>Find Best Corporate Routes</span>
-<span class="material-symbols-outlined text-base">search</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Tab 3: Corporate Concierge (Hidden State) -->
-<div class="hidden p-space-lg flex-col gap-space-md" id="content-concierge">
-<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Corporate Account ID</label>
-<input id="search-concierge-acc" class="bg-surface-container-low rounded-lg px-space-md py-space-sm text-body-md focus:outline-none" placeholder="EXPR-ENT-9021" type="text"/>
-</div>
-<div class="flex flex-col gap-space-xs">
-<label class="font-label-sm text-label-sm uppercase font-bold text-on-surface-variant tracking-wider">Service Request</label>
-<select class="bg-surface-container-low rounded-lg px-space-md py-space-sm text-body-md focus:outline-none">
-<option>Diplomatic Ground Chauffeur</option>
-<option>Embassy Expedited Escort</option>
-<option>Multinational Group Air Charter</option>
-</select>
-</div>
-<div class="flex flex-col justify-end">
-<button class="w-full inline-flex items-center justify-center gap-space-sm bg-secondary hover:bg-secondary-fixed text-on-secondary px-space-lg py-space-md rounded-lg font-label-lg text-label-lg font-semibold transition-all" type="button">
-<span>Summon Case Officer</span>
-<span class="material-symbols-outlined text-base">support_agent</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Core Services Grid -->
-<section class="w-full py-24 bg-surface" id="services-grid">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
-<div class="flex flex-col gap-space-xs max-w-2xl">
-<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Uncompromising Global Mobility</span>
-<h2 class="font-headline-lg text-headline-lg text-primary font-medium">Bespoke Sovereign &amp; Executive Services</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Each engagement is handled with absolute discretion, rigorous compliance checks, and a designated senior case officer.</p>
-</div>
-<a class="inline-flex items-center gap-space-xs text-primary font-label-lg text-label-lg font-bold hover:text-secondary transition-colors pb-1" href="book-consultation.html">
-<span>View Detailed Protocol Matrix</span>
-<span class="material-symbols-outlined text-base">north_east</span>
-</a>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-<!-- Service Card 1: Visa & Immigration -->
-<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group">
-<div class="w-14 h-14 rounded-lg bg-surface-container-low flex items-center justify-center mb-space-md text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-3xl">verified_user</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold mb-1">Government Liaisons</span>
-<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-space-xs">Visa &amp; Fast-Track Immigration</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-            End-to-end diplomatic handling, expedited embassy appointments, biometrics escorting, and zero-error documentation for UK, US, Schengen, and GCC jurisdictions.
+
+<!-- =============================================== -->
+<!-- SMART AUTO-HIDING HEADER                        -->
+<!-- =============================================== -->
+<header id="main-header" class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,31,44,0.06)] transition-transform duration-300 ease-in-out will-change-transform">
+  <div class="h-16 sm:h-20 w-full px-4 sm:px-6 lg:px-margin flex items-center justify-between gap-2 sm:gap-space-md">
+    <!-- Brand Logo -->
+    <a href="index.html" class="flex items-center gap-2 sm:gap-space-sm shrink-0 group">
+      <img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 sm:w-11 sm:h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/>
+      <div class="flex flex-col">
+        <span class="font-headline-sm text-lg sm:text-2xl tracking-tight text-primary font-semibold leading-none">Express</span>
+        <span class="font-label-sm text-[10px] sm:text-xs uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold border-b-2 border-secondary pb-1">
+      <a aria-current="page" class="transition-colors py-1 text-primary font-semibold border-b-2 border-secondary pb-1 text-sm font-medium" data-path="home" href="index.html">Home</a>
+      <a class="font-label-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors py-1 font-medium" data-path="services-and-visas" href="#services-grid">Services &amp; Visas</a>
+      <a class="font-label-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors py-1 font-medium" data-path="global-destinations" href="#destinations">Global Destinations</a>
+      <a class="font-label-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors py-1 font-medium" data-path="corporate-travel" href="book-consultation.html?service=corporate">Corporate Travel</a>
+      <a class="font-label-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors py-1 font-medium" data-path="about-us" href="#why-us">Why Us</a>
+      <a class="font-label-lg text-sm text-on-surface-variant hover:text-on-surface transition-colors py-1 font-medium" data-path="contact" href="#consultation-booking">Contact</a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="flex items-center gap-2 sm:gap-space-md shrink-0">
+      <div class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full border border-surface-variant/80">
+        <span class="material-symbols-outlined text-secondary text-sm">headset_mic</span>
+        <div class="flex flex-col text-left">
+          <span class="font-label-sm text-[10px] uppercase tracking-wider text-on-surface-variant">24/7 Concierge</span>
+          <span class="font-label-md text-xs font-semibold text-primary">+1 (800) 924-EXPR</span>
+        </div>
+      </div>
+      
+      <!-- Primary Consultation CTA -->
+      <a class="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-bold text-xs sm:text-sm px-3 sm:px-space-lg py-2 sm:py-space-sm rounded-lg transition-all shadow-sm shrink-0" data-path="book-consultation" href="book-consultation.html">
+        <span>Book Consultation</span>
+      </a>
+
+      <!-- Mobile Hamburger Menu Button -->
+      <button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-lg text-primary hover:bg-surface-container-low transition-colors" aria-label="Toggle navigation">
+        <span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span>
+      </button>
+
+      <!-- Profile Avatar (Desktop Only) -->
+      <div class="hidden sm:flex items-center pl-space-xs">
+        <img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-secondary-container/40" src="https://lh3.googleusercontent.com/aida/ALJJyrDmmZhpI5OQ_kpw7jFJTm2KWIxL2dG-MsaXBf4rSbpMxujv6a8t9j0Nn3tTBpw99z4eho9TPHQPVCd_JiO6vqYLfRUiYOTPtJz1KfOaqCCGR_sGv4r0EQbqOmALz4Gk2uCWIc5V0FKKegsDANYnMdQSxfDNSi6qwGh4R4G5SziwPlbF7JfxaWlgdLwF73_dxdaoCQ24oyr_m4GOeCePRmutfmtu6L1MHczmv3QPOjfjR1WKcKC_H2LGJby6"/>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Dropdown Navigation Drawer -->
+  <div id="mobile-menu" class="hidden xl:hidden bg-surface-container-lowest/98 backdrop-blur-md border-b border-surface-container px-5 py-4 shadow-xl flex-col gap-1 transition-all">
+    <a class="text-sm font-bold text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="index.html" onclick="toggleMobileMenu()">
+      <span>Home</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="#services-grid" onclick="toggleMobileMenu()">
+      <span>Services &amp; Visas</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="#destinations" onclick="toggleMobileMenu()">
+      <span>Global Destinations</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="book-consultation.html?service=corporate" onclick="toggleMobileMenu()">
+      <span>Corporate Travel</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="#why-us" onclick="toggleMobileMenu()">
+      <span>Why Choose Us</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="#testimonials" onclick="toggleMobileMenu()">
+      <span>Client Reviews</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    <a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-2.5 border-b border-surface-container/60 flex items-center justify-between" href="#consultation-booking" onclick="toggleMobileMenu()">
+      <span>Officer Callback Desk</span>
+      <span class="material-symbols-outlined text-sm text-secondary">chevron_right</span>
+    </a>
+    
+    <div class="pt-3 flex flex-col gap-2">
+      <a href="book-consultation.html" class="w-full text-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-bold py-3 rounded-xl text-xs sm:text-sm shadow-sm flex items-center justify-center gap-2">
+        <span class="material-symbols-outlined text-base">calendar_month</span>
+        <span>Book Priority Consultation</span>
+      </a>
+      <a href="https://t.me/ExpressConsultancy" target="_blank" class="w-full text-center bg-[#229ED9]/10 hover:bg-[#229ED9]/20 text-[#0088cc] font-bold py-2.5 rounded-xl text-xs border border-[#229ED9]/30 flex items-center justify-center gap-2">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        <span>Open Agency Telegram Desk</span>
+      </a>
+    </div>
+  </div>
+</header>
+
+<main class="w-full pt-16 sm:pt-20 bg-surface min-h-screen">
+<div class="flex flex-col w-full">
+
+<!-- =============================================== -->
+<!-- 1. TOP HERO & SOVEREIGN CREST BANNER            -->
+<!-- =============================================== -->
+<section class="relative w-full -mt-16 sm:-mt-20 pt-24 sm:pt-28 pb-16 sm:pb-20 bg-primary-container text-surface overflow-hidden">
+  <!-- Ambient atmospheric subtle glows -->
+  <div class="absolute -top-32 -left-32 w-80 sm:w-96 h-80 sm:h-96 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 right-4 sm:right-10 w-[360px] sm:w-[500px] h-[360px] sm:h-[500px] rounded-full bg-secondary/15 blur-3xl pointer-events-none"></div>
+  
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-gutter items-center pt-4 sm:pt-8">
+      
+      <!-- Hero Text Content -->
+      <div class="lg:col-span-7 flex flex-col gap-4 sm:gap-space-lg text-left">
+        <div class="inline-flex items-center gap-2 bg-surface-container-lowest/10 backdrop-blur-md px-3.5 py-1.5 rounded-full w-fit">
+          <span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+          <span class="font-label-sm text-[11px] sm:text-xs uppercase tracking-widest text-secondary-container font-bold">Diplomatic Excellence • Since 2009</span>
+        </div>
+        
+        <div class="flex flex-col gap-2 sm:gap-space-sm">
+          <h1 class="font-headline-xl text-3xl sm:text-4xl md:text-5xl lg:text-[46px] text-surface-container-lowest font-medium leading-[1.15] sm:leading-tight">
+            Seamless Global Travel &amp; <br/>
+            <span class="italic text-secondary-container font-normal">Executive Visa</span> Consultancy
+          </h1>
+          <p class="font-body-lg text-sm sm:text-base md:text-lg text-on-primary-container max-w-xl leading-relaxed">
+            Empowering international travelers, corporate leaders, and scholars with sovereign-tier visa facilitation, private air logistics, and bespoke cross-border mobility solutions.
           </p>
-<ul class="flex flex-col gap-space-xs mb-space-lg font-body-sm text-body-sm text-on-surface">
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Document Verification &amp; Apostille</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Direct Embassy Slot Fast-Tracking</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Appeals &amp; Complex Inquiries</span>
-</li>
-</ul>
-<a class="inline-flex items-center gap-space-xs font-label-md text-label-md font-bold text-primary hover:text-secondary transition-colors mt-auto" href="book-consultation.html?service=visa">
-<span>Explore Visa Protocols</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-</div>
-<!-- Service Card 2: Corporate Travel -->
-<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group">
-<div class="w-14 h-14 rounded-lg bg-surface-container-low flex items-center justify-center mb-space-md text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-3xl">corporate_fare</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold mb-1">Enterprise Advisory</span>
-<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-space-xs">Corporate Travel Management</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-            Streamlined cross-border executive movements, multi-delegation logistics, enterprise invoicing, and duty-of-care emergency support for global corporations.
-          </p>
-<ul class="flex flex-col gap-space-xs mb-space-lg font-body-sm text-body-sm text-on-surface">
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Centralized Consolidated Billing</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>VIP Airport Meet &amp; Greet</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>24/7 Crisis &amp; Flight Monitoring</span>
-</li>
-</ul>
-<a class="inline-flex items-center gap-space-xs font-label-md text-label-md font-bold text-primary hover:text-secondary transition-colors mt-auto" href="book-consultation.html?service=corporate">
-<span>Corporate Solutions</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-</div>
-<!-- Service Card 3: Bespoke Luxury Expeditions -->
-<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group">
-<div class="w-14 h-14 rounded-lg bg-surface-container-low flex items-center justify-center mb-space-md text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-3xl">travel_explore</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold mb-1">Tailored Leisure</span>
-<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-space-xs">Bespoke Luxury Holidays</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-            Private villa retreats, exclusive access to restricted historical sites, superyacht charters, and customized holiday itineraries tailored for high-net-worth clients.
-          </p>
-<ul class="flex flex-col gap-space-xs mb-space-lg font-body-sm text-body-sm text-on-surface">
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Palace &amp; 5-Star Suites Access</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Dedicated Private Guides</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Curated Fine Dining &amp; Culture</span>
-</li>
-</ul>
-<a class="inline-flex items-center gap-space-xs font-label-md text-label-md font-bold text-primary hover:text-secondary transition-colors mt-auto" href="book-consultation.html?service=luxury">
-<span>View Itineraries</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-</div>
-<!-- Service Card 4: Air Ticketing & Express Rebooking -->
-<div class="flex flex-col bg-surface-container-lowest p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group">
-<div class="w-14 h-14 rounded-lg bg-surface-container-low flex items-center justify-center mb-space-md text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
-<span class="material-symbols-outlined text-3xl">connecting_airports</span>
-</div>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold mb-1">Immediate Dispatch</span>
-<h3 class="font-title-lg text-title-lg text-primary font-semibold mb-space-xs">Air Ticketing &amp; Express Rebooking</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-space-md flex-1">
-            Privileged global routing desks, instantaneous flight changes without regular airline queues, and guaranteed seat holds on heavily constrained executive routes.
-          </p>
-<ul class="flex flex-col gap-space-xs mb-space-lg font-body-sm text-body-sm text-on-surface">
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Zero-Wait Instant Rebooking</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Private Jet Interline Connections</span>
-</li>
-<li class="flex items-center gap-space-xs">
-<span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
-<span>Bespoke Multi-City Stopovers</span>
-</li>
-</ul>
-<a class="inline-flex items-center gap-space-xs font-label-md text-label-md font-bold text-primary hover:text-secondary transition-colors mt-auto" href="book-consultation.html?service=flight">
-<span>Flight Desk Access</span>
-<span class="material-symbols-outlined text-base">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Featured Global Destinations -->
-<section class="w-full py-20 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Global Hubs</span>
-<h2 class="font-headline-lg text-headline-lg text-primary font-medium">Prime Destinations &amp; Embassy Desks</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">Accelerated entry permits and white-glove arrival logistics across high-demand sovereign territories.</p>
-</div>
-<div class="flex items-center gap-space-xs">
-<span class="font-label-md text-label-md text-on-surface-variant">Updated daily with consular processing times</span>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-<!-- Destination 1: London UK -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Iconic Tower Bridge and the River Thames in London under crisp dusk lighting, showing architectural elegance and metropolitan power, rich navy and warm amber reflections." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBswlGFSzwailsKz5AJCR4zdC7jNwu7irhwfy8z07EkCUvDXrRad3bjFcMt8Ob3FiJxAJnKpyQPPt6TJb0QqaTrWGIPdAXNIe_WQsMyyHD0Dpyg981NL-LduLfDK--62NCMTZLx8Dort6eCQanzb7nc66r_9yrx6-pAWAdxJDZcTUxVYB0r0kfOIJFLZauK0zfXlqTHtj-UkFG0zh3iW7-c_ZTDn_GxAj3BT_6zPai9"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              United Kingdom
+        </div>
+
+        <!-- Dual Executive CTAs -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-space-md pt-1 sm:pt-space-xs">
+          <a class="inline-flex items-center justify-center gap-2 bg-secondary-container text-on-secondary-fixed hover:bg-secondary hover:text-on-secondary px-6 sm:px-space-xl py-3 sm:py-space-md rounded-lg font-bold text-xs sm:text-sm shadow-md transition-all text-center" href="#services-grid">
+            <span>Explore Visa Services</span>
+            <span class="material-symbols-outlined text-base">arrow_forward</span>
+          </a>
+          <a class="inline-flex items-center justify-center gap-2 bg-surface-container-lowest/10 text-surface-container-lowest hover:bg-surface-container-lowest/20 px-5 sm:px-space-lg py-3 sm:py-space-md rounded-lg font-semibold text-xs sm:text-sm backdrop-blur-sm transition-all text-center border border-white/10" href="book-consultation.html">
+            <span class="material-symbols-outlined text-secondary-container text-base">calendar_month</span>
+            <span>Schedule Free Consultation</span>
+          </a>
+        </div>
+
+        <!-- Trust Badges Under Hero -->
+        <div class="pt-2 sm:pt-space-md flex flex-wrap items-center gap-3 sm:gap-space-lg text-on-primary-container/80 text-xs">
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary-container text-base">verified_user</span>
+            <span class="uppercase tracking-wider text-[11px] sm:text-xs">Embassy Accredited</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary-container text-base">lock</span>
+            <span class="uppercase tracking-wider text-[11px] sm:text-xs">Zero Data Leakage Protocol</span>
+          </div>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-secondary-container text-base">flight</span>
+            <span class="uppercase tracking-wider text-[11px] sm:text-xs">IATA Mobility Certified</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Crest Display & Editorial Visual Stack -->
+      <div class="lg:col-span-5 relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+        <div class="relative w-full max-w-md aspect-[4/3] sm:aspect-[4/5] rounded-xl overflow-hidden shadow-2xl bg-surface-container-high/10">
+          <img class="w-full h-full object-cover" data-alt="Refined executive in an upscale private airport departure lounge looking at global flight coordinates on a luxury tablet, soft golden daylight, cinematic architectural composition, warm prestige aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDq0JmGb_38HSuYKbTe2WknbIq9bJCw38tk1jME-4DpLHycMqEAQ2BwotyUH2Ei-u035PrOypW2NEM0Io779kdAzGfx2t16-GKpwPC-44BGtqwj4RGfvUmLhfBq6cK43KYU0Es2gULmhZcFBocuOIhKEJSR7CiT9zD6Q3jXrcHgPvss6_xAdw9d8TQON0U22gvC4OmEdn3pZJcFwbEi-oFJQ-FDJiAp8XSl0xWi7Cdb"/>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary-container via-primary-container/20 to-transparent"></div>
+          
+          <!-- Emblem Shield Overlay Badge inspired by the EC Crest -->
+          <div class="absolute top-3 right-3 sm:top-6 sm:right-6 bg-primary-container/90 backdrop-blur-md p-2.5 sm:p-space-md rounded-lg shadow-xl flex items-center gap-2.5 sm:gap-space-md border border-secondary-container/20">
+            <img src="assets/logo.jpg" alt="Express Consultancy Crest" class="w-9 h-9 sm:w-12 sm:h-12 rounded-full object-contain bg-white p-0.5 shadow ring-2 ring-secondary-container/40"/>
+            <div class="flex flex-col text-left">
+              <span class="font-label-sm text-[10px] sm:text-xs uppercase tracking-widest text-secondary-container font-semibold">Priority Visa Desk</span>
+              <span class="font-title-md text-sm sm:text-lg text-surface-container-lowest font-medium">99.4% Clearance</span>
             </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Fast-Track: 5 Working Days
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">London &amp; UK Tier Visas</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">Priority Diplomatic</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Full legal file preparation for Standard Visitor, Innovator Founder, Global Talent, and High Net Worth investor relocations.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.7%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=UK&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Destination 2: Dubai / UAE -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic Dubai skyline with Burj Khalifa and luxury highway light trails at sunset, gleaming golden glass facades, warm desert twilight and ultra-luxury atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmlxehqN6efmJ-07GUmBBOzdzY9H6a2aHv6nwFtB_n7aLgGRcGo3T3IgSSpnXDlI04uJ57xx7V93BWwKV4-YPBtnTZE9ouqmFy_V79cBUlqDALZPQunA9xgKwkDVr7jS9MIvdURr1_8gV_Kh0RrgRwa5qK8gu3-SPzxoPRYyPy6hpeLY2SCOpv1bYdgwoLKSZCybPl3P-FKdxhbYmoiRbvMQ7WAgiG7KAv6GToROpZ"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              UAE / Dubai
-            </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Fast-Track: 24 - 48 Hours
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Dubai 10-Yr Golden Visa</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">Residency &amp; Business</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Direct liaison with GDRFA and ICP for instant investor residency, executive multi-entry permits, and VIP airport meet-and-assist.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 100%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=UAE&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Destination 3: Paris & Schengen Europe -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Haussmann architectural boulevards in Paris with the Eiffel tower softly visible in the background, elegant autumn light, refined historical aesthetic with luxury Parisian elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaI8MqyL2qASmm-GRQCy-adfgIb0aGLshs_J7TakOkzpN3TV8Imvo0S17yw3ZVJ9uCro8E4vUFdjPQkn8MeATUmmvsT0i0-BrfguMyl_Q-wtFZ4tWPjY5w_ezOcH06i4pznjdTnANht2fA4LD0El1fJEpv4CAw_E8rVa4ZftF-cw2KX0l15zibJzUeR837WBrfG8JQnsn1MXIJitXJcyfZWETPdQ7KiJ-ir9LqCr4g"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              Schengen Area (EU)
-            </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Fast-Track: 7 - 10 Days
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Multi-Entry Schengen Hub</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">29 Member States</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Guaranteed consulate appointment securing for France, Switzerland, Germany, and Italy with complete itinerary validation.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.1%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Schengen&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Destination 4: Tokyo Japan -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern architectural district in Tokyo featuring sleek glass towers juxtaposed with subtle Japanese botanical greenery, clean high-contrast daylight, serene luxury tone." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCivYetBcwyRamMSa1rYssV1-t1koWXQ8w2jZ_03cAjMrBWodB51FKn8gN7lvrbZuXbDGo-keZCKcyYLwqmqNi4NQSYFAqsUKzKMhQBBPwHSDthNvwMs90Uh_ClIIHx16XdqjM4ZteWd1Fm0fpTOkLun6HS5LEB-L-QH5UW4pwtgLXa0HlUks63lfniWZdfYUmdZbblowtOE3EOQHHiGaeTIHxgqks2Am9kwRkQ0-7u"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              Japan
-            </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Fast-Track: 4 Working Days
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Tokyo &amp; Osaka Business Entry</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">ERFS Certified</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Comprehensive corporate business travel guarantees, specialized cultural itineraries, and high-skilled foreign professional clearance.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.8%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Japan&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Destination 5: Singapore -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Singapore Marina Bay illuminated at twilight, featuring futuristic architecture, clean urban harbor, reflecting prestige wealth management and international trade aesthetics." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA75QfCGTiBEiwBfAQsIz25YLfMK_kkJjgoHZIFjZDAFkK6lEFQv3FeAhvo8_zlizq-w4TDphrQx3rnCgFOI02FxaF0uEOAKgoAgTp5VqcZdPnEWQzzov1vOW4Np5KbjdCYwyKDO2GyBULQYdO_jDHHJtT8q7FhqKv2agDo3I0qZVAP_AhvGLm7AInTYf_mcRpNOyL_iS7aGpXg10wysD5tMWSMsq-4iFxpF1c3xxJy"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              Singapore
-            </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Fast-Track: 48 - 72 Hours
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">Singapore ONE Pass &amp; EP</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">Apex Gateway</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              Expedited Ministry of Manpower filings, corporate director visas, family pass logistics, and seamless APAC cross-border transit.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.5%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Singapore&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-<!-- Destination 6: New York & United States -->
-<div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col">
-<div class="relative h-60 w-full overflow-hidden">
-<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Manhattan New York financial district skyline overlooking the Hudson River with warm sunset glow reflecting on glass skyscrapers, evoking premier commerce and executive prestige." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdblS_gDkxJZrKg2bXCYbSOnb8rTTC_YdYI62nlhAeGvB9ARB6Nc6JN5mihK3AVW1GBjRtKnGjelmJB07djpDX764hjjbQI5XmGn2-Y9olUGEb6KTPPgs316U5Ea0_rueEo_waGN2tvFfSKwCIQxzCNjrTDbC9hsTc2VgRxjcm-QRZkhnb0PdfUcAFC1IpqR7Fj4W3bZRhKw3tfjeeD7coYaiEumzTaCThOf5vxu0"/>
-<div class="absolute top-4 left-4 bg-primary/80 backdrop-blur-sm px-space-sm py-1 rounded text-surface-container-lowest font-label-sm text-label-sm font-bold uppercase tracking-wider">
-              United States (USA)
-            </div>
-<div class="absolute bottom-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md px-space-sm py-1 rounded text-primary font-label-md text-label-md font-semibold">
-              Emergency Interview Slotting
-            </div>
-</div>
-<div class="p-space-lg flex flex-col gap-space-sm flex-1">
-<div class="flex items-center justify-between">
-<h3 class="font-headline-sm text-headline-sm text-primary font-semibold">US B1/B2 &amp; L1 Intracompany</h3>
-<span class="font-label-md text-label-md text-secondary font-bold">DS-160 Specialist</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface-variant">
-              High-priority DS-160 preparation, consular interview mock training, emergency expedite filings, and multi-year renewals.
-            </p>
-<div class="pt-space-md border-t border-surface-container flex items-center justify-between mt-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Approval Rate: 98.9%</span>
-<a class="font-label-md text-label-md font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=USA&service=visa">
-<span>Inquire Desk</span>
-<span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Why Choose Express Consultancy -->
-<section class="w-full py-24 bg-surface relative overflow-hidden">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
-<!-- Visual Shield/Crest Architecture Graphic -->
-<div class="lg:col-span-5 relative flex justify-center">
-<div class="relative w-full max-w-sm aspect-square bg-gradient-to-tr from-primary to-primary-container rounded-2xl p-space-lg flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden">
-<!-- Background pattern decorative ring -->
-<div class="absolute inset-4 rounded-xl border border-secondary-container/20 pointer-events-none"></div>
-<div class="absolute -top-16 -right-16 w-36 h-36 bg-secondary-container/20 rounded-full blur-2xl"></div>
-<div class="w-24 h-24 rounded-full bg-white flex items-center justify-center mb-space-md ring-8 ring-secondary-container/20 p-1 shadow-xl">
-<img src="assets/logo.jpg" alt="Express Consultancy Sovereign Shield" class="w-full h-full object-contain rounded-full"/>
-</div>
-<span class="font-headline-sm text-headline-sm text-surface-container-lowest font-medium mb-1">Express Consultancy</span>
-<span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container font-bold mb-space-md">Sovereign Standard of Care</span>
-<p class="font-body-sm text-body-sm text-on-primary-container max-w-xs">
-              Accredited by major international mobility associations and operating with strict Swiss-standard client discretion.
-            </p>
-<div class="mt-space-lg flex items-center gap-space-md">
-<div class="px-space-md py-1 bg-surface-container-lowest/10 rounded font-label-sm text-label-sm text-surface-container-lowest font-semibold">15+ Years Excellence</div>
-<div class="px-space-md py-1 bg-secondary-container text-on-secondary-fixed rounded font-label-sm text-label-sm font-bold">Tier 1 Certified</div>
-</div>
-</div>
-</div>
-<!-- Pillar Reasons -->
-<div class="lg:col-span-7 flex flex-col gap-space-lg">
-<div class="flex flex-col gap-space-xs">
-<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">The Express Advantage</span>
-<h2 class="font-headline-lg text-headline-lg text-primary font-medium">Why Global Decision-Makers Entrust Us</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant">We eliminate the uncertainty, embassy delays, and bureaucratic dead-ends common to cross-border transitions.</p>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-lg pt-space-xs">
-<!-- Pillar 1 -->
-<div class="flex items-start gap-space-md">
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-<span class="material-symbols-outlined text-secondary text-xl">gavel</span>
-</div>
-<div class="flex flex-col">
-<h4 class="font-title-md text-title-md text-primary font-semibold">Accredited Immigration Lawyers</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Our submissions are compiled and signed off by qualified sovereign immigration barristers.</p>
-</div>
-</div>
-<!-- Pillar 2 -->
-<div class="flex items-start gap-space-md">
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-<span class="material-symbols-outlined text-secondary text-xl">payments</span>
-</div>
-<div class="flex flex-col">
-<h4 class="font-title-md text-title-md text-primary font-semibold">Complete Cost Transparency</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Clear upfront fee schedule. Zero hidden embassy surcharges, surprise expediting taxes, or markup.</p>
-</div>
-</div>
-<!-- Pillar 3 -->
-<div class="flex items-start gap-space-md">
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-<span class="material-symbols-outlined text-secondary text-xl">badge</span>
-</div>
-<div class="flex flex-col">
-<h4 class="font-title-md text-title-md text-primary font-semibold">Dedicated Single Case Officer</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct single-point-of-contact via WhatsApp and encrypted hotline for your entire mobility journey.</p>
-</div>
-</div>
-<!-- Pillar 4 -->
-<div class="flex items-start gap-space-md">
-<div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
-<span class="material-symbols-outlined text-secondary text-xl">history_edu</span>
-</div>
-<div class="flex flex-col">
-<h4 class="font-title-md text-title-md text-primary font-semibold">15+ Years Sovereign Pedigree</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Consistently maintained the highest visa clearance percentage across 140 diplomatic consulates worldwide.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Client Success Stories & Testimonials -->
-<section class="w-full py-20 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
-<span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Client Validations</span>
-<h2 class="font-headline-lg text-headline-lg text-primary font-medium mt-1">Proven Results for Sovereign &amp; Executive Mobility</h2>
-<p class="font-body-lg text-body-lg text-on-surface-variant mt-2">Hear directly from multinational enterprise executives, international postgraduates, and global families.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-<!-- Testimonial 1 -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between">
-<div class="flex flex-col gap-space-sm">
-<div class="flex items-center gap-1 text-secondary">
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-              "Express Consultancy coordinated the simultaneous deployment of 18 senior management personnel to our London HQ with zero delays. When two embassy appointments were bottlenecked, their priority channel sorted both within 48 hours."
-            </p>
-</div>
-<div class="flex items-center gap-space-md pt-space-lg mt-space-md border-t border-surface-container">
-<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of a confident executive male in a tailored navy suit with glasses, neutral executive office background, sharp professional lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX0ndRnD9tyt2siJZKd69b2azRjEIBOoSoSM2O_gCvWNXe0KhHS63ExBWkINnzK_uKvgcP52kiSJ9mvx2XLnEZPsCLTNDALMcyBn56KvUaFDS99V_CS7TI9ZCwstzOHSd1pp8L8aOE6YvDQJGB-kcghDH9rffBEHuIZdPt-JdQT56rgLfojE1TabPrUpkP4v4nXxRJdpu-Xi_sAsnYLvLtY2LMkAln7jVy3npIUvN-"/>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-primary font-semibold">Marcus Vance</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">VP Global Operations, Vance Capital London</span>
-</div>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between">
-<div class="flex flex-col gap-space-sm">
-<div class="flex items-center gap-1 text-secondary">
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-              "Securing my Tier 4 Cambridge study visa after a previous self-file rejection seemed impossible. Express Consultancy reviewed my entire file, identified the financial statement discrepancies, and had my approval in just 6 business days."
-            </p>
-</div>
-<div class="flex items-center gap-space-md pt-space-lg mt-space-md border-t border-surface-container">
-<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of a smiling young woman postgraduate student wearing a smart casual blazer, academic library setting with soft warm bokeh." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp2jd5RURfGcRWvZQOQ3zpyRoZjhJFXZAezUk5sLMlbv-3xtZeksjiD0vFdHPHbGbgKcXHKx39AYmg2UBuic0ehBPHMfgOXbQRDxxPcyRieSlz7X6_EGda5zkTad03VYGKf5A8VMiKu-Pjw0eKG3FzK-U6rkTjXeNA8yX118C1YIpJanlqZ6446G6edcnMCdar6j9SlhanDWl5mYaVhNf2A2p92JkLxLWeYZ7dWqMi"/>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-primary font-semibold">Dr. Aisha Al-Nuaimi</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Biotechnology Fellow, Cambridge University</span>
-</div>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-md flex flex-col justify-between">
-<div class="flex flex-col gap-space-sm">
-<div class="flex items-center gap-1 text-secondary">
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="font-body-md text-body-md text-on-surface italic">
-              "Our 3-week multi-nation European family holiday was completely hands-free. Schengen visas for all 6 family members arrived weeks in advance, along with seamless tarmac chauffeur transfers at every touchdown. Impeccable standard."
-            </p>
-</div>
-<div class="flex items-center gap-space-md pt-space-lg mt-space-md border-t border-surface-container">
-<img class="w-12 h-12 rounded-full object-cover" data-alt="Headshot of an elegant international traveler woman in modern linen resort attire, smiling warmly in a Mediterranean courtyard." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqWDhY8BGfczoD_5h8VRZnpCqzMGQkWlWBGVRjUOrsxLYyIExHRW3Lu8-7Uo0YlfiCfap6CjwAiXV-pBlC2k1IfTtJKFPu0yWKCUk5F70ku8vhi-9kLtUMIx-cHM2HwBU6dxXkDw6crVsa2cBafGk4sk87VxoKvtc0cY3ka1Ybj7inEve-a1hUUM5hmw0pYZ1vSGxwpm-8ul0Ig5iGgtdwx-29sdNt_gYabFHJJQzy"/>
-<div class="flex flex-col">
-<span class="font-title-md text-title-md text-primary font-semibold">Elena Rostova</span>
-<span class="font-body-sm text-body-sm text-on-surface-variant">Private Family Office, Zurich &amp; Dubai</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Consultation Booking & Callback Lead Banner -->
-<section class="w-full py-20 bg-primary-container text-surface" id="consultation-booking">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
-<div class="bg-gradient-to-r from-primary via-primary-container to-primary p-space-xl rounded-2xl shadow-2xl relative overflow-hidden">
-<!-- Shield Glow Accent -->
-<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center relative z-10">
-<div class="lg:col-span-7 flex flex-col gap-space-sm">
-<div class="inline-flex items-center gap-space-xs text-secondary-container font-label-sm text-label-sm uppercase tracking-widest font-bold">
-<span class="material-symbols-outlined text-sm">bolt</span>
-<span>Express Callback Protocol • Response within 15 mins</span>
-</div>
-<h2 class="font-headline-lg text-headline-lg text-surface-container-lowest font-medium leading-tight">
-              Ready to take flight? <br/>
-<span class="text-secondary-container">Speak with an accredited travel consultant today.</span>
-</h2>
-<p class="font-body-md text-body-md text-on-primary-container max-w-xl">
-              Leave your direct line below. A designated senior mobility officer will review your jurisdiction requirements and contact you immediately.
-            </p>
-</div>
-<!-- Quick Phone Callback Form -->
-<div class="lg:col-span-5 bg-surface-container-lowest/10 backdrop-blur-md p-space-lg rounded-xl shadow-lg">
-<form class="flex flex-col gap-space-md" onsubmit="handleLeadSubmit(event)">
-<div class="flex flex-col gap-1">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-surface-container-lowest font-semibold">Your Full Legal Name</label>
-<input id="callback-name" class="bg-surface-container-lowest/10 border-0 rounded px-space-md py-space-sm text-surface-container-lowest placeholder:text-on-primary-container/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="e.g. Jonathan St. Claire" required="" type="text"/>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-surface-container-lowest font-semibold">Direct Phone / WhatsApp Number</label>
-<div class="flex items-center gap-space-xs">
-<select class="bg-surface-container-lowest/10 text-surface-container-lowest rounded px-space-sm py-space-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-secondary-container">
-<option class="text-primary" value="+44">+44 (UK)</option>
-<option class="text-primary" value="+1">+1 (US/CA)</option>
-<option class="text-primary" value="+971">+971 (UAE)</option>
-<option class="text-primary" value="+65">+65 (SG)</option>
-<option class="text-primary" value="+41">+41 (CH)</option>
-</select>
-<input id="callback-phone" class="w-full bg-surface-container-lowest/10 border-0 rounded px-space-md py-space-sm text-surface-container-lowest placeholder:text-on-primary-container/60 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="7911 123456" required="" type="tel"/>
-</div>
-</div>
-<div class="flex flex-col gap-1">
-<label class="font-label-sm text-label-sm uppercase tracking-wider text-surface-container-lowest font-semibold">Service Requirement</label>
-<select class="bg-surface-container-lowest/10 text-surface-container-lowest rounded px-space-md py-space-sm text-body-md focus:outline-none focus:ring-2 focus:ring-secondary-container cursor-pointer">
-<option class="text-primary" value="visa">Executive Visa &amp; Consular Expedite</option>
-<option class="text-primary" value="corporate">Corporate Travel Logistics</option>
-<option class="text-primary" value="luxury">Bespoke Holiday &amp; Private Jet</option>
-<option class="text-primary" value="student">Premier Academic Tier-4 Visa</option>
-</select>
-</div>
-<button class="w-full inline-flex items-center justify-center gap-space-xs bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary py-space-md rounded-lg font-label-lg text-label-lg font-bold transition-all shadow-md mt-space-xs" id="submit-btn" type="submit">
-<span>Request Urgent Officer Callback</span>
-<span class="material-symbols-outlined text-base">call</span>
-</button>
-<div class="hidden text-center text-secondary-container font-label-sm text-label-sm uppercase tracking-wider font-bold" id="submit-msg">
-                Callback request logged. A case officer is dialing your line.
+          </div>
+          
+          <!-- Bottom Floating Mobility Tag -->
+          <div class="absolute bottom-3 left-3 right-3 sm:bottom-6 sm:left-6 sm:right-6 bg-surface-container-lowest text-on-surface p-2.5 sm:p-space-md rounded-lg shadow-xl flex items-center justify-between">
+            <div class="flex items-center gap-2 sm:gap-space-sm">
+              <span class="material-symbols-outlined text-secondary text-xl sm:text-2xl">public</span>
+              <div class="flex flex-col text-left">
+                <span class="font-label-sm text-[10px] sm:text-xs uppercase text-on-surface-variant font-bold">Fast-Track Status</span>
+                <span class="font-title-md text-xs sm:text-base text-primary font-semibold">Express Pathway Active</span>
               </div>
-</form>
-</div>
-</div>
-</div>
-</div>
+            </div>
+            <span class="font-label-md text-[10px] sm:text-xs bg-secondary-container/20 text-on-secondary-container px-2 py-0.5 sm:px-space-sm sm:py-1 rounded font-bold uppercase tracking-wider">Tier 1</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </section>
-<!-- Inline Tab Switching, Search Routing, & Telegram Integration JavaScript -->
+
+<!-- =============================================== -->
+<!-- 2. METRICS / TRUST STATS BAR                    -->
+<!-- =============================================== -->
+<section class="w-full bg-surface-container-low py-6 sm:py-space-lg shadow-inner">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-space-lg">
+      <div class="flex flex-col gap-0.5 sm:gap-1 p-2 sm:p-space-sm text-left">
+        <span class="text-2xl sm:text-3xl lg:text-headline-lg text-primary font-bold">99.4%</span>
+        <span class="text-xs sm:text-sm font-semibold text-on-surface">Visa Approval Rate</span>
+        <span class="text-[11px] sm:text-xs text-on-surface-variant">Validated through official consulate records</span>
+      </div>
+      <div class="flex flex-col gap-0.5 sm:gap-1 p-2 sm:p-space-sm text-left">
+        <span class="text-2xl sm:text-3xl lg:text-headline-lg text-primary font-bold">140+</span>
+        <span class="text-xs sm:text-sm font-semibold text-on-surface">Countries Served</span>
+        <span class="text-[11px] sm:text-xs text-on-surface-variant">Direct liaison with overseas embassies</span>
+      </div>
+      <div class="flex flex-col gap-0.5 sm:gap-1 p-2 sm:p-space-sm text-left">
+        <span class="text-2xl sm:text-3xl lg:text-headline-lg text-primary font-bold">25,000+</span>
+        <span class="text-xs sm:text-sm font-semibold text-on-surface">Satisfied Travelers</span>
+        <span class="text-[11px] sm:text-xs text-on-surface-variant">C-Suite, diplomats &amp; premier academics</span>
+      </div>
+      <div class="flex flex-col gap-0.5 sm:gap-1 p-2 sm:p-space-sm text-left">
+        <span class="text-2xl sm:text-3xl lg:text-headline-lg text-primary font-bold">24/7</span>
+        <span class="text-xs sm:text-sm font-semibold text-on-surface">Priority Concierge</span>
+        <span class="text-[11px] sm:text-xs text-on-surface-variant">Dedicated personal mobility manager</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 3. INTERACTIVE VISA & FLIGHT SEARCH WIDGET      -->
+<!-- =============================================== -->
+<section class="max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-margin -mt-6 sm:-mt-8 relative z-20">
+  <div class="bg-surface-container-lowest rounded-xl shadow-xl overflow-hidden border border-surface-container/80">
+    
+    <!-- Responsive Tabs Navigation (Horizontal scroll on mobile) -->
+    <div class="flex items-center overflow-x-auto no-scrollbar scroll-smooth bg-surface-container-low px-2 sm:px-space-md pt-2 border-b border-surface-container gap-1 sm:gap-0" id="widget-tabs">
+      <button class="widget-tab active-tab shrink-0 flex items-center gap-1.5 sm:gap-space-xs px-3 sm:px-space-lg py-2.5 sm:py-space-md text-xs sm:text-sm font-bold text-primary bg-surface-container-lowest rounded-t-lg transition-colors whitespace-nowrap" id="tab-visa" onclick="switchWidgetTab('visa')" type="button">
+        <span class="material-symbols-outlined text-secondary text-base sm:text-lg">verified</span>
+        <span>Visa Eligibility</span>
+      </button>
+      <button class="widget-tab shrink-0 flex items-center gap-1.5 sm:gap-space-xs px-3 sm:px-space-lg py-2.5 sm:py-space-md text-xs sm:text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-flight" onclick="switchWidgetTab('flight')" type="button">
+        <span class="material-symbols-outlined text-base sm:text-lg">flight_takeoff</span>
+        <span>Flight Booking</span>
+      </button>
+      <button class="widget-tab shrink-0 flex items-center gap-1.5 sm:gap-space-xs px-3 sm:px-space-lg py-2.5 sm:py-space-md text-xs sm:text-sm font-semibold text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" id="tab-concierge" onclick="switchWidgetTab('concierge')" type="button">
+        <span class="material-symbols-outlined text-base sm:text-lg">room_service</span>
+        <span>Concierge Dispatch</span>
+      </button>
+    </div>
+
+    <!-- Tab 1: Visa Inquiry (Default) -->
+    <div class="p-4 sm:p-space-lg flex flex-col gap-3 sm:gap-space-md" id="content-visa">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-space-md">
+        <!-- Destination Country -->
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Destination Country</label>
+          <div class="relative flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">pin_drop</span>
+            <select id="search-visa-dest" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none cursor-pointer">
+              <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+              <option value="United States (USA)">United States (USA)</option>
+              <option value="Schengen Area (EU)">Schengen Area (EU)</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="United Arab Emirates (UAE)">United Arab Emirates (UAE)</option>
+              <option value="Japan">Japan</option>
+              <option value="Singapore">Singapore</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Visa Category -->
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Visa Category</label>
+          <div class="relative flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">assignment_ind</span>
+            <select id="search-visa-cat" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none cursor-pointer">
+              <option value="Executive Business Visa">Executive Business Visa</option>
+              <option value="VIP Tourism & Leisure">VIP Tourism &amp; Leisure</option>
+              <option value="Premier University Tier-4">Premier University Tier-4</option>
+              <option value="Intra-Company & Work Permit">Intra-Company &amp; Work Permit</option>
+              <option value="Diplomatic & Official Mission">Diplomatic &amp; Official Mission</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Departure Date -->
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Planned Travel Date</label>
+          <div class="relative flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">calendar_today</span>
+            <input id="search-visa-date" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none cursor-pointer" type="date" value="2025-05-15"/>
+          </div>
+        </div>
+
+        <!-- Urgency -->
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Expedited Clearance</label>
+          <div class="relative flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">bolt</span>
+            <select id="search-visa-urgency" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none cursor-pointer">
+              <option value="Standard Priority (7-14 Days)">Standard Priority (7-14 Days)</option>
+              <option value="Diplomatic Courier (3-5 Days)">Diplomatic Courier (3-5 Days)</option>
+              <option value="Emergency VIP (24-48 Hours)">Emergency VIP (24-48 Hours)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-1">
+        <div class="flex items-center gap-2 text-on-surface-variant text-xs">
+          <span class="material-symbols-outlined text-secondary text-base shrink-0">info</span>
+          <span>Complimentary document pre-audit included with zero consular penalty risk.</span>
+        </div>
+        <button onclick="routeVisaSearch()" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary px-6 py-3 rounded-lg font-bold text-xs sm:text-sm shadow transition-all shrink-0" type="button">
+          <span>Check Requirements &amp; Eligibility</span>
+          <span class="material-symbols-outlined text-base">arrow_forward</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Tab 2: Flight Booking (Hidden State) -->
+    <div class="hidden p-4 sm:p-space-lg flex-col gap-3 sm:gap-space-md" id="content-flight">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-space-md">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Departure Airport</label>
+          <div class="flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">flight_takeoff</span>
+            <input id="search-flight-from" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none" placeholder="LHR, JFK, DXB or City" type="text" value="Addis Ababa (ADD)"/>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Arrival Destination</label>
+          <div class="flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">flight_land</span>
+            <input id="search-flight-to" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none" placeholder="LHR, GVA, CDG, HND" type="text" value="London Heathrow (LHR)"/>
+          </div>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Travel Class</label>
+          <div class="flex items-center bg-surface-container-low rounded-lg px-3 py-2.5">
+            <span class="material-symbols-outlined text-secondary mr-2 text-lg">airline_seat_recline_extra</span>
+            <select id="search-flight-class" class="w-full bg-transparent text-primary font-medium text-sm focus:outline-none cursor-pointer">
+              <option value="Private Jet On-Demand">Private Jet On-Demand</option>
+              <option value="First Class / Private Suite">First Class / Private Suite</option>
+              <option value="Executive Business Class">Executive Business Class</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-col justify-end">
+          <button onclick="routeFlightSearch()" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-on-primary hover:bg-primary-container px-6 py-3 rounded-lg font-bold text-xs sm:text-sm shadow transition-all" type="button">
+            <span>Find Best Corporate Routes</span>
+            <span class="material-symbols-outlined text-base">search</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 3: Corporate Concierge (Hidden State) -->
+    <div class="hidden p-4 sm:p-space-lg flex-col gap-3 sm:gap-space-md" id="content-concierge">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-space-md">
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Corporate Account ID</label>
+          <input id="search-concierge-acc" class="bg-surface-container-low rounded-lg px-3 py-2.5 text-sm focus:outline-none font-medium" placeholder="EXPR-ENT-9021" type="text"/>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label class="font-label-sm text-[11px] sm:text-xs uppercase font-bold text-on-surface-variant tracking-wider">Service Request</label>
+          <select id="search-concierge-req" class="bg-surface-container-low rounded-lg px-3 py-2.5 text-sm focus:outline-none font-medium">
+            <option value="Diplomatic Ground Chauffeur">Diplomatic Ground Chauffeur</option>
+            <option value="Embassy Expedited Escort">Embassy Expedited Escort</option>
+            <option value="Multinational Group Air Charter">Multinational Group Air Charter</option>
+          </select>
+        </div>
+        <div class="flex flex-col justify-end">
+          <button onclick="routeConciergeSearch()" class="w-full inline-flex items-center justify-center gap-2 bg-secondary hover:bg-secondary-fixed text-on-secondary px-6 py-3 rounded-lg font-bold text-xs sm:text-sm transition-all shadow" type="button">
+            <span>Summon Case Officer</span>
+            <span class="material-symbols-outlined text-base">support_agent</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 4. CORE SERVICES GRID                           -->
+<!-- =============================================== -->
+<section class="w-full py-16 sm:py-24 bg-surface" id="services-grid">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-space-xl text-left">
+      <div class="flex flex-col gap-1 max-w-2xl">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Uncompromising Global Mobility</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg text-primary font-medium">Bespoke Sovereign &amp; Executive Services</h2>
+        <p class="font-body-lg text-sm sm:text-base text-on-surface-variant">Each engagement is handled with absolute discretion, rigorous compliance checks, and a designated senior case officer.</p>
+      </div>
+      <a class="inline-flex items-center gap-1.5 text-primary text-xs sm:text-sm font-bold hover:text-secondary transition-colors" href="book-consultation.html">
+        <span>View Detailed Protocol Matrix</span>
+        <span class="material-symbols-outlined text-base">north_east</span>
+      </a>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-gutter">
+      <!-- Service Card 1: Visa & Immigration -->
+      <div class="flex flex-col bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-surface-container/60 text-left">
+        <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center mb-4 text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
+          <span class="material-symbols-outlined text-2xl">verified_user</span>
+        </div>
+        <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold mb-1">Government Liaisons</span>
+        <h3 class="font-title-lg text-lg text-primary font-semibold mb-2">Visa &amp; Fast-Track Immigration</h3>
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-4 flex-1 leading-relaxed">
+          End-to-end diplomatic handling, expedited embassy appointments, biometrics escorting, and zero-error documentation for UK, US, Schengen, and GCC jurisdictions.
+        </p>
+        <ul class="flex flex-col gap-1.5 mb-6 text-xs text-on-surface">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Document Verification &amp; Apostille</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Direct Embassy Slot Fast-Tracking</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Appeals &amp; Complex Inquiries</span>
+          </li>
+        </ul>
+        <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors mt-auto pt-2" href="book-consultation.html?service=visa">
+          <span>Explore Visa Protocols</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Service Card 2: Corporate Travel -->
+      <div class="flex flex-col bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-surface-container/60 text-left">
+        <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center mb-4 text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
+          <span class="material-symbols-outlined text-2xl">corporate_fare</span>
+        </div>
+        <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold mb-1">Enterprise Advisory</span>
+        <h3 class="font-title-lg text-lg text-primary font-semibold mb-2">Corporate Travel Management</h3>
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-4 flex-1 leading-relaxed">
+          Streamlined cross-border executive movements, multi-delegation logistics, enterprise invoicing, and duty-of-care emergency support for global corporations.
+        </p>
+        <ul class="flex flex-col gap-1.5 mb-6 text-xs text-on-surface">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Centralized Consolidated Billing</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>VIP Airport Meet &amp; Greet</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>24/7 Crisis &amp; Flight Monitoring</span>
+          </li>
+        </ul>
+        <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors mt-auto pt-2" href="book-consultation.html?service=corporate">
+          <span>Corporate Solutions</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Service Card 3: Bespoke Luxury Expeditions -->
+      <div class="flex flex-col bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-surface-container/60 text-left">
+        <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center mb-4 text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
+          <span class="material-symbols-outlined text-2xl">travel_explore</span>
+        </div>
+        <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold mb-1">Tailored Leisure</span>
+        <h3 class="font-title-lg text-lg text-primary font-semibold mb-2">Bespoke Luxury Holidays</h3>
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-4 flex-1 leading-relaxed">
+          Private villa retreats, exclusive access to restricted historical sites, superyacht charters, and customized holiday itineraries tailored for high-net-worth clients.
+        </p>
+        <ul class="flex flex-col gap-1.5 mb-6 text-xs text-on-surface">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Palace &amp; 5-Star Suites Access</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Dedicated Private Guides</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Curated Fine Dining &amp; Culture</span>
+          </li>
+        </ul>
+        <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors mt-auto pt-2" href="book-consultation.html?service=luxury">
+          <span>View Itineraries</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+
+      <!-- Service Card 4: Air Ticketing & Express Rebooking -->
+      <div class="flex flex-col bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md hover:shadow-xl transition-all duration-300 group border border-surface-container/60 text-left">
+        <div class="w-12 h-12 rounded-lg bg-surface-container-low flex items-center justify-center mb-4 text-primary group-hover:bg-secondary-container group-hover:text-on-secondary-fixed transition-colors">
+          <span class="material-symbols-outlined text-2xl">connecting_airports</span>
+        </div>
+        <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold mb-1">Immediate Dispatch</span>
+        <h3 class="font-title-lg text-lg text-primary font-semibold mb-2">Air Ticketing &amp; Express Rebooking</h3>
+        <p class="font-body-md text-xs sm:text-sm text-on-surface-variant mb-4 flex-1 leading-relaxed">
+          Privileged global routing desks, instantaneous flight changes without regular airline queues, and guaranteed seat holds on heavily constrained executive routes.
+        </p>
+        <ul class="flex flex-col gap-1.5 mb-6 text-xs text-on-surface">
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Zero-Wait Instant Rebooking</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Private Jet Interline Connections</span>
+          </li>
+          <li class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-secondary text-sm">check_circle</span>
+            <span>Bespoke Multi-City Stopovers</span>
+          </li>
+        </ul>
+        <a class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors mt-auto pt-2" href="book-consultation.html?service=flight">
+          <span>Flight Desk Access</span>
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 5. FEATURED GLOBAL DESTINATIONS                 -->
+<!-- =============================================== -->
+<section class="w-full py-16 sm:py-20 bg-surface-container-low" id="destinations">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-space-xl text-left">
+      <div class="flex flex-col gap-1">
+        <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Global Hubs</span>
+        <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg text-primary font-medium">Prime Destinations &amp; Embassy Desks</h2>
+        <p class="font-body-lg text-sm sm:text-base text-on-surface-variant">Accelerated entry permits and white-glove arrival logistics across high-demand sovereign territories.</p>
+      </div>
+      <div class="flex items-center gap-1.5 text-xs sm:text-sm text-on-surface-variant">
+        <span class="material-symbols-outlined text-secondary text-sm">schedule</span>
+        <span>Updated daily with consular processing times</span>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-gutter">
+      <!-- Destination 1: London UK -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Iconic Tower Bridge and the River Thames in London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBswlGFSzwailsKz5AJCR4zdC7jNwu7irhwfy8z07EkCUvDXrRad3bjFcMt8Ob3FiJxAJnKpyQPPt6TJb0QqaTrWGIPdAXNIe_WQsMyyHD0Dpyg981NL-LduLfDK--62NCMTZLx8Dort6eCQanzb7nc66r_9yrx6-pAWAdxJDZcTUxVYB0r0kfOIJFLZauK0zfXlqTHtj-UkFG0zh3iW7-c_ZTDn_GxAj3BT_6zPai9"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            United Kingdom
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Fast-Track: 5 Working Days
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">London &amp; UK Tier Visas</h3>
+            <span class="text-xs text-secondary font-bold">Priority Diplomatic</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Full legal file preparation for Standard Visitor, Innovator Founder, Global Talent, and High Net Worth investor relocations.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.7%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=UK&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 2: Dubai / UAE -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic Dubai skyline with Burj Khalifa" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmlxehqN6efmJ-07GUmBBOzdzY9H6a2aHv6nwFtB_n7aLgGRcGo3T3IgSSpnXDlI04uJ57xx7V93BWwKV4-YPBtnTZE9ouqmFy_V79cBUlqDALZPQunA9xgKwkDVr7jS9MIvdURr1_8gV_Kh0RrgRwa5qK8gu3-SPzxoPRYyPy6hpeLY2SCOpv1bYdgwoLKSZCybPl3P-FKdxhbYmoiRbvMQ7WAgiG7KAv6GToROpZ"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            UAE / Dubai
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Fast-Track: 24 - 48 Hours
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">Dubai 10-Yr Golden Visa</h3>
+            <span class="text-xs text-secondary font-bold">Residency &amp; Business</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Direct liaison with GDRFA and ICP for instant investor residency, executive multi-entry permits, and VIP airport meet-and-assist.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 100%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=UAE&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 3: Paris & Schengen Europe -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Haussmann architectural boulevards in Paris with the Eiffel tower" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaI8MqyL2qASmm-GRQCy-adfgIb0aGLshs_J7TakOkzpN3TV8Imvo0S17yw3ZVJ9uCro8E4vUFdjPQkn8MeATUmmvsT0i0-BrfguMyl_Q-wtFZ4tWPjY5w_ezOcH06i4pznjdTnANht2fA4LD0El1fJEpv4CAw_E8rVa4ZftF-cw2KX0l15zibJzUeR837WBrfG8JQnsn1MXIJitXJcyfZWETPdQ7KiJ-ir9LqCr4g"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            Schengen Area (EU)
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Fast-Track: 7 - 10 Days
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">Multi-Entry Schengen Hub</h3>
+            <span class="text-xs text-secondary font-bold">29 Member States</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Guaranteed consulate appointment securing for France, Switzerland, Germany, and Italy with complete itinerary validation.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.1%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Schengen&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 4: Tokyo Japan -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern architectural district in Tokyo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCivYetBcwyRamMSa1rYssV1-t1koWXQ8w2jZ_03cAjMrBWodB51FKn8gN7lvrbZuXbDGo-keZCKcyYLwqmqNi4NQSYFAqsUKzKMhQBBPwHSDthNvwMs90Uh_ClIIHx16XdqjM4ZteWd1Fm0fpTOkLun6HS5LEB-L-QH5UW4pwtgLXa0HlUks63lfniWZdfYUmdZbblowtOE3EOQHHiGaeTIHxgqks2Am9kwRkQ0-7u"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            Japan
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Fast-Track: 4 Working Days
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">Tokyo &amp; Osaka Business Entry</h3>
+            <span class="text-xs text-secondary font-bold">ERFS Certified</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Comprehensive corporate business travel guarantees, specialized cultural itineraries, and high-skilled foreign professional clearance.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.8%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Japan&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 5: Singapore -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Singapore Marina Bay illuminated at twilight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA75QfCGTiBEiwBfAQsIz25YLfMK_kkJjgoHZIFjZDAFkK6lEFQv3FeAhvo8_zlizq-w4TDphrQx3rnCgFOI02FxaF0uEOAKgoAgTp5VqcZdPnEWQzzov1vOW4Np5KbjdCYwyKDO2GyBULQYdO_jDHHJtT8q7FhqKv2agDo3I0qZVAP_AhvGLm7AInTYf_mcRpNOyL_iS7aGpXg10wysD5tMWSMsq-4iFxpF1c3xxJy"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            Singapore
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Fast-Track: 48 - 72 Hours
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">Singapore ONE Pass &amp; EP</h3>
+            <span class="text-xs text-secondary font-bold">Apex Gateway</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            Expedited Ministry of Manpower filings, corporate director visas, family pass logistics, and seamless APAC cross-border transit.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 99.5%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=Singapore&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Destination 6: New York & United States -->
+      <div class="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all flex flex-col text-left border border-surface-container/60">
+        <div class="relative h-48 sm:h-60 w-full overflow-hidden">
+          <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Manhattan New York financial district skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJdblS_gDkxJZrKg2bXCYbSOnb8rTTC_YdYI62nlhAeGvB9ARB6Nc6JN5mihK3AVW1GBjRtKnGjelmJB07djpDX764hjjbQI5XmGn2-Y9olUGEb6KTPPgs316U5Ea0_rueEo_waGN2tvFfSKwCIQxzCNjrTDbC9hsTc2VgRxjcm-QRZkhnb0PdfUcAFC1IpqR7Fj4W3bZRhKw3tfjeeD7coYaiEumzTaCThOf5vxu0"/>
+          <div class="absolute top-3 left-3 bg-primary/80 backdrop-blur-sm px-2.5 py-1 rounded text-surface-container-lowest text-[11px] font-bold uppercase tracking-wider">
+            United States (USA)
+          </div>
+          <div class="absolute bottom-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded text-primary text-xs font-semibold">
+            Emergency Interview Slotting
+          </div>
+        </div>
+        <div class="p-4 sm:p-space-lg flex flex-col gap-2 flex-1">
+          <div class="flex items-center justify-between">
+            <h3 class="font-headline-sm text-lg sm:text-xl text-primary font-semibold">US B1/B2 &amp; L1 Intracompany</h3>
+            <span class="text-xs text-secondary font-bold">DS-160 Specialist</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface-variant leading-relaxed">
+            High-priority DS-160 preparation, consular interview mock training, emergency expedite filings, and multi-year renewals.
+          </p>
+          <div class="pt-3 border-t border-surface-container flex items-center justify-between mt-auto">
+            <span class="text-[11px] text-on-surface-variant uppercase tracking-wider">Approval Rate: 98.9%</span>
+            <a class="text-xs sm:text-sm font-bold text-primary group-hover:text-secondary transition-colors flex items-center gap-1" href="book-consultation.html?destination=USA&service=visa">
+              <span>Inquire Desk</span>
+              <span class="material-symbols-outlined text-sm">arrow_forward</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 6. WHY CHOOSE EXPRESS CONSULTANCY               -->
+<!-- =============================================== -->
+<section class="w-full py-16 sm:py-24 bg-surface relative overflow-hidden" id="why-us">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-space-xl items-center">
+      
+      <!-- Visual Shield/Crest Graphic Stack -->
+      <div class="lg:col-span-5 relative flex justify-center">
+        <div class="relative w-full max-w-xs sm:max-w-sm bg-gradient-to-tr from-primary to-primary-container rounded-2xl p-6 sm:p-space-lg flex flex-col items-center justify-center text-center shadow-2xl overflow-hidden border border-secondary-container/20">
+          <div class="absolute inset-3 sm:inset-4 rounded-xl border border-secondary-container/20 pointer-events-none"></div>
+          <div class="absolute -top-16 -right-16 w-36 h-36 bg-secondary-container/20 rounded-full blur-2xl"></div>
+          
+          <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-white flex items-center justify-center mb-3 sm:mb-space-md ring-8 ring-secondary-container/20 p-1 shadow-xl">
+            <img src="assets/logo.jpg" alt="Express Consultancy Sovereign Shield" class="w-full h-full object-contain rounded-full"/>
+          </div>
+          
+          <span class="font-headline-sm text-lg sm:text-headline-sm text-surface-container-lowest font-medium mb-1">Express Consultancy</span>
+          <span class="font-label-sm text-[10px] sm:text-xs uppercase tracking-widest text-secondary-container font-bold mb-2 sm:mb-space-md">Sovereign Standard of Care</span>
+          <p class="font-body-sm text-xs sm:text-sm text-on-primary-container max-w-xs leading-relaxed">
+            Accredited by major international mobility associations and operating with strict Swiss-standard client discretion.
+          </p>
+          
+          <div class="mt-4 sm:mt-space-lg flex items-center gap-2 sm:gap-space-md">
+            <div class="px-3 py-1 bg-surface-container-lowest/10 rounded text-[11px] sm:text-xs text-surface-container-lowest font-semibold">15+ Years Excellence</div>
+            <div class="px-3 py-1 bg-secondary-container text-on-secondary-fixed rounded text-[11px] sm:text-xs font-bold">Tier 1 Certified</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pillar Reasons -->
+      <div class="lg:col-span-7 flex flex-col gap-4 sm:gap-space-lg text-left">
+        <div class="flex flex-col gap-1">
+          <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">The Express Advantage</span>
+          <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg text-primary font-medium">Why Global Decision-Makers Entrust Us</h2>
+          <p class="font-body-lg text-sm sm:text-base text-on-surface-variant">We eliminate the uncertainty, embassy delays, and bureaucratic dead-ends common to cross-border transitions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-space-lg pt-1">
+          <!-- Pillar 1 -->
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+              <span class="material-symbols-outlined text-secondary text-xl">gavel</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="font-title-md text-sm sm:text-base text-primary font-semibold">Accredited Immigration Lawyers</h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">Our submissions are compiled and signed off by qualified sovereign immigration barristers.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+              <span class="material-symbols-outlined text-secondary text-xl">payments</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="font-title-md text-sm sm:text-base text-primary font-semibold">Complete Cost Transparency</h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">Clear upfront fee schedule. Zero hidden embassy surcharges, surprise expediting taxes, or markup.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+              <span class="material-symbols-outlined text-secondary text-xl">badge</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="font-title-md text-sm sm:text-base text-primary font-semibold">Dedicated Single Case Officer</h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">Direct single-point-of-contact via WhatsApp and encrypted hotline for your entire mobility journey.</p>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="flex items-start gap-3">
+            <div class="w-10 h-10 rounded-lg bg-surface-container-low flex items-center justify-center shrink-0 text-primary">
+              <span class="material-symbols-outlined text-secondary text-xl">history_edu</span>
+            </div>
+            <div class="flex flex-col">
+              <h4 class="font-title-md text-sm sm:text-base text-primary font-semibold">15+ Years Sovereign Pedigree</h4>
+              <p class="text-xs sm:text-sm text-on-surface-variant mt-1 leading-relaxed">Consistently maintained the highest visa clearance percentage across 140 diplomatic consulates worldwide.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 7. CLIENT TESTIMONIALS                          -->
+<!-- =============================================== -->
+<section class="w-full py-16 sm:py-20 bg-surface-container-low" id="testimonials">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-8 sm:mb-space-xl">
+      <span class="font-label-md text-xs uppercase tracking-widest text-secondary font-bold">Client Validations</span>
+      <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg text-primary font-medium mt-1">Proven Results for Sovereign &amp; Executive Mobility</h2>
+      <p class="font-body-lg text-sm sm:text-base text-on-surface-variant mt-2">Hear directly from multinational enterprise executives, international postgraduates, and global families.</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-gutter text-left">
+      <!-- Testimonial 1 -->
+      <div class="bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md flex flex-col justify-between border border-surface-container/60">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-1 text-secondary">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface italic leading-relaxed">
+            "Express Consultancy coordinated the simultaneous deployment of 18 senior management personnel to our London HQ with zero delays. When two embassy appointments were bottlenecked, their priority channel sorted both within 48 hours."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 mt-4 border-t border-surface-container">
+          <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" data-alt="Marcus Vance Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAX0ndRnD9tyt2siJZKd69b2azRjEIBOoSoSM2O_gCvWNXe0KhHS63ExBWkINnzK_uKvgcP52kiSJ9mvx2XLnEZPsCLTNDALMcyBn56KvUaFDS99V_CS7TI9ZCwstzOHSd1pp8L8aOE6YvDQJGB-kcghDH9rffBEHuIZdPt-JdQT56rgLfojE1TabPrUpkP4v4nXxRJdpu-Xi_sAsnYLvLtY2LMkAln7jVy3npIUvN-"/>
+          <div class="flex flex-col">
+            <span class="font-title-md text-sm font-semibold text-primary">Marcus Vance</span>
+            <span class="text-xs text-on-surface-variant">VP Global Operations, Vance Capital</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md flex flex-col justify-between border border-surface-container/60">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-1 text-secondary">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface italic leading-relaxed">
+            "Securing my Tier 4 Cambridge study visa after a previous self-file rejection seemed impossible. Express Consultancy reviewed my entire file, identified financial statement discrepancies, and had my approval in 6 business days."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 mt-4 border-t border-surface-container">
+          <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" data-alt="Dr. Aisha Al-Nuaimi Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCp2jd5RURfGcRWvZQOQ3zpyRoZjhJFXZAezUk5sLMlbv-3xtZeksjiD0vFdHPHbGbgKcXHKx39AYmg2UBuic0ehBPHMfgOXbQRDxxPcyRieSlz7X6_EGda5zkTad03VYGKf5A8VMiKu-Pjw0eKG3FzK-U6rkTjXeNA8yX118C1YIpJanlqZ6446G6edcnMCdar6j9SlhanDWl5mYaVhNf2A2p92JkLxLWeYZ7dWqMi"/>
+          <div class="flex flex-col">
+            <span class="font-title-md text-sm font-semibold text-primary">Dr. Aisha Al-Nuaimi</span>
+            <span class="text-xs text-on-surface-variant">Biotechnology Fellow, Cambridge Univ.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="bg-surface-container-lowest p-5 sm:p-space-lg rounded-xl shadow-md flex flex-col justify-between border border-surface-container/60">
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center gap-1 text-secondary">
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+            <span class="material-symbols-outlined text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+          </div>
+          <p class="text-xs sm:text-sm text-on-surface italic leading-relaxed">
+            "Our 3-week multi-nation European family holiday was completely hands-free. Schengen visas for all 6 family members arrived weeks in advance, along with seamless tarmac chauffeur transfers at every touchdown. Impeccable."
+          </p>
+        </div>
+        <div class="flex items-center gap-3 pt-4 mt-4 border-t border-surface-container">
+          <img class="w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover" data-alt="Elena Rostova Headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqWDhY8BGfczoD_5h8VRZnpCqzMGQkWlWBGVRjUOrsxLYyIExHRW3Lu8-7Uo0YlfiCfap6CjwAiXV-pBlC2k1IfTtJKFPu0yWKCUk5F70ku8vhi-9kLtUMIx-cHM2HwBU6dxXkDw6crVsa2cBafGk4sk87VxoKvtc0cY3ka1Ybj7inEve-a1hUUM5hmw0pYZ1vSGxwpm-8ul0Ig5iGgtdwx-29sdNt_gYabFHJJQzy"/>
+          <div class="flex flex-col">
+            <span class="font-title-md text-sm font-semibold text-primary">Elena Rostova</span>
+            <span class="text-xs text-on-surface-variant">Family Office, Zurich &amp; Dubai</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- =============================================== -->
+<!-- 8. CONSULTATION BOOKING & CALLBACK LEAD BANNER  -->
+<!-- =============================================== -->
+<section class="w-full py-16 sm:py-20 bg-primary-container text-surface" id="consultation-booking">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10">
+    <div class="bg-gradient-to-r from-primary via-primary-container to-primary p-6 sm:p-space-xl rounded-2xl shadow-2xl relative overflow-hidden border border-secondary-container/20">
+      
+      <!-- Shield Glow Accent -->
+      <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-space-xl items-center relative z-10 text-left">
+        <div class="lg:col-span-7 flex flex-col gap-2 sm:gap-space-sm">
+          <div class="inline-flex items-center gap-1.5 text-secondary-container text-xs uppercase tracking-widest font-bold">
+            <span class="material-symbols-outlined text-sm">bolt</span>
+            <span>Express Callback Protocol • Response within 15 mins</span>
+          </div>
+          <h2 class="font-headline-lg text-2xl sm:text-3xl lg:text-headline-lg text-surface-container-lowest font-medium leading-tight">
+            Ready to take flight? <br/>
+            <span class="text-secondary-container">Speak with an accredited travel consultant today.</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-on-primary-container max-w-xl leading-relaxed">
+            Leave your direct line below. A designated senior mobility officer will review your jurisdiction requirements and contact you immediately.
+          </p>
+        </div>
+
+        <!-- Quick Phone Callback Form -->
+        <div class="lg:col-span-5 bg-surface-container-lowest/10 backdrop-blur-md p-5 sm:p-space-lg rounded-xl shadow-lg border border-white/10">
+          <form class="flex flex-col gap-3 sm:gap-space-md" onsubmit="handleLeadSubmit(event)">
+            <div class="flex flex-col gap-1">
+              <label class="text-[11px] uppercase tracking-wider text-surface-container-lowest font-semibold">Your Full Legal Name</label>
+              <input id="callback-name" class="w-full bg-surface-container-lowest/15 border border-white/10 rounded-lg px-3.5 py-2.5 text-surface-container-lowest placeholder:text-on-primary-container/60 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="e.g. Jonathan St. Claire" required="" type="text"/>
+            </div>
+            
+            <div class="flex flex-col gap-1">
+              <label class="text-[11px] uppercase tracking-wider text-surface-container-lowest font-semibold">Direct Phone / WhatsApp Number</label>
+              <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
+                <select id="callback-code" class="bg-surface-container-lowest/15 border border-white/10 text-surface-container-lowest rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-container">
+                  <option class="text-primary" value="+44">+44 (UK)</option>
+                  <option class="text-primary" value="+1">+1 (US/CA)</option>
+                  <option class="text-primary" value="+971">+971 (UAE)</option>
+                  <option class="text-primary" value="+65">+65 (SG)</option>
+                  <option class="text-primary" value="+41">+41 (CH)</option>
+                  <option class="text-primary" value="+251">+251 (ET)</option>
+                </select>
+                <input id="callback-phone" class="w-full bg-surface-container-lowest/15 border border-white/10 rounded-lg px-3.5 py-2.5 text-surface-container-lowest placeholder:text-on-primary-container/60 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-container" placeholder="7911 123456" required="" type="tel"/>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-1">
+              <label class="text-[11px] uppercase tracking-wider text-surface-container-lowest font-semibold">Service Requirement</label>
+              <select id="callback-service" class="bg-surface-container-lowest/15 border border-white/10 text-surface-container-lowest rounded-lg px-3.5 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-secondary-container cursor-pointer">
+                <option class="text-primary" value="Executive Visa & Consular Expedite">Executive Visa &amp; Consular Expedite</option>
+                <option class="text-primary" value="Corporate Travel Logistics">Corporate Travel Logistics</option>
+                <option class="text-primary" value="Bespoke Holiday & Private Jet">Bespoke Holiday &amp; Private Jet</option>
+                <option class="text-primary" value="Premier Academic Tier-4 Visa">Premier Academic Tier-4 Visa</option>
+              </select>
+            </div>
+
+            <button class="w-full inline-flex items-center justify-center gap-2 bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary py-3 rounded-lg font-bold text-xs sm:text-sm transition-all shadow-md mt-1" id="submit-btn" type="submit">
+              <span>Request Urgent Officer Callback</span>
+              <span class="material-symbols-outlined text-base">call</span>
+            </button>
+
+            <div class="hidden text-center text-secondary-container text-xs uppercase tracking-wider font-bold pt-2" id="submit-msg"></div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+</main>
+
+<!-- =============================================== -->
+<!-- 9. FOOTER                                       -->
+<!-- =============================================== -->
+<footer class="w-full bg-primary-container text-surface-container-highest py-12 sm:py-space-xl mt-auto">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-margin relative z-10 text-left">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-space-xl mb-8 sm:mb-space-xl">
+      
+      <div class="lg:col-span-2 flex flex-col gap-3 sm:gap-space-md">
+        <div class="flex items-center gap-space-sm">
+          <img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 object-contain rounded-lg bg-white p-0.5 shadow-sm border border-secondary-container/20"/>
+          <span class="font-headline-sm text-lg sm:text-headline-sm text-surface-container-lowest font-medium">Express Consultancy</span>
+        </div>
+        <p class="text-xs sm:text-sm text-on-primary-container max-w-sm leading-relaxed">
+          Premier international mobility advisory, diplomatic visa fast-tracking, VIP concierge logistics, and sovereign corporate travel arrangements tailored for enterprise leaders.
+        </p>
+        <div class="flex flex-col gap-1 pt-1">
+          <span class="text-[10px] sm:text-xs uppercase tracking-widest text-secondary-container font-bold">Accreditations &amp; Partnerships</span>
+          <div class="flex items-center gap-2 text-on-primary-container text-[11px] sm:text-xs">
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">IATA Certified</span>
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">Virtuoso Partner</span>
+            <span class="px-2 py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">UN Global Compact</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <span class="text-sm sm:text-base font-semibold text-surface-container-lowest">Advisory Services</span>
+        <ul class="flex flex-col gap-1.5 text-xs sm:text-sm">
+          <li class="text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="services-and-visas" href="#services-grid">Visa Assistance &amp; Fast-Track</a></li>
+          <li class="text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="flight-bookings" href="book-consultation.html?service=Private%20Air%20Charter">Private &amp; Commercial Flights</a></li>
+          <li class="text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="luxury-tours" href="book-consultation.html?service=luxury">Luxury Bespoke Expeditions</a></li>
+          <li class="text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="corporate-travel" href="book-consultation.html?service=corporate">Corporate Travel Management</a></li>
+          <li class="text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="diplomatic-protocol" href="book-consultation.html?service=diplomatic">Diplomatic Protocol Desk</a></li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <span class="text-sm sm:text-base font-semibold text-surface-container-lowest">Global Presence</span>
+        <div class="flex flex-col gap-2 text-on-primary-container text-xs sm:text-sm">
+          <div class="flex flex-col">
+            <span class="text-secondary-container font-semibold">Geneva (HQ)</span>
+            <span>Rue du Rhône 42, 1204 Genève</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-secondary-container font-semibold">London Mayfair</span>
+            <span>Berkeley Square House, W1J 6BD</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-secondary-container font-semibold">Dubai DIFC</span>
+            <span>Gate Precinct 4, Level 5</span>
+          </div>
+          <div class="flex flex-col">
+            <span class="text-secondary-container font-semibold">Singapore</span>
+            <span>Marina Bay Financial Centre Tower 2</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <span class="text-sm sm:text-base font-semibold text-surface-container-lowest">Discretionary Briefings</span>
+        <p class="text-xs sm:text-sm text-on-primary-container leading-relaxed">Receive monthly diplomatic immigration updates and geopolitical travel briefings.</p>
+        <div class="flex flex-col gap-1.5 pt-1">
+          <div class="flex items-center gap-1.5">
+            <input class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 rounded px-2.5 py-1.5 text-xs text-surface-container-lowest placeholder:text-on-primary-container/70 w-full focus:outline-none focus:border-secondary-container" placeholder="executive@enterprise.com" type="email"/>
+            <button class="bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary text-xs uppercase px-3 py-1.5 rounded font-bold transition-all shrink-0" type="button">Join</button>
+          </div>
+          <span class="text-[10px] text-on-primary-container/70">Strict non-disclosure protocol maintained.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pt-6 border-t border-surface-container-lowest/10 flex flex-col md:flex-row items-center justify-between gap-3 text-on-primary-container text-xs text-center md:text-left">
+      <span>&copy; 2025 Express Consultancy Group S.A. All rights reserved.</span>
+      <div class="flex items-center gap-4 flex-wrap justify-center">
+        <a class="hover:text-surface-container-lowest transition-colors" data-path="privacy-policy" href="#">Privacy Charter</a>
+        <a class="hover:text-surface-container-lowest transition-colors" data-path="terms-of-engagement" href="#">Terms of Engagement</a>
+        <a class="hover:text-surface-container-lowest transition-colors" data-path="security-protocols" href="#">Security Protocols</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- =============================================== -->
+<!-- 10. FLOATING FLIGHT TELEMETRY HUD WIDGET        -->
+<!-- =============================================== -->
+<div id="flight-telemetry-hud" class="fixed bottom-3 left-3 right-3 sm:right-auto sm:left-6 sm:bottom-6 z-40 flex items-center justify-between sm:justify-start gap-2.5 sm:gap-3 bg-[#1A1F2C]/95 backdrop-blur-md border border-[#D4AF37]/50 text-white rounded-full px-3.5 py-2 sm:px-4 sm:py-2.5 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] select-none max-w-fit">
+  <!-- Radar Ping Icon -->
+  <div class="relative flex items-center justify-center w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-secondary-container/20 border border-secondary-container/40 shrink-0">
+    <span class="absolute w-full h-full rounded-full bg-secondary-container/30 radar-pulse-ring"></span>
+    <span class="material-symbols-outlined text-secondary-container text-sm sm:text-base animate-pulse">flight_takeoff</span>
+  </div>
+
+  <!-- Telemetry Data -->
+  <div class="flex flex-col text-left pr-1 sm:pr-2">
+    <div class="flex items-center gap-1.5 sm:gap-2">
+      <span class="font-bold text-[11px] sm:text-xs uppercase tracking-wider text-secondary-container">Flight EC-901</span>
+      <span class="text-[9px] sm:text-[10px] text-gray-300 font-mono">ADD ➔ LHR</span>
+      <span id="hud-progress-pill" class="text-[9px] sm:text-[10px] bg-secondary-container/20 text-secondary-container font-mono font-bold px-1.5 py-0.5 rounded">0%</span>
+    </div>
+    <div class="flex items-center gap-1.5 text-[9px] sm:text-[10px] text-gray-300">
+      <span id="hud-phase-label" class="truncate max-w-[140px] sm:max-w-[190px]">Runway 07R • Bole Int'l</span>
+      <span class="text-gray-500">•</span>
+      <span id="hud-alt-label" class="font-mono text-secondary-container font-bold">7,625 FT</span>
+    </div>
+  </div>
+
+  <!-- Mini Progress Bar on Desktop -->
+  <div class="hidden md:flex flex-col w-16 gap-1 pl-1">
+    <div class="w-full bg-gray-700/60 rounded-full h-1 overflow-hidden">
+      <div id="hud-progress-fill" class="bg-secondary-container h-full rounded-full transition-all duration-100" style="width: 0%;"></div>
+    </div>
+  </div>
+
+  <!-- Jump to Arrival / Booking Desk -->
+  <a href="#consultation-booking" class="p-1 rounded-full text-secondary-container hover:bg-white/10 transition-colors shrink-0" title="Fast-forward to Touchdown &amp; Consultation">
+    <span class="material-symbols-outlined text-base">expand_circle_down</span>
+  </a>
+</div>
+
+<!-- =============================================== -->
+<!-- 11. SCRIPT ENGINE                               -->
+<!-- =============================================== -->
 <script>
-    const AGENCY_TG_USERNAME = "ExpressConsultancy";
+  const AGENCY_TG_USERNAME = "ExpressConsultancy";
 
-    // Smart Header: Hides upwards on scroll down, reveals on scroll up
-    (function initSmartHeader() {
-      const header = document.getElementById("main-header");
-      if (!header) return;
+  // Smart Header: Hides upwards on scroll down, reveals on scroll up
+  (function initSmartHeader() {
+    const header = document.getElementById("main-header");
+    if (!header) return;
 
-      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
-      const threshold = 8;
+    let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const threshold = 6;
 
-      window.addEventListener("scroll", () => {
-        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+    window.addEventListener("scroll", () => {
+      const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
 
-        // Keep visible if mobile drawer is currently open
-        const mobileMenu = document.getElementById("mobile-menu");
-        if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
-          header.classList.remove("-translate-y-full");
-          lastScrollY = currentScrollY;
-          return;
-        }
-
-        // Always show near the very top of page
-        if (currentScrollY <= 60) {
-          header.classList.remove("-translate-y-full");
-          lastScrollY = currentScrollY;
-          return;
-        }
-
-        // Scroll Down -> Hide upwards
-        if (currentScrollY > lastScrollY + threshold) {
-          header.classList.add("-translate-y-full");
-        }
-        // Scroll Up -> Re-appear downwards
-        else if (currentScrollY < lastScrollY - threshold) {
-          header.classList.remove("-translate-y-full");
-        }
-
-        lastScrollY = Math.max(0, currentScrollY);
-      }, { passive: true });
-    })();
-
-    function toggleMobileMenu() {
-      const menu = document.getElementById("mobile-menu");
-      const icon = document.getElementById("menu-icon");
-      if (menu.classList.contains("hidden")) {
-        menu.classList.remove("hidden");
-        menu.classList.add("flex");
-        if (icon) icon.textContent = "close";
-      } else {
-        menu.classList.add("hidden");
-        menu.classList.remove("flex");
-        if (icon) icon.textContent = "menu";
+      // Keep visible if mobile drawer is currently open
+      const mobileMenu = document.getElementById("mobile-menu");
+      if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+        header.classList.remove("-translate-y-full");
+        lastScrollY = currentScrollY;
+        return;
       }
-    }
 
-    function switchWidgetTab(tabName) {
-      const tabs = ['visa', 'flight', 'concierge'];
-      tabs.forEach(t => {
-        const btn = document.getElementById('tab-' + t);
-        const content = document.getElementById('content-' + t);
+      // Always show near the very top of page
+      if (currentScrollY <= 60) {
+        header.classList.remove("-translate-y-full");
+        lastScrollY = currentScrollY;
+        return;
+      }
+
+      // Scroll Down -> Hide upwards
+      if (currentScrollY > lastScrollY + threshold) {
+        header.classList.add("-translate-y-full");
+      }
+      // Scroll Up -> Re-appear downwards
+      else if (currentScrollY < lastScrollY - threshold) {
+        header.classList.remove("-translate-y-full");
+      }
+
+      lastScrollY = Math.max(0, currentScrollY);
+    }, { passive: true });
+  })();
+
+  function toggleMobileMenu() {
+    const menu = document.getElementById("mobile-menu");
+    const icon = document.getElementById("menu-icon");
+    if (!menu) return;
+    if (menu.classList.contains("hidden")) {
+      menu.classList.remove("hidden");
+      menu.classList.add("flex");
+      if (icon) icon.textContent = "close";
+    } else {
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
+      if (icon) icon.textContent = "menu";
+    }
+  }
+
+  function switchWidgetTab(tabName) {
+    const tabs = ['visa', 'flight', 'concierge'];
+    tabs.forEach(t => {
+      const btn = document.getElementById('tab-' + t);
+      const content = document.getElementById('content-' + t);
+      if (btn && content) {
         if (t === tabName) {
           btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-bold');
           btn.classList.remove('text-on-surface-variant');
@@ -958,43 +1379,49 @@
           content.classList.add('hidden');
           content.classList.remove('flex');
         }
-      });
+      }
+    });
+  }
+
+  function routeVisaSearch() {
+    const dest = document.getElementById("search-visa-dest") ? document.getElementById("search-visa-dest").value : "United Kingdom (UK)";
+    const cat = document.getElementById("search-visa-cat") ? document.getElementById("search-visa-cat").value : "Executive Business Visa";
+    const date = document.getElementById("search-visa-date") ? document.getElementById("search-visa-date").value : "";
+    const urgency = document.getElementById("search-visa-urgency") ? document.getElementById("search-visa-urgency").value : "";
+    window.location.href = `book-consultation.html?destination=${encodeURIComponent(dest)}&service=${encodeURIComponent(cat)}&date=${encodeURIComponent(date)}&urgency=${encodeURIComponent(urgency)}`;
+  }
+
+  function routeFlightSearch() {
+    const from = document.getElementById("search-flight-from") ? document.getElementById("search-flight-from").value : "";
+    const to = document.getElementById("search-flight-to") ? document.getElementById("search-flight-to").value : "";
+    const cabin = document.getElementById("search-flight-class") ? document.getElementById("search-flight-class").value : "";
+    window.location.href = `book-consultation.html?service=Private%20Air%20Charter&destination=${encodeURIComponent(to)}&notes=${encodeURIComponent("Corporate Flight Request: " + from + " to " + to + " (" + cabin + ")")}`;
+  }
+
+  function routeConciergeSearch() {
+    const acc = document.getElementById("search-concierge-acc") ? document.getElementById("search-concierge-acc").value : "";
+    const req = document.getElementById("search-concierge-req") ? document.getElementById("search-concierge-req").value : "";
+    window.location.href = `book-consultation.html?service=Diplomatic%20Escort&notes=${encodeURIComponent("Concierge Dispatch for Account " + acc + ": " + req)}`;
+  }
+
+  function handleLeadSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById("callback-name") ? document.getElementById("callback-name").value.trim() : "";
+    const code = document.getElementById("callback-code") ? document.getElementById("callback-code").value : "+44";
+    const phone = document.getElementById("callback-phone") ? document.getElementById("callback-phone").value.trim() : "";
+    const service = document.getElementById("callback-service") ? document.getElementById("callback-service").value : "Executive Visa";
+    const btn = document.getElementById("submit-btn");
+    const msg = document.getElementById("submit-msg");
+
+    if (!name || !phone) {
+      alert("Please enter both your full name and contact phone number.");
+      return;
     }
 
-    function routeVisaSearch() {
-      const dest = document.getElementById("search-visa-dest") ? document.getElementById("search-visa-dest").value : "United Kingdom (UK)";
-      const cat = document.getElementById("search-visa-cat") ? document.getElementById("search-visa-cat").value : "Executive Business Visa";
-      const date = document.getElementById("search-visa-date") ? document.getElementById("search-visa-date").value : "";
-      const urgency = document.getElementById("search-visa-urgency") ? document.getElementById("search-visa-urgency").value : "";
-      window.location.href = `book-consultation.html?destination=${encodeURIComponent(dest)}&service=${encodeURIComponent(cat)}&date=${encodeURIComponent(date)}&urgency=${encodeURIComponent(urgency)}`;
-    }
+    btn.innerText = "Routing to Telegram Officer...";
+    btn.disabled = true;
 
-    function routeFlightSearch() {
-      const from = document.getElementById("search-flight-from") ? document.getElementById("search-flight-from").value : "";
-      const to = document.getElementById("search-flight-to") ? document.getElementById("search-flight-to").value : "";
-      const cabin = document.getElementById("search-flight-class") ? document.getElementById("search-flight-class").value : "";
-      window.location.href = `book-consultation.html?service=Private%20Air%20Charter&destination=${encodeURIComponent(to)}&notes=${encodeURIComponent("Corporate Flight Request: " + from + " to " + to + " (" + cabin + ")")}`;
-    }
-
-    function routeConciergeSearch() {
-      const acc = document.getElementById("search-concierge-acc") ? document.getElementById("search-concierge-acc").value : "";
-      const req = document.getElementById("search-concierge-req") ? document.getElementById("search-concierge-req").value : "";
-      window.location.href = `book-consultation.html?service=Diplomatic%20Escort&notes=${encodeURIComponent("Concierge Dispatch for Account " + acc + ": " + req)}`;
-    }
-
-    function handleLeadSubmit(e) {
-      e.preventDefault();
-      const name = document.getElementById("callback-name") ? document.getElementById("callback-name").value.trim() : "";
-      const code = document.getElementById("callback-code") ? document.getElementById("callback-code").value : "+44";
-      const phone = document.getElementById("callback-phone") ? document.getElementById("callback-phone").value.trim() : "";
-      const service = document.getElementById("callback-service") ? document.getElementById("callback-service").value : "Executive Visa";
-      const btn = document.getElementById("submit-btn");
-      const msg = document.getElementById("submit-msg");
-
-      btn.innerText = "Routing to Telegram Officer...";
-      btn.disabled = true;
-
-      const payload = 
+    const payload = 
 `⚡ *URGENT OFFICER CALLBACK REQUEST*
 ━━━━━━━━━━━━━━━━━━━━
 👤 *Client Name:* ${name}
@@ -1002,262 +1429,265 @@
 📋 *Service Needed:* ${service}
 ⏱️ *Requested:* ${new Date().toLocaleString()}
 ━━━━━━━━━━━━━━━━━━━━
-🌐 *Source:* Homepage Callback Desk`;
+🌐 *Source:* Express Consultancy Mobile Desk`;
 
-      const tgUrl = `https://t.me/${AGENCY_TG_USERNAME}?text=${encodeURIComponent(payload)}`;
+    const tgUrl = `https://t.me/${AGENCY_TG_USERNAME}?text=${encodeURIComponent(payload)}`;
 
-      setTimeout(() => {
-        btn.classList.add("hidden");
-        msg.classList.remove("hidden");
-        msg.innerHTML = `
-          <div class="p-3 bg-secondary-container/15 border border-secondary-container/40 rounded-lg text-left text-xs">
-            <p class="font-bold text-secondary-container mb-1">Callback request prepared for Telegram!</p>
-            <p class="text-surface-container-highest mb-2.5">Opening your direct chat with our case officer...</p>
-            <a href="${tgUrl}" target="_blank" class="inline-flex items-center gap-1.5 bg-[#229ED9] text-white px-3 py-1.5 rounded font-bold hover:bg-[#1a85b8] transition-colors">
-              <span>Open Telegram Chat</span>
-              <span class="material-symbols-outlined text-sm">open_in_new</span>
-            </a>
-          </div>
-        `;
-        window.open(tgUrl, "_blank");
-      }, 700);
-    }
-  </script>
-</div></main><footer class="w-full bg-primary-container text-surface-container-highest py-space-xl mt-auto"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 object-contain rounded-lg bg-white p-0.5 shadow-sm border border-secondary-container/20"/><span class="font-headline-sm text-headline-sm text-surface-container-lowest font-medium">Express Consultancy</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Premier international mobility advisory, diplomatic visa fast-tracking, VIP concierge logistics, and sovereign corporate travel arrangements tailored for enterprise leaders.</p><div class="flex flex-col gap-space-xs pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container">Accreditations &amp; Partnerships</span><div class="flex items-center gap-space-md text-on-primary-container"><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">IATA Certified</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">Virtuoso Partner</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">UN Global Compact</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Advisory Services</span><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="services-and-visas" href="#">Visa Assistance &amp; Fast-Track</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="flight-bookings" href="#">Private &amp; Commercial Flights</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="luxury-tours" href="#">Luxury Bespoke Expeditions</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="corporate-travel" href="#">Corporate Travel Management</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="diplomatic-protocol" href="#">Diplomatic Courier Protocol</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Global Presence</span><div class="flex flex-col gap-space-sm text-on-primary-container"><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Geneva (HQ)</span><span class="font-body-sm text-body-sm">Rue du Rhône 42, 1204 Genève</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">London Mayfair</span><span class="font-body-sm text-body-sm">Berkeley Square House, W1J 6BD</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Dubai DIFC</span><span class="font-body-sm text-body-sm">Gate Precinct 4, Level 5</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Singapore</span><span class="font-body-sm text-body-sm">Marina Bay Financial Centre Tower 2</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Discretionary Briefings</span><p class="font-body-sm text-body-sm text-on-primary-container">Receive monthly diplomatic immigration updates and geopolitical travel briefings.</p><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><input class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 rounded text-surface-container-lowest placeholder:text-on-primary-container/70 px-space-sm py-space-xs text-body-sm w-full focus:outline-none focus:border-secondary-container" placeholder="executive@enterprise.com" type="email"/><button class="bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-label-sm text-label-sm uppercase px-space-md py-space-xs rounded font-bold transition-all shrink-0" type="button">Join</button></div><span class="font-label-sm text-label-sm text-on-primary-container/70">Strict non-disclosure protocol maintained.</span></div></div></div><div class="pt-space-lg border-t border-surface-container-lowest/10 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-primary-container"><span class="font-body-sm text-body-sm">© 2025 Express Consultancy Group S.A. All rights reserved.</span><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="privacy-policy" href="#">Privacy Charter</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="terms-of-engagement" href="#">Terms of Engagement</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="security-protocols" href="#">Security Protocols</a></div></div></div></footer><!-- Floating Executive Flight Telemetry HUD Widget -->
-<div id="flight-telemetry-hud" class="fixed bottom-6 left-6 z-40 flex items-center gap-3 bg-[#1A1F2C]/95 backdrop-blur-md border border-[#D4AF37]/50 text-white rounded-full px-4 py-2.5 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] select-none">
-  <!-- Radar Ping Icon -->
-  <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary-container/40 shrink-0">
-    <span class="absolute w-full h-full rounded-full bg-secondary-container/30 radar-pulse-ring"></span>
-    <span class="material-symbols-outlined text-secondary-container text-base animate-pulse">flight_takeoff</span>
-  </div>
-
-  <!-- Telemetry Data -->
-  <div class="flex flex-col text-left pr-2">
-    <div class="flex items-center gap-2">
-      <span class="font-bold text-xs uppercase tracking-wider text-secondary-container">Flight EC-901</span>
-      <span class="text-[10px] text-gray-400 font-mono">ADD ➔ LHR</span>
-      <span id="hud-progress-pill" class="text-[10px] bg-secondary-container/20 text-secondary-container font-mono font-bold px-1.5 py-0.5 rounded">0%</span>
-    </div>
-    <div class="flex items-center gap-2 text-[11px] text-gray-300">
-      <span id="hud-phase-label" class="font-medium">Takeoff • Addis Ababa (Bole)</span>
-      <span class="text-gray-500">•</span>
-      <span id="hud-alt-label" class="font-mono text-secondary-container font-bold">7,625 FT</span>
-    </div>
-  </div>
-
-  <!-- Mini Progress Bar -->
-  <div class="hidden md:flex flex-col w-20 gap-1 pl-1">
-    <div class="w-full bg-gray-700/60 rounded-full h-1.5 overflow-hidden">
-      <div id="hud-progress-fill" class="bg-secondary-container h-full rounded-full transition-all duration-150" style="width: 0%;"></div>
-    </div>
-  </div>
-
-  <!-- Jump to Arrival / Booking Desk -->
-  <a href="#consultation-booking" class="p-1 rounded-full text-secondary-container hover:bg-white/10 transition-colors" title="Fast-forward to Touchdown & Consultation">
-    <span class="material-symbols-outlined text-base">expand_circle_down</span>
-  </a>
-</div>
-
-<!-- =============================================== -->
-<!-- SCROLL-LINKED FLIGHT ANIMATION SCRIPT ENGINE    -->
-<!-- (Viewport-Centered, Aerodynamic Lag & Contrail)  -->
-<!-- =============================================== -->
-<script>
-(function initScrollFlight() {
-  const svg = document.getElementById('flight-svg');
-  const jet = document.getElementById('flight-jet');
-  const contrailLeft = document.getElementById('contrail-left');
-  const contrailRight = document.getElementById('contrail-right');
-  const corridorArc = document.getElementById('flight-corridor-arc');
-
-  const hudProgressPill = document.getElementById('hud-progress-pill');
-  const hudPhaseLabel = document.getElementById('hud-phase-label');
-  const hudAltLabel = document.getElementById('hud-alt-label');
-  const hudProgressFill = document.getElementById('hud-progress-fill');
-
-  let currentProgress = 0;
-  let targetProgress = 0;
-  let prevPos = { x: 0, y: 0 };
-  let currentAngle = 0;
-  let trailHistory = [];
-
-  function getViewportDimensions() {
-    return {
-      w: window.innerWidth,
-      h: window.innerHeight
-    };
+    setTimeout(() => {
+      btn.classList.add("hidden");
+      msg.classList.remove("hidden");
+      msg.innerHTML = `
+        <div class="p-3 bg-secondary-container/15 border border-secondary-container/40 rounded-lg text-left text-xs">
+          <p class="font-bold text-secondary-container mb-1">Callback request prepared for Telegram!</p>
+          <p class="text-surface-container-highest mb-2.5">Opening your direct chat with our case officer...</p>
+          <a href="${tgUrl}" target="_blank" class="inline-flex items-center gap-1.5 bg-[#229ED9] text-white px-3 py-1.5 rounded font-bold hover:bg-[#1a85b8] transition-colors">
+            <span>Open Telegram Chat</span>
+            <span class="material-symbols-outlined text-sm">open_in_new</span>
+          </a>
+        </div>
+      `;
+      window.open(tgUrl, "_blank");
+    }, 600);
   }
 
-  function resizeSvg() {
-    const { w, h } = getViewportDimensions();
-    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  // ========================================================
+  // SCROLL-LINKED FLIGHT TRAJECTORY ANIMATION ENGINE
+  // (Mathematically Smooth, Continuous Tangent, Centered Cruise)
+  // ========================================================
+  (function initScrollFlight() {
+    const svg = document.getElementById('flight-svg');
+    const jet = document.getElementById('flight-jet');
+    const contrailLeft = document.getElementById('contrail-left');
+    const contrailRight = document.getElementById('contrail-right');
+    const corridorArc = document.getElementById('flight-corridor-arc');
 
-    // Update faint corridor horizon curve across the middle of the screen
-    const midY = h * 0.50;
-    const corridorD = `M 0 ${midY + 30} Q ${w * 0.35} ${midY - 45}, ${w * 0.55} ${midY + 10} T ${w} ${midY - 25}`;
-    if (corridorArc) corridorArc.setAttribute('d', corridorD);
-  }
+    // Waypoints
+    const wpAddPt = document.getElementById('wp-add-pt');
+    const wpAddLbl = document.getElementById('wp-add-lbl');
+    const wpMidPt = document.getElementById('wp-mid-pt');
+    const wpMidLbl = document.getElementById('wp-mid-lbl');
+    const wpEndPt = document.getElementById('wp-end-pt');
+    const wpEndLbl = document.getElementById('wp-end-lbl');
 
-  function calculateTargetPosition(p, w, h) {
-    let x, y, baseAngle;
+    const hudProgressPill = document.getElementById('hud-progress-pill');
+    const hudPhaseLabel = document.getElementById('hud-phase-label');
+    const hudAltLabel = document.getElementById('hud-alt-label');
+    const hudProgressFill = document.getElementById('hud-progress-fill');
 
-    if (p <= 0.05) {
-      // Ground / Takeoff roll at Bole Airport (ADD)
-      const t = p / 0.05;
-      x = w * (0.16 + t * 0.08);
-      y = h * (0.74 - t * 0.06);
-      baseAngle = -16;
-    } else if (p <= 0.16) {
-      // Steep initial climb from runway into the middle of the screen
-      const t = (p - 0.05) / 0.11;
-      const ease = 1 - Math.pow(1 - t, 3);
-      x = w * (0.24 + ease * 0.18);
-      y = h * (0.68 - ease * 0.20); // Climbs from 68% up to 48% (middle of screen!)
-      baseAngle = -28 * (1 - ease) - 10 * ease;
-    } else if (p <= 0.86) {
-      // CRUISE IN THE MIDDLE OF THE SCREEN (Follows around 48% - 52% of viewport height)
-      const t = (p - 0.16) / 0.70;
-      
-      // Middle vertical zone:
-      const midY = h * 0.50;
-      const atmosphericFloat = Math.sin(t * Math.PI * 4) * (h * 0.05);
-      y = midY + atmosphericFloat;
+    let currentProgress = 0;
+    let targetProgress = 0;
+    let currentAngle = -18;
 
-      // Smooth horizontal transcontinental weaving (Addis Ababa ➔ Red Sea ➔ Dubai ➔ Alps):
-      // Glides smoothly across the middle of the screen
-      x = w * (0.50 + 0.28 * Math.sin(t * Math.PI * 3.2 - Math.PI * 0.5));
-      baseAngle = Math.cos(t * Math.PI * 3.2 - Math.PI * 0.5) * 16;
-    } else {
-      // Final Approach & Landing into London Heathrow / Geneva (LHR/GVA)
-      const t = (p - 0.86) / 0.14;
-      const ease = t * t;
-      x = w * (0.54 + ease * 0.12);
-      y = h * (0.50 + ease * 0.22); // Descends from middle of screen (50%) to runway (72%)
-      baseAngle = -12 * (1 - t) - 2 * t;
+    function getViewport() {
+      return {
+        w: window.innerWidth || document.documentElement.clientWidth || 1200,
+        h: window.innerHeight || document.documentElement.clientHeight || 800,
+        isMobile: window.innerWidth < 640
+      };
     }
 
-    return { x, y, baseAngle };
-  }
+    // Smooth parametric trajectory function F(p) = (x, y)
+    function getTrajectoryPoint(p, w, h) {
+      const isMobile = w < 640;
+      let x, y;
 
-  function updateContrails() {
-    if (trailHistory.length < 2) return;
+      // Safe horizontal bounds keeping jet elegantly on-screen
+      const xMin = isMobile ? w * 0.14 : w * 0.10;
+      const xMax = isMobile ? w * 0.86 : w * 0.90;
+      const xSpan = xMax - xMin;
 
-    let leftD = '';
-    let rightD = '';
-
-    for (let i = 0; i < trailHistory.length; i++) {
-      const pt = trailHistory[i];
-      const rad = (pt.angle * Math.PI) / 180;
-      const perpRad = rad + Math.PI / 2;
-
-      // Twin engines are at -18px back, and ±8px perpendicular
-      const backDist = 18;
-      const sideDist = 8;
-
-      const lx = pt.x - Math.cos(rad) * backDist + Math.cos(perpRad) * sideDist;
-      const ly = pt.y - Math.sin(rad) * backDist + Math.sin(perpRad) * sideDist;
-
-      const rx = pt.x - Math.cos(rad) * backDist - Math.cos(perpRad) * sideDist;
-      const ry = pt.y - Math.sin(rad) * backDist - Math.sin(perpRad) * sideDist;
-
-      if (i === 0) {
-        leftD = `M ${lx} ${ly}`;
-        rightD = `M ${rx} ${ry}`;
+      if (p <= 0.14) {
+        // Phase 1: Takeoff & Climb out of Addis Ababa Bole Airport (ADD)
+        const t = p / 0.14;
+        const climbEase = t * t * (3 - 2 * t);
+        x = xMin + climbEase * (xSpan * 0.16);
+        y = h * (0.75 - climbEase * 0.25); // Climbs from 75% height up to 50% (vertical middle)
+      } else if (p <= 0.84) {
+        // Phase 2: High-Altitude Transcontinental Cruise locked in Middle of Viewport
+        const t = (p - 0.14) / 0.70;
+        // Monotonic forward progression across the continent
+        x = (xMin + xSpan * 0.16) + t * (xSpan * 0.68);
+        // Majestic subtle atmospheric buoyancy wave (±2.5% viewport height)
+        const wave = Math.sin(t * Math.PI * 2) * (h * 0.025);
+        y = h * 0.50 + wave;
       } else {
-        leftD += ` L ${lx} ${ly}`;
-        rightD += ` L ${rx} ${ry}`;
+        // Phase 3: Descent & Approach into London / Geneva (LHR/GVA)
+        const t = (p - 0.84) / 0.16;
+        const descentEase = t * t * (3 - 2 * t);
+        x = (xMin + xSpan * 0.84) + descentEase * (xSpan * 0.16);
+        y = h * (0.50 + descentEase * 0.22); // From 50% down to 72% VIP arrival runway
       }
+
+      return { x, y };
     }
 
-    if (contrailLeft) contrailLeft.setAttribute('d', leftD);
-    if (contrailRight) contrailRight.setAttribute('d', rightD);
-  }
+    // Exact analytical heading angle along the flight trajectory curve
+    function getTrajectoryAngle(p, w, h) {
+      const dp = 0.005;
+      const p1 = Math.max(0, p - dp);
+      const p2 = Math.min(1, p + dp);
+      const pt1 = getTrajectoryPoint(p1, w, h);
+      const pt2 = getTrajectoryPoint(p2, w, h);
+      return Math.atan2(pt2.y - pt1.y, pt2.x - pt1.x) * (180 / Math.PI);
+    }
 
-  function loop() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    targetProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-
-    const { w, h } = getViewportDimensions();
-
-    // Silky aerodynamic lag (inertia)
-    const delta = targetProgress - currentProgress;
-    currentProgress += delta * 0.055;
-
-    // Aerodynamic scroll lag offset (dips slightly with momentum when scrolling fast)
-    const lagY = -delta * (h * 0.35);
-
-    const pos = calculateTargetPosition(currentProgress, w, h);
-    pos.y += lagY;
-
-    // Calculate heading angle smoothly
-    if (prevPos.x !== 0 || prevPos.y !== 0) {
-      const dx = pos.x - prevPos.x;
-      const dy = pos.y - prevPos.y;
-      if (Math.hypot(dx, dy) > 0.4) {
-        const motionAngle = Math.atan2(dy, dx) * (180 / Math.PI);
-        // Blend base angle with motion angle
-        currentAngle += (motionAngle - currentAngle) * 0.15;
+    // Draw background corridor and place waypoint indicators
+    function drawCorridor(w, h) {
+      if (!corridorArc) return;
+      let d = '';
+      const steps = 36;
+      for (let i = 0; i <= steps; i++) {
+        const p = i / steps;
+        const pt = getTrajectoryPoint(p, w, h);
+        if (i === 0) {
+          d = `M ${pt.x.toFixed(1)} ${pt.y.toFixed(1)}`;
+        } else {
+          d += ` L ${pt.x.toFixed(1)} ${pt.y.toFixed(1)}`;
+        }
       }
-    } else {
-      currentAngle = pos.baseAngle;
+      corridorArc.setAttribute('d', d);
+
+      // Position waypoint beacons
+      const ptStart = getTrajectoryPoint(0.01, w, h);
+      if (wpAddPt) { wpAddPt.setAttribute('cx', ptStart.x); wpAddPt.setAttribute('cy', ptStart.y); }
+      if (wpAddLbl) { wpAddLbl.setAttribute('x', ptStart.x - 8); wpAddLbl.setAttribute('y', ptStart.y - 12); }
+
+      const ptMid = getTrajectoryPoint(0.48, w, h);
+      if (wpMidPt) { wpMidPt.setAttribute('cx', ptMid.x); wpMidPt.setAttribute('cy', ptMid.y); }
+      if (wpMidLbl) { wpMidLbl.setAttribute('x', ptMid.x - 40); wpMidLbl.setAttribute('y', ptMid.y - 14); }
+
+      const ptEnd = getTrajectoryPoint(0.98, w, h);
+      if (wpEndPt) { wpEndPt.setAttribute('cx', ptEnd.x); wpEndPt.setAttribute('cy', ptEnd.y); }
+      if (wpEndLbl) { wpEndLbl.setAttribute('x', ptEnd.x - 70); wpEndLbl.setAttribute('y', ptEnd.y + 20); }
     }
 
-    prevPos = { x: pos.x, y: pos.y };
-
-    // Update airplane transform
-    jet.setAttribute('transform', `translate(${pos.x}, ${pos.y}) rotate(${currentAngle})`);
-    jet.style.opacity = '1';
-
-    // Update contrail history
-    trailHistory.unshift({ x: pos.x, y: pos.y, angle: currentAngle });
-    if (trailHistory.length > 22) {
-      trailHistory.pop();
-    }
-    updateContrails();
-
-    // Telemetry HUD Updates
-    const pct = Math.round(currentProgress * 100);
-    if (hudProgressPill) hudProgressPill.textContent = pct + '%';
-    if (hudProgressFill) hudProgressFill.style.width = pct + '%';
-
-    let alt = 7625;
-    let phase = "Takeoff • Addis Ababa (Bole Int'l)";
-
-    if (currentProgress < 0.06) {
-      alt = 7625;
-      phase = "Runway 07R • Bole Int'l (ADD)";
-    } else if (currentProgress < 0.18) {
-      const subT = (currentProgress - 0.06) / 0.12;
-      alt = Math.round(7625 + subT * (28000 - 7625));
-      phase = "Climbing out of Addis Ababa • Gear Up";
-    } else if (currentProgress < 0.45) {
-      alt = 35000 + Math.round(Math.sin(currentProgress * 20) * 800);
-      phase = "Cruising FL350 • Red Sea Airway";
-    } else if (currentProgress < 0.85) {
-      alt = 39000 + Math.round(Math.sin(currentProgress * 25) * 600);
-      phase = "Cruising FL390 • Mach 0.85 • Transcontinental";
-    } else if (currentProgress < 0.96) {
-      const subT = (currentProgress - 0.85) / 0.11;
-      alt = Math.round(39000 * (1 - subT) + 2400 * subT);
-      phase = "Descent & Vectors • Heathrow / Geneva";
-    } else {
-      alt = 150;
-      phase = "Touchdown & VIP Apron Stand • Arrival";
+    function resizeSvg() {
+      const { w, h } = getViewport();
+      svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+      drawCorridor(w, h);
     }
 
-    if (hudAltLabel) hudAltLabel.textContent = alt.toLocaleString() + ' FT';
-    if (hudPhaseLabel) hudPhaseLabel.textContent = phase;
+    // Dynamic Contrails sampled along trajectory behind engines
+    function updateContrails(w, h, currentP) {
+      if (!contrailLeft || !contrailRight) return;
+      if (currentP <= 0.015) {
+        contrailLeft.setAttribute('d', '');
+        contrailRight.setAttribute('d', '');
+        return;
+      }
+
+      const trailSpan = Math.min(0.065, currentP - 0.002);
+      const steps = 12;
+      let leftD = '';
+      let rightD = '';
+
+      const isMobile = w < 640;
+      const scale = isMobile ? 0.8 : 1.0;
+
+      for (let i = 0; i <= steps; i++) {
+        const tP = currentP - (i / steps) * trailSpan;
+        const pt = getTrajectoryPoint(tP, w, h);
+        const angle = getTrajectoryAngle(tP, w, h);
+        const rad = (angle * Math.PI) / 180;
+        const perp = rad + Math.PI / 2;
+
+        const backDist = (18 + i * 1.6) * scale;
+        const sideDist = 7.5 * scale;
+
+        const lx = pt.x - Math.cos(rad) * backDist + Math.cos(perp) * sideDist;
+        const ly = pt.y - Math.sin(rad) * backDist + Math.sin(perp) * sideDist;
+
+        const rx = pt.x - Math.cos(rad) * backDist - Math.cos(perp) * sideDist;
+        const ry = pt.y - Math.sin(rad) * backDist - Math.sin(perp) * sideDist;
+
+        if (i === 0) {
+          leftD = `M ${lx.toFixed(1)} ${ly.toFixed(1)}`;
+          rightD = `M ${rx.toFixed(1)} ${ry.toFixed(1)}`;
+        } else {
+          leftD += ` L ${lx.toFixed(1)} ${ly.toFixed(1)}`;
+          rightD += ` L ${rx.toFixed(1)} ${ry.toFixed(1)}`;
+        }
+      }
+
+      contrailLeft.setAttribute('d', leftD);
+      contrailRight.setAttribute('d', rightD);
+    }
+
+    // Main Smooth Animation Loop
+    function loop() {
+      const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      targetProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
+
+      const { w, h, isMobile } = getViewport();
+
+      // Silky smooth inertia (responsive yet gives realistic mass & lag)
+      const delta = targetProgress - currentProgress;
+      currentProgress += delta * 0.095;
+
+      // Position along trajectory
+      const pos = getTrajectoryPoint(currentProgress, w, h);
+      
+      // Calculate smooth tangent angle + velocity bank tilt
+      const baseAngle = getTrajectoryAngle(currentProgress, w, h);
+      const dynamicBank = Math.max(-8, Math.min(8, delta * 35));
+      const targetAngle = baseAngle + dynamicBank;
+      currentAngle += (targetAngle - currentAngle) * 0.15;
+
+      // Responsive scale for aircraft
+      const scale = isMobile ? 0.80 : 1.0;
+
+      // Apply transform to SVG Jet
+      jet.setAttribute('transform', `translate(${pos.x.toFixed(2)}, ${pos.y.toFixed(2)}) rotate(${currentAngle.toFixed(2)}) scale(${scale})`);
+      jet.style.opacity = '1';
+
+      // Update engine contrails
+      updateContrails(w, h, currentProgress);
+
+      // Update Telemetry HUD
+      const pct = Math.round(currentProgress * 100);
+      if (hudProgressPill) hudProgressPill.textContent = pct + '%';
+      if (hudProgressFill) hudProgressFill.style.width = pct + '%';
+
+      let alt = 7625;
+      let phase = "Runway 07R • Bole Int'l";
+
+      if (currentProgress < 0.05) {
+        alt = 7625;
+        phase = "Runway 07R • Bole Int'l (ADD)";
+      } else if (currentProgress < 0.15) {
+        const subT = (currentProgress - 0.05) / 0.10;
+        alt = Math.round(7625 + subT * (28000 - 7625));
+        phase = "Climbing out of Addis Ababa • Flaps Up";
+      } else if (currentProgress < 0.45) {
+        alt = 35000 + Math.round(Math.sin(currentProgress * 18) * 600);
+        phase = "FL350 Cruise • Red Sea Airway";
+      } else if (currentProgress < 0.84) {
+        alt = 39000 + Math.round(Math.sin(currentProgress * 22) * 500);
+        phase = "FL390 Transcontinental • Mach 0.85";
+      } else if (currentProgress < 0.96) {
+        const subT = (currentProgress - 0.84) / 0.12;
+        alt = Math.round(39000 * (1 - subT) + 2400 * subT);
+        phase = "Descent & Vectors • London / Geneva";
+      } else {
+        alt = 150;
+        phase = "Touchdown & VIP Apron Stand";
+      }
+
+      if (hudAltLabel) hudAltLabel.textContent = alt.toLocaleString() + ' FT';
+      if (hudPhaseLabel) hudPhaseLabel.textContent = phase;
+
+      requestAnimationFrame(loop);
+    }
+
+    window.addEventListener('DOMContentLoaded', resizeSvg);
+    window.addEventListener('load', resizeSvg);
+    window.addEventListener('resize', resizeSvg);
+    resizeSvg();
 
     requestAnimationFrame(loop);
-  }
-
-  window.addEventListener('DOMContentLoaded', resizeSvg);
-  window.addEventListener('load', resizeSvg);
-  window.addEventListener('resize', resizeSvg);
-  resizeSvg();
-
-  requestAnimationFrame(loop);
-})();
+  })();
 </script>
-</body></html>
+
+</body>
+</html>
