@@ -1,0 +1,699 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Book an Executive Consultation | Express Consultancy Travel Agency</title>
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg"/>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#030612",
+            "primary-container": "#1a1f2c",
+            "secondary": "#735c00",
+            "secondary-container": "#fed65b",
+            "on-secondary-fixed": "#241a00",
+            "on-secondary": "#ffffff",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#828697",
+            "surface": "#f8f9fa",
+            "surface-dim": "#d9dadb",
+            "surface-bright": "#f8f9fa",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f3f4f5",
+            "surface-container": "#edeeef",
+            "surface-container-high": "#e7e8e9",
+            "surface-container-highest": "#e1e3e4",
+            "on-surface": "#191c1d",
+            "on-surface-variant": "#45464c",
+            "outline": "#76777c",
+            "outline-variant": "#c6c6cc"
+          },
+          fontFamily: {
+            "headline-xl": ["EB Garamond", "serif"],
+            "headline-lg": ["EB Garamond", "serif"],
+            "headline-md": ["EB Garamond", "serif"],
+            "headline-sm": ["EB Garamond", "serif"],
+            "body-lg": ["Manrope", "sans-serif"],
+            "body-md": ["Manrope", "sans-serif"],
+            "body-sm": ["Manrope", "sans-serif"],
+            "label-lg": ["Manrope", "sans-serif"],
+            "label-md": ["Manrope", "sans-serif"],
+            "label-sm": ["Manrope", "sans-serif"],
+          }
+        }
+      }
+    };
+  </script>
+  
+  <style>
+    @layer base {
+      html, body {
+        margin: 0;
+        padding: 0;
+        scroll-behavior: smooth;
+      }
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fed65b;
+    }
+  </style>
+</head>
+
+<body class="bg-surface font-body-md text-body-md text-on-surface antialiased min-h-screen flex flex-col">
+
+  <!-- Top Global Header -->
+  <header id="main-header" class="sticky top-0 w-full z-50 bg-surface/95 backdrop-blur-md border-b border-surface-container shadow-sm transition-transform duration-300 ease-in-out will-change-transform">
+    <div class="max-w-7xl mx-auto h-20 px-6 sm:px-10 flex items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="index.html" class="flex items-center gap-3 shrink-0 group">
+        <img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-11 h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/>
+        <div class="flex flex-col">
+          <span class="font-headline-sm text-2xl tracking-tight text-primary font-semibold leading-none">Express</span>
+          <span class="font-label-sm text-[11px] uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span>
+        </div>
+      </a>
+
+      <!-- Middle Security Pill -->
+      <div class="hidden md:flex items-center gap-2 bg-surface-container-low px-4 py-1.5 rounded-full border border-surface-variant/80 text-xs text-on-surface-variant">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span class="font-semibold uppercase tracking-wider text-[11px]">Diplomatic Dossier Portal • 256-Bit Encrypted</span>
+      </div>
+
+      <!-- Right Contact & Back link -->
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="inline-flex items-center gap-1.5 text-sm font-semibold text-primary hover:text-secondary transition-colors py-2 px-3 rounded-lg hover:bg-surface-container-low">
+          <span class="material-symbols-outlined text-lg">arrow_back</span>
+          <span>Back to Home</span>
+        </a>
+        <a href="https://t.me/ExpressConsultancy" target="_blank" class="hidden sm:inline-flex items-center gap-2 bg-[#229ED9]/10 hover:bg-[#229ED9]/20 text-[#0088cc] px-3.5 py-1.5 rounded-lg text-xs font-bold transition-all border border-[#229ED9]/30">
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Telegram Desk</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="flex-1 w-full py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+
+      <!-- Breadcrumbs & Intro Header -->
+      <div class="mb-10 text-center sm:text-left flex flex-col sm:flex-row items-center justify-between gap-4 border-b border-surface-container pb-8">
+        <div>
+          <div class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-secondary font-bold mb-2">
+            <span class="material-symbols-outlined text-sm">shield</span>
+            <span>Priority Visa & Travel Allocation</span>
+          </div>
+          <h1 class="font-headline-xl text-3xl sm:text-4xl text-primary font-semibold tracking-tight">
+            Book an Executive Consultation
+          </h1>
+          <p class="font-body-md text-on-surface-variant text-base mt-2 max-w-xl">
+            Complete the official inquiry dossier below. Upon submission, your case details are compiled and routed directly to our senior case officer on Telegram for priority handling.
+          </p>
+        </div>
+
+        <!-- Trust Badge -->
+        <div class="bg-primary-container text-surface p-4 rounded-xl shadow-md flex items-center gap-3.5 shrink-0 border border-secondary-container/20">
+          <img src="assets/logo.jpg" alt="Express Consultancy Crest" class="w-11 h-11 rounded-full object-contain bg-white p-0.5 shadow ring-2 ring-secondary-container/30"/>
+          <div class="text-left">
+            <div class="text-[11px] uppercase tracking-wider text-secondary-container font-bold">Clearance Desk</div>
+            <div class="text-sm font-semibold text-white">Direct Telegram Dispatch</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Telegram Destination Notice Card -->
+      <div class="bg-surface-container-low border border-secondary/20 rounded-xl p-4 sm:p-5 mb-8 flex items-start gap-4 shadow-sm">
+        <div class="w-10 h-10 rounded-lg bg-[#229ED9] text-white flex items-center justify-center shrink-0 shadow">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+        </div>
+        <div class="text-sm">
+          <h2 class="font-bold text-primary flex items-center gap-2">
+            <span>Direct Telegram Forwarding Active</span>
+            <span class="text-[10px] uppercase font-bold tracking-widest px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded">Instant Dispatch</span>
+          </h2>
+          <p class="text-on-surface-variant mt-1 leading-relaxed">
+            When you submit, your full booking dossier is automatically compiled into an encrypted message and forwarded to our official agency Telegram account (<code class="bg-surface-container px-1.5 py-0.5 rounded text-primary font-bold" id="cfg-display-handle">@ExpressConsultancy</code>). An accredited case officer will review your documents and reply within minutes.
+          </p>
+        </div>
+      </div>
+
+      <!-- FORM CARD -->
+      <form id="consultation-form" onsubmit="handleFormSubmit(event)" class="bg-surface-container-lowest rounded-2xl shadow-xl border border-surface-container overflow-hidden">
+        
+        <!-- SECTION 1: MANDATORY CLIENT INFORMATION -->
+        <div class="p-6 sm:p-10 border-b border-surface-container">
+          <div class="flex items-center gap-2 text-primary font-bold text-lg mb-6">
+            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-secondary-container text-xs font-bold">1</span>
+            <h3>Mandatory Client & Contact Information</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Full Name (Mandatory) -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant flex items-center justify-between">
+                <span>Full Legal Name <span class="text-red-600">*</span></span>
+                <span class="text-[10px] text-gray-400 font-normal">As shown in passport</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">person</span>
+                <input type="text" id="fullName" name="fullName" required placeholder="e.g. Sir Arthur Sterling" 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"/>
+              </div>
+            </div>
+
+            <!-- Email (Mandatory) -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant flex items-center justify-between">
+                <span>Corporate / Personal Email <span class="text-red-600">*</span></span>
+                <span class="text-[10px] text-gray-400 font-normal">For formal documentation</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">mail</span>
+                <input type="email" id="email" name="email" required placeholder="name@enterprise.com" 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"/>
+              </div>
+            </div>
+
+            <!-- Phone / WhatsApp (Mandatory) -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant flex items-center justify-between">
+                <span>Phone / WhatsApp Number <span class="text-red-600">*</span></span>
+                <span class="text-[10px] text-emerald-700 font-semibold">Priority Telegram / Call</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">phone</span>
+                <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 019-2834" 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"/>
+              </div>
+            </div>
+
+            <!-- Client / Traveler Category (Mandatory) -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Applicant Type <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">badge</span>
+                <select id="clientCategory" name="clientCategory" required 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="Executive / Corporate Leader">Executive / Corporate Leader</option>
+                  <option value="Private VIP Traveler / Family">Private VIP Traveler / Family</option>
+                  <option value="Diplomatic / Official Delegation">Diplomatic / Official Delegation</option>
+                  <option value="International Student / Scholar">International Student / Scholar</option>
+                  <option value="Investor / Golden Visa Applicant">Investor / Golden Visa Applicant</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Nationality / Passport Issuing Country -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Passport Issuing Country <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">flag</span>
+                <input type="text" id="nationality" name="nationality" required placeholder="e.g. United Kingdom, USA, Germany..." 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"/>
+              </div>
+            </div>
+
+            <!-- Country of Current Residence -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Current Country of Residence <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">home_pin</span>
+                <input type="text" id="residence" name="residence" required placeholder="e.g. United Arab Emirates, France..." 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"/>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 2: SERVICE & TRAVEL REQUIREMENTS -->
+        <div class="p-6 sm:p-10 border-b border-surface-container">
+          <div class="flex items-center gap-2 text-primary font-bold text-lg mb-6">
+            <span class="flex items-center justify-center w-7 h-7 rounded-full bg-primary text-secondary-container text-xs font-bold">2</span>
+            <h3>Service Requirement & Travel Specifications</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Primary Service Required -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Service Required <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">assignment_turned_in</span>
+                <select id="serviceRequired" name="serviceRequired" required 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="Executive Visa & Fast-Track Immigration">Executive Visa & Fast-Track Immigration</option>
+                  <option value="Corporate Travel Logistics & Multi-Delegation">Corporate Travel Logistics & Multi-Delegation</option>
+                  <option value="Bespoke Luxury Holiday & Private Villa">Bespoke Luxury Holiday & Private Villa</option>
+                  <option value="Private Air Charter & Jet Interline">Private Air Charter & Jet Interline</option>
+                  <option value="Premier University Student Tier-4 Visa">Premier University Student Tier-4 Visa</option>
+                  <option value="Diplomatic Escort & Consular Expedite">Diplomatic Escort & Consular Expedite</option>
+                  <option value="Golden Visa & Global Residency Investment">Golden Visa & Global Residency Investment</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Destination Country / Territory -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Destination Country / Territory <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">public</span>
+                <select id="destination" name="destination" required 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="United Kingdom (UK)">United Kingdom (UK)</option>
+                  <option value="United States (USA)">United States (USA)</option>
+                  <option value="Schengen Area (EU Member States)">Schengen Area (EU Member States)</option>
+                  <option value="United Arab Emirates (Dubai / Abu Dhabi)">United Arab Emirates (Dubai / Abu Dhabi)</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                  <option value="Singapore">Singapore</option>
+                  <option value="Japan">Japan</option>
+                  <option value="Switzerland (Geneva / Zurich)">Switzerland (Geneva / Zurich)</option>
+                  <option value="Saudi Arabia (KSA)">Saudi Arabia (KSA)</option>
+                  <option value="Other Destination">Other Destination</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Planned Travel / Departure Date -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Target Departure / Appointment Date <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">calendar_today</span>
+                <input type="date" id="travelDate" name="travelDate" required 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-4 py-2.5 text-sm font-medium text-primary cursor-pointer transition-all"/>
+              </div>
+            </div>
+
+            <!-- Expedited Clearance Urgency -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Expedited Clearance Level <span class="text-red-600">*</span>
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">bolt</span>
+                <select id="urgencyLevel" name="urgencyLevel" required 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="Standard Priority (7 - 14 Business Days)">Standard Priority (7 - 14 Business Days)</option>
+                  <option value="Diplomatic Courier Fast-Track (3 - 5 Days)">Diplomatic Courier Fast-Track (3 - 5 Days)</option>
+                  <option value="Emergency VIP Consular Clearance (24 - 48 Hours)">Emergency VIP Consular Clearance (24 - 48 Hours)</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Number of Travelers -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Total Travelers / Applicants
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">group</span>
+                <select id="travelerCount" name="travelerCount" 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="1 Solo Traveler">1 Solo Traveler</option>
+                  <option value="2 Travelers">2 Travelers</option>
+                  <option value="3 - 5 Family / Delegation Members">3 - 5 Family / Delegation Members</option>
+                  <option value="6 - 15 Corporate Delegation">6 - 15 Corporate Delegation</option>
+                  <option value="15+ Large Organization Group">15+ Large Organization Group</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Preferred Communication Channel -->
+            <div class="flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant">
+                Officer Contact Channel
+              </label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-3.5 top-3 text-secondary text-lg">forum</span>
+                <select id="contactPreference" name="contactPreference" 
+                  class="w-full bg-surface-container-low border border-surface-container rounded-lg pl-11 pr-8 py-2.5 text-sm font-medium text-primary cursor-pointer appearance-none">
+                  <option value="Telegram (Fastest - Direct Chat)">Telegram (Fastest - Direct Chat)</option>
+                  <option value="WhatsApp Direct">WhatsApp Direct</option>
+                  <option value="Encrypted Corporate Phone Call">Encrypted Corporate Phone Call</option>
+                  <option value="Formal Email Consultation Brief">Formal Email Consultation Brief</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-3 top-3 text-gray-500 pointer-events-none text-base">expand_more</span>
+              </div>
+            </div>
+
+            <!-- Additional Details / Specific Requirements -->
+            <div class="sm:col-span-2 flex flex-col gap-1.5">
+              <label class="text-xs uppercase font-bold tracking-wider text-on-surface-variant flex items-center justify-between">
+                <span>Specific Itinerary, Visa Details, or Complexities</span>
+                <span class="text-[10px] text-gray-400 font-normal">Optional details</span>
+              </label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Provide any additional context (e.g., prior refusals, specific airline preferences, VIP airport meet & assist requirements, embassy location preference)..."
+                class="w-full bg-surface-container-low border border-surface-container rounded-lg px-4 py-3 text-sm font-medium text-primary placeholder:text-gray-400 transition-all"></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- SECTION 3: AGENCY TELEGRAM SETTINGS & SUBMIT -->
+        <div class="p-6 sm:p-10 bg-surface-container-low/60 flex flex-col gap-6">
+          
+          <!-- Optional Account Customizer (Allows user to point to their own Telegram handle) -->
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 p-4 rounded-xl bg-surface-container-lowest border border-surface-container">
+            <div class="flex items-center gap-3">
+              <div class="w-8 h-8 rounded-full bg-[#229ED9]/10 text-[#0088cc] flex items-center justify-center font-bold text-xs shrink-0">
+                TG
+              </div>
+              <div>
+                <div class="text-xs font-bold text-primary">Agency Telegram Recipient:</div>
+                <div class="text-xs text-on-surface-variant">The dossier will be sent directly to this Telegram username.</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-sm font-bold text-gray-400">@</span>
+              <input type="text" id="agencyHandleInput" value="ExpressConsultancy" 
+                class="bg-surface-container-low border border-surface-container rounded-lg px-3 py-1.5 text-xs font-bold text-primary w-44 focus:ring-1 focus:ring-secondary-container"
+                placeholder="Telegram Username" onchange="updateAgencyHandle(this.value)"/>
+            </div>
+          </div>
+
+          <!-- Compliance Confirmation Checkbox -->
+          <label class="flex items-start gap-3 cursor-pointer select-none">
+            <input type="checkbox" required checked class="mt-1 w-4 h-4 rounded text-secondary-container focus:ring-secondary-container border-gray-300"/>
+            <span class="text-xs text-on-surface-variant leading-relaxed">
+              I authorize Express Consultancy to review my submitted itinerary details under strict diplomatic non-disclosure standards and initialize communication via Telegram / phone.
+            </span>
+          </label>
+
+          <!-- Submit Button -->
+          <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="text-xs text-gray-500 flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-secondary text-base">verified_user</span>
+              <span>Average officer response time: <strong>under 15 minutes</strong></span>
+            </div>
+
+            <button type="submit" id="submit-button" 
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary px-8 py-3.5 rounded-xl font-label-lg text-base font-bold transition-all shadow-md hover:shadow-lg">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Submit & Open in Telegram</span>
+              <span class="material-symbols-outlined text-lg">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- SUCCESS MODAL / DOSSIER SUMMARY (Shows after submit) -->
+      <div id="success-modal" class="hidden fixed inset-0 z-50 bg-primary/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-surface-container-lowest max-w-xl w-full rounded-2xl shadow-2xl border border-secondary-container/40 overflow-hidden flex flex-col">
+          
+          <!-- Modal Header -->
+          <div class="bg-primary-container text-surface p-6 flex items-center justify-between border-b border-secondary-container/20">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-emerald-500 text-white flex items-center justify-center font-bold">
+                <span class="material-symbols-outlined text-2xl">check</span>
+              </div>
+              <div>
+                <h3 class="font-headline-sm text-xl text-white font-semibold">Consultation Dossier Prepared!</h3>
+                <p class="text-xs text-on-primary-container">Ready for immediate dispatch to Telegram</p>
+              </div>
+            </div>
+            <button onclick="closeModal()" class="text-gray-400 hover:text-white transition-colors">
+              <span class="material-symbols-outlined">close</span>
+            </button>
+          </div>
+
+          <!-- Modal Body with Formatted Summary -->
+          <div class="p-6 flex flex-col gap-4 text-sm max-h-[60vh] overflow-y-auto">
+            <div class="bg-surface-container-low p-4 rounded-xl border border-surface-container">
+              <div class="text-xs font-bold uppercase tracking-wider text-secondary mb-2">Telegram Payload Preview:</div>
+              <pre id="payload-preview" class="font-mono text-xs text-primary whitespace-pre-wrap leading-relaxed select-all bg-white p-3 rounded-lg border border-gray-200"></pre>
+            </div>
+
+            <div class="flex items-center justify-between gap-3 text-xs text-on-surface-variant">
+              <span>Recipient: <strong class="text-primary font-mono" id="modal-handle-label">@ExpressConsultancy</strong></span>
+              <button onclick="copyPayload()" class="text-secondary hover:underline font-bold flex items-center gap-1">
+                <span class="material-symbols-outlined text-sm">content_copy</span>
+                <span id="copy-btn-text">Copy Dossier Text</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Modal Action Bar -->
+          <div class="p-6 bg-surface-container-low border-t border-surface-container flex flex-col sm:flex-row items-center justify-between gap-3">
+            <button onclick="closeModal()" class="w-full sm:w-auto px-5 py-2.5 rounded-lg text-xs font-bold text-gray-600 hover:bg-gray-200 transition-colors">
+              Edit Submission
+            </button>
+            <a id="telegram-direct-link" href="#" target="_blank"
+              class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-[#229ED9] hover:bg-[#1a85b8] text-white px-6 py-2.5 rounded-lg text-xs font-bold transition-all shadow">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+              <span>Continue to Telegram Now</span>
+              <span class="material-symbols-outlined text-sm">open_in_new</span>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="w-full bg-primary-container text-surface-container-highest py-8 border-t border-secondary-container/20 mt-12">
+    <div class="max-w-7xl mx-auto px-6 sm:px-10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-on-primary-container">
+      <div class="flex items-center gap-2.5">
+        <img src="assets/logo.jpg" alt="Express Consultancy" class="w-6 h-6 object-contain rounded-full bg-white p-0.5"/>
+        <span>© 2025 Express Consultancy Group S.A. All diplomatic and consular protocols reserved.</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="index.html" class="hover:text-white transition-colors">Homepage</a>
+        <a href="index.html#services-grid" class="hover:text-white transition-colors">Services</a>
+        <a href="index.html#destinations" class="hover:text-white transition-colors">Global Hubs</a>
+        <a href="https://t.me/ExpressConsultancy" target="_blank" class="hover:text-white transition-colors flex items-center gap-1">
+          <span>Telegram</span>
+          <span class="material-symbols-outlined text-xs">open_in_new</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR TELEGRAM ROUTING & FORM VALIDATION -->
+  <script>
+    // Configurable Agency Telegram Handle
+    let AGENCY_TELEGRAM_HANDLE = "ExpressConsultancy";
+
+    // Smart Header: Hides upwards on scroll down, reveals on scroll up
+    (function initSmartHeader() {
+      const header = document.getElementById("main-header");
+      if (!header) return;
+
+      let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+      const threshold = 8;
+
+      window.addEventListener("scroll", () => {
+        const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+        // Always show near the very top of page
+        if (currentScrollY <= 60) {
+          header.classList.remove("-translate-y-full");
+          lastScrollY = currentScrollY;
+          return;
+        }
+
+        // Scroll Down -> Hide upwards
+        if (currentScrollY > lastScrollY + threshold) {
+          header.classList.add("-translate-y-full");
+        }
+        // Scroll Up -> Re-appear downwards
+        else if (currentScrollY < lastScrollY - threshold) {
+          header.classList.remove("-translate-y-full");
+        }
+
+        lastScrollY = Math.max(0, currentScrollY);
+      }, { passive: true });
+    })();
+    
+    // Optional: Telegram Bot API direct notification (if provided)
+    const TELEGRAM_BOT_CONFIG = {
+      botToken: "", // Set token if you want automated silent bot broadcast
+      chatId: ""    // Set chat ID if you want automated silent bot broadcast
+    };
+
+    function updateAgencyHandle(val) {
+      val = val.trim().replace(/^@/, '');
+      if (val) {
+        AGENCY_TELEGRAM_HANDLE = val;
+        document.getElementById('cfg-display-handle').innerText = '@' + val;
+        document.getElementById('modal-handle-label').innerText = '@' + val;
+      }
+    }
+
+    // Auto-fill from URL parameters (e.g. ?destination=UK&service=visa)
+    window.addEventListener('DOMContentLoaded', () => {
+      const params = new URLSearchParams(window.location.search);
+      
+      const destParam = params.get('destination');
+      if (destParam) {
+        const destSelect = document.getElementById('destination');
+        for (let i = 0; i < destSelect.options.length; i++) {
+          if (destSelect.options[i].value.toLowerCase().includes(destParam.toLowerCase())) {
+            destSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      const serviceParam = params.get('service');
+      if (serviceParam) {
+        const serviceSelect = document.getElementById('serviceRequired');
+        for (let i = 0; i < serviceSelect.options.length; i++) {
+          if (serviceSelect.options[i].value.toLowerCase().includes(serviceParam.toLowerCase())) {
+            serviceSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+
+      // Default travel date to 30 days from now
+      const dateInput = document.getElementById('travelDate');
+      if (dateInput && !dateInput.value) {
+        const d = new Date();
+        d.setDate(d.getDate() + 30);
+        dateInput.value = d.toISOString().split('T')[0];
+      }
+    });
+
+    let currentPayload = "";
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      
+      const btn = document.getElementById('submit-button');
+      btn.disabled = true;
+      btn.innerHTML = `<span class="material-symbols-outlined animate-spin text-lg">progress_activity</span><span>Compiling Dossier...</span>`;
+
+      // Collect Form Data
+      const fullName = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const clientCategory = document.getElementById('clientCategory').value;
+      const nationality = document.getElementById('nationality').value.trim();
+      const residence = document.getElementById('residence').value.trim();
+      
+      const serviceRequired = document.getElementById('serviceRequired').value;
+      const destination = document.getElementById('destination').value;
+      const travelDate = document.getElementById('travelDate').value;
+      const urgencyLevel = document.getElementById('urgencyLevel').value;
+      const travelerCount = document.getElementById('travelerCount').value;
+      const contactPreference = document.getElementById('contactPreference').value;
+      const notes = document.getElementById('notes').value.trim() || "None specified";
+
+      const now = new Date().toLocaleString();
+
+      // Build structured Telegram dossier message
+      currentPayload = 
+`✈️ *NEW CONSULTATION DOSSIER - TRAVEL AGENCY*
+━━━━━━━━━━━━━━━━━━━━
+👤 *CLIENT INFORMATION*
+• *Full Legal Name:* ${fullName}
+• *Phone / WhatsApp:* ${phone}
+• *Email:* ${email}
+• *Nationality:* ${nationality}
+• *Current Residence:* ${residence}
+• *Client Type:* ${clientCategory}
+
+🌍 *TRAVEL & SERVICE SPECIFICATION*
+• *Service Required:* ${serviceRequired}
+• *Destination:* ${destination}
+• *Target Departure:* ${travelDate}
+• *Clearance Urgency:* ${urgencyLevel}
+• *Total Applicants:* ${travelerCount}
+• *Contact Preference:* ${contactPreference}
+
+📝 *CASE NOTES / DETAILS*
+${notes}
+━━━━━━━━━━━━━━━━━━━━
+⏱️ *Timestamp:* ${now}
+🌐 *Source:* Express Consultancy Web Portal`;
+
+      // If Bot API configured, also post to Telegram Bot silently
+      if (TELEGRAM_BOT_CONFIG.botToken && TELEGRAM_BOT_CONFIG.chatId) {
+        fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_CONFIG.botToken}/sendMessage`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            chat_id: TELEGRAM_BOT_CONFIG.chatId,
+            text: currentPayload,
+            parse_mode: 'Markdown'
+          })
+        }).catch(err => console.log('Bot notify error:', err));
+      }
+
+      // Generate Telegram Deeplink
+      const tgUsername = AGENCY_TELEGRAM_HANDLE.trim().replace(/^@/, '');
+      const encodedMsg = encodeURIComponent(currentPayload);
+      const telegramUrl = `https://t.me/${tgUsername}?text=${encodedMsg}`;
+
+      // Show in modal preview
+      document.getElementById('payload-preview').textContent = currentPayload;
+      document.getElementById('telegram-direct-link').href = telegramUrl;
+      document.getElementById('modal-handle-label').textContent = '@' + tgUsername;
+      
+      const modal = document.getElementById('success-modal');
+      modal.classList.remove('hidden');
+
+      // Attempt immediate redirection to Telegram
+      window.open(telegramUrl, '_blank');
+
+      // Reset button
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.innerHTML = `
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.75-.55 2.92-1.27 4.86-2.11 5.83-2.51 2.78-1.16 3.35-1.36 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+          <span>Submit & Open in Telegram</span>
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        `;
+      }, 1000);
+    }
+
+    function closeModal() {
+      document.getElementById('success-modal').classList.add('hidden');
+    }
+
+    function copyPayload() {
+      if (!currentPayload) return;
+      navigator.clipboard.writeText(currentPayload).then(() => {
+        const textSpan = document.getElementById('copy-btn-text');
+        textSpan.textContent = 'Copied to Clipboard!';
+        setTimeout(() => {
+          textSpan.textContent = 'Copy Dossier Text';
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
+
