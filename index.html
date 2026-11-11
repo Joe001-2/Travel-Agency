@@ -4,8 +4,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={"darkMode":"class","theme":{"extend":{"colors":{"on-secondary-container":"#745c00","on-surface":"#191c1d","background":"#f8f9fa","outline":"#76777c","surface-container":"#edeeef","on-primary-fixed-variant":"#424655","on-secondary-fixed":"#241a00","surface-variant":"#e1e3e4","primary-fixed":"#dee2f4","surface-container-highest":"#e1e3e4","secondary-fixed-dim":"#e9c349","surface-tint":"#595e6d","secondary":"#735c00","on-primary":"#ffffff","surface-container-low":"#f3f4f5","on-background":"#191c1d","inverse-on-surface":"#f0f1f2","on-surface-variant":"#45464c","inverse-surface":"#2e3132","error":"#ba1a1a","tertiary-fixed-dim":"#eac249","on-tertiary-fixed-variant":"#584400","on-error-container":"#93000a","on-tertiary-fixed":"#241a00","tertiary-fixed":"#ffe08b","surface-container-lowest":"#ffffff","on-secondary":"#ffffff","secondary-container":"#fed65b","tertiary-container":"#cda72f","surface":"#f8f9fa","tertiary":"#745b00","on-tertiary":"#ffffff","on-tertiary-container":"#4f3d00","secondary-fixed":"#ffe088","surface-bright":"#f8f9fa","primary-container":"#1a1f2c","on-primary-fixed":"#161b28","surface-dim":"#d9dadb","surface-container-high":"#e7e8e9","primary-fixed-dim":"#c2c6d8","on-error":"#ffffff","on-secondary-fixed-variant":"#574500","inverse-primary":"#c2c6d8","error-container":"#ffdad6","primary":"#030612","on-primary-container":"#828697","outline-variant":"#c6c6cc"},"borderRadius":{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},"spacing":{"space-xs":"0.25rem","space-xl":"2.5rem","space-sm":"0.5rem","space-md":"1rem","margin-mobile":"1.25rem","gutter-mobile":"1rem","gutter":"1.5rem","space-lg":"1.5rem","margin":"3rem"},"fontFamily":{"headline-xl":["EB Garamond"],"label-md":["Manrope"],"headline-sm":["EB Garamond"],"body-lg":["Manrope"],"headline-lg":["EB Garamond"],"label-lg":["Manrope"],"body-md":["Manrope"],"headline-xl-mobile":["EB Garamond"],"headline-md":["EB Garamond"],"body-sm":["Manrope"],"title-md":["Manrope"],"title-lg":["Manrope"],"label-sm":["Manrope"],"headline-lg-mobile":["EB Garamond"]},"fontSize":{"headline-xl":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"600"}],"headline-sm":["22px",{"lineHeight":"30px","fontWeight":"500"}],"body-lg":["16px",{"lineHeight":"26px","fontWeight":"400"}],"headline-lg":["36px",{"lineHeight":"44px","letterSpacing":"-0.015em","fontWeight":"600"}],"label-lg":["14px",{"lineHeight":"20px","letterSpacing":"0.02em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"22px","fontWeight":"400"}],"headline-xl-mobile":["34px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"headline-md":["28px",{"lineHeight":"36px","fontWeight":"500"}],"body-sm":["12px",{"lineHeight":"18px","fontWeight":"400"}],"title-md":["16px",{"lineHeight":"24px","fontWeight":"600"}],"title-lg":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-sm":["10px",{"lineHeight":"14px","letterSpacing":"0.08em","fontWeight":"700"}],"headline-lg-mobile":["28px",{"lineHeight":"36px","letterSpacing":"0em","fontWeight":"600"}]}}}};</script><style>
 /* Scroll-Linked Flight Radar Animation */
 #flight-animation-wrapper {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
   pointer-events: none;
-  z-index: 25;
+  z-index: 5; /* Strictly behind texts and buttons (which are z-10 / z-20) */
+  overflow: hidden;
 }
 .flight-waypoint-beacon {
   position: absolute;
@@ -26,15 +31,14 @@
 <!-- SCROLL-LINKED FLIGHT TRAJECTORY ANIMATION                -->
 <!-- ROUTE: ADDIS ABABA (BOLE INT'L) ➔ LONDON / GENEVA (HQ)   -->
 <!-- ======================================================== -->
-<div id="flight-animation-wrapper" class="absolute inset-0 w-full overflow-hidden pointer-events-none" style="height: 100%;">
+<div id="flight-animation-wrapper" class="fixed inset-0 w-screen h-screen overflow-hidden pointer-events-none z-[5]">
   <svg id="flight-svg" class="w-full h-full absolute inset-0" xmlns="http://www.w3.org/2000/svg">
     <defs>
-      <!-- Sovereign Gold Gradient for Flight Track -->
-      <linearGradient id="flight-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <!-- Sovereign Gold Gradient for Contrails -->
+      <linearGradient id="contrail-fade" x1="100%" y1="0%" x2="0%" y2="0%">
         <stop offset="0%" stop-color="#FED65B" stop-opacity="0.9"/>
-        <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.95"/>
-        <stop offset="70%" stop-color="#FED65B" stop-opacity="1"/>
-        <stop offset="100%" stop-color="#FFFFFF" stop-opacity="1"/>
+        <stop offset="30%" stop-color="#D4AF37" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
       </linearGradient>
 
       <!-- Golden Metallic Shading for Jet -->
@@ -47,7 +51,7 @@
 
       <!-- Soft Glow Filters -->
       <filter id="gold-glow" x="-30%" y="-30%" width="160%" height="160%">
-        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feGaussianBlur stdDeviation="3.5" result="blur"/>
         <feComposite in="SourceGraphic" in2="blur" operator="over"/>
       </filter>
       <filter id="jet-glow" x="-40%" y="-40%" width="180%" height="180%">
@@ -55,21 +59,18 @@
       </filter>
     </defs>
 
-    <!-- Background Faint Planned Radar Track -->
-    <path id="flight-path-base" d="" fill="none" stroke="rgba(212, 175, 55, 0.22)" stroke-width="2" stroke-dasharray="8 6"/>
+    <!-- Twin Dynamic Engine Contrails -->
+    <path id="contrail-left" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.5" stroke-linecap="round" filter="url(#gold-glow)"/>
+    <path id="contrail-right" d="" fill="none" stroke="url(#contrail-fade)" stroke-width="2.5" stroke-linecap="round" filter="url(#gold-glow)"/>
 
-    <!-- Active Illuminated Flight Track (Draws with Scroll Progress) -->
-    <path id="flight-path-active" d="" fill="none" stroke="url(#flight-gradient)" stroke-width="3.5" stroke-linecap="round" filter="url(#gold-glow)"/>
+    <!-- Subtle Radar Waypoint Horizon Arc in Background -->
+    <path id="flight-corridor-arc" d="" fill="none" stroke="rgba(212, 175, 55, 0.12)" stroke-width="1.5" stroke-dasharray="6 8"/>
 
     <!-- The Supersonic Jet Aircraft Symbol -->
     <g id="flight-jet" filter="url(#jet-glow)" style="opacity: 0; transform-origin: 0px 0px;">
-      <!-- Engine Contrail / Afterburner Flame -->
-      <g id="jet-contrails">
-        <line x1="-18" y1="-7" x2="-52" y2="-7" stroke="#FED65B" stroke-width="2.5" stroke-linecap="round" opacity="0.85" stroke-dasharray="6,4"/>
-        <line x1="-18" y1="7" x2="-52" y2="7" stroke="#FED65B" stroke-width="2.5" stroke-linecap="round" opacity="0.85" stroke-dasharray="6,4"/>
-        <circle cx="-19" cy="-7" r="3.5" fill="#FFF4CC" filter="url(#gold-glow)"/>
-        <circle cx="-19" cy="7" r="3.5" fill="#FFF4CC" filter="url(#gold-glow)"/>
-      </g>
+      <!-- Engine Exhaust Glowing Points -->
+      <circle cx="-19" cy="-7.5" r="3" fill="#FFF4CC" filter="url(#gold-glow)"/>
+      <circle cx="-19" cy="7.5" r="3" fill="#FFF4CC" filter="url(#gold-glow)"/>
 
       <!-- Ambient Glow Halo -->
       <circle cx="0" cy="0" r="34" fill="rgba(254, 214, 91, 0.12)" filter="url(#gold-glow)"/>
@@ -92,11 +93,11 @@
 
       <!-- Flight Cockpit Glass -->
       <ellipse cx="17" cy="0" rx="4.5" ry="2.2" fill="#1A1F2C"/>
+
+      <!-- Live Flight Callout Tag Floating with Jet -->
+      <text x="0" y="-38" text-anchor="middle" fill="#FED65B" font-family="monospace" font-size="9" font-weight="bold" letter-spacing="1" opacity="0.85">EC-901 • FL390</text>
     </g>
   </svg>
-
-  <!-- Interactive Waypoint Badges Layer -->
-  <div id="flight-waypoints-layer" class="w-full h-full relative pointer-events-none"></div>
 </div><header id="main-header" class="fixed top-0 w-full z-50 bg-surface/95 backdrop-blur-md shadow-[0_1px_8px_rgba(26,31,44,0.06)] transition-transform duration-300 ease-in-out will-change-transform"><div class="h-20 w-full px-margin-mobile lg:px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex items-center gap-space-sm"><img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-11 h-11 object-contain rounded-lg shadow-sm bg-white p-0.5 border border-secondary/20"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm tracking-tight text-primary font-semibold leading-none">Express</span><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-bold -mt-0.5">Consultancy</span></div></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-semibold border-b-2 border-secondary pb-1"><a aria-current="page" class="transition-colors py-1 text-primary font-semibold border-b-2 border-secondary pb-1" data-path="home" href="index.html">Home</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="services-and-visas" href="#services-grid">Services &amp; Visas</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="global-destinations" href="#destinations">Global Destinations</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="corporate-travel" href="book-consultation.html?service=corporate">Corporate Travel</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="about-us" href="#why-us">Why Us</a><a class="font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="contact" href="#consultation-booking">Contact</a></nav><div class="flex items-center gap-space-md shrink-0"><div class="hidden md:flex items-center gap-space-sm bg-surface-container-low px-space-md py-space-xs rounded-full border border-surface-variant/80"><span class="material-symbols-outlined text-secondary text-sm">headset_mic</span><div class="flex flex-col text-left"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">24/7 Concierge</span><span class="font-label-md text-label-md font-semibold text-primary">+1 (800) 924-EXPR</span></div></div><a class="inline-flex items-center justify-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-label-lg text-label-lg font-semibold px-space-lg py-space-sm rounded-lg transition-all shadow-sm" data-path="book-consultation" href="book-consultation.html">Book Consultation</a><button id="mobile-menu-btn" onclick="toggleMobileMenu()" class="xl:hidden p-2 rounded-lg text-primary hover:bg-surface-container-low transition-colors ml-2" aria-label="Toggle navigation"><span class="material-symbols-outlined text-2xl" id="menu-icon">menu</span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-1 ring-secondary-container/40" src="https://lh3.googleusercontent.com/aida/ALJJyrDmmZhpI5OQ_kpw7jFJTm2KWIxL2dG-MsaXBf4rSbpMxujv6a8t9j0Nn3tTBpw99z4eho9TPHQPVCd_JiO6vqYLfRUiYOTPtJz1KfOaqCCGR_sGv4r0EQbqOmALz4Gk2uCWIc5V0FKKegsDANYnMdQSxfDNSi6qwGh4R4G5SziwPlbF7JfxaWlgdLwF73_dxdaoCQ24oyr_m4GOeCePRmutfmtu6L1MHczmv3QPOjfjR1WKcKC_H2LGJby6"/></div></div></div><div id="mobile-menu" class="hidden xl:hidden bg-surface-container-lowest/98 backdrop-blur-md border-b border-surface-container px-6 py-5 shadow-xl flex-col gap-3"><a class="text-sm font-bold text-primary py-1.5" href="index.html">Home</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#services-grid" onclick="toggleMobileMenu()">Services &amp; Visas</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#destinations" onclick="toggleMobileMenu()">Global Destinations</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#why-us" onclick="toggleMobileMenu()">Why Choose Us</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#testimonials" onclick="toggleMobileMenu()">Client Reviews</a><a class="text-sm font-semibold text-on-surface-variant hover:text-primary py-1.5" href="#consultation-booking" onclick="toggleMobileMenu()">Contact</a><div class="pt-2 flex flex-col gap-2"><a href="book-consultation.html" class="w-full text-center bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-bold py-2.5 rounded-lg text-xs shadow-sm">Book Priority Consultation</a><a href="https://t.me/ExpressConsultancy" target="_blank" class="w-full text-center bg-[#229ED9]/10 text-[#0088cc] font-bold py-2 rounded-lg text-xs border border-[#229ED9]/30 flex items-center justify-center gap-1.5"><span>Telegram Official Desk</span></a></div></div></header><main class="w-full pt-20 bg-surface min-h-screen"><div class="flex flex-col w-full">
 <!-- Top Hero & Sovereign Crest Banner -->
 <section class="relative w-full -mt-20 pt-28 pb-20 bg-primary-container text-surface overflow-hidden">
@@ -178,7 +179,7 @@
 </section>
 <!-- Metrics / Trust Stats Bar -->
 <section class="w-full bg-surface-container-low py-space-lg shadow-inner">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="grid grid-cols-2 lg:grid-cols-4 gap-space-lg">
 <div class="flex flex-col gap-1 p-space-sm">
 <span class="font-headline-lg text-headline-lg text-primary font-bold">99.4%</span>
@@ -350,7 +351,7 @@
 </section>
 <!-- Core Services Grid -->
 <section class="w-full py-24 bg-surface" id="services-grid">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
 <div class="flex flex-col gap-space-xs max-w-2xl">
 <span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Uncompromising Global Mobility</span>
@@ -484,7 +485,7 @@
 </section>
 <!-- Featured Global Destinations -->
 <section class="w-full py-20 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
 <div class="flex flex-col gap-space-xs">
 <span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Global Hubs</span>
@@ -669,7 +670,7 @@
 </section>
 <!-- Why Choose Express Consultancy -->
 <section class="w-full py-24 bg-surface relative overflow-hidden">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-center">
 <!-- Visual Shield/Crest Architecture Graphic -->
 <div class="lg:col-span-5 relative flex justify-center">
@@ -746,7 +747,7 @@
 </section>
 <!-- Client Success Stories & Testimonials -->
 <section class="w-full py-20 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="flex flex-col items-center text-center max-w-2xl mx-auto mb-space-xl">
 <span class="font-label-md text-label-md uppercase tracking-widest text-secondary font-bold">Client Validations</span>
 <h2 class="font-headline-lg text-headline-lg text-primary font-medium mt-1">Proven Results for Sovereign &amp; Executive Mobility</h2>
@@ -824,7 +825,7 @@
 </section>
 <!-- Consultation Booking & Callback Lead Banner -->
 <section class="w-full py-20 bg-primary-container text-surface" id="consultation-booking">
-<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin">
+<div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10">
 <div class="bg-gradient-to-r from-primary via-primary-container to-primary p-space-xl rounded-2xl shadow-2xl relative overflow-hidden">
 <!-- Shield Glow Accent -->
 <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-secondary-container/10 blur-3xl pointer-events-none"></div>
@@ -1022,7 +1023,7 @@
       }, 700);
     }
   </script>
-</div></main><footer class="w-full bg-primary-container text-surface-container-highest py-space-xl mt-auto"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 object-contain rounded-lg bg-white p-0.5 shadow-sm border border-secondary-container/20"/><span class="font-headline-sm text-headline-sm text-surface-container-lowest font-medium">Express Consultancy</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Premier international mobility advisory, diplomatic visa fast-tracking, VIP concierge logistics, and sovereign corporate travel arrangements tailored for enterprise leaders.</p><div class="flex flex-col gap-space-xs pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container">Accreditations &amp; Partnerships</span><div class="flex items-center gap-space-md text-on-primary-container"><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">IATA Certified</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">Virtuoso Partner</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">UN Global Compact</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Advisory Services</span><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="services-and-visas" href="#">Visa Assistance &amp; Fast-Track</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="flight-bookings" href="#">Private &amp; Commercial Flights</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="luxury-tours" href="#">Luxury Bespoke Expeditions</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="corporate-travel" href="#">Corporate Travel Management</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="diplomatic-protocol" href="#">Diplomatic Courier Protocol</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Global Presence</span><div class="flex flex-col gap-space-sm text-on-primary-container"><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Geneva (HQ)</span><span class="font-body-sm text-body-sm">Rue du Rhône 42, 1204 Genève</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">London Mayfair</span><span class="font-body-sm text-body-sm">Berkeley Square House, W1J 6BD</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Dubai DIFC</span><span class="font-body-sm text-body-sm">Gate Precinct 4, Level 5</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Singapore</span><span class="font-body-sm text-body-sm">Marina Bay Financial Centre Tower 2</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Discretionary Briefings</span><p class="font-body-sm text-body-sm text-on-primary-container">Receive monthly diplomatic immigration updates and geopolitical travel briefings.</p><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><input class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 rounded text-surface-container-lowest placeholder:text-on-primary-container/70 px-space-sm py-space-xs text-body-sm w-full focus:outline-none focus:border-secondary-container" placeholder="executive@enterprise.com" type="email"/><button class="bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-label-sm text-label-sm uppercase px-space-md py-space-xs rounded font-bold transition-all shrink-0" type="button">Join</button></div><span class="font-label-sm text-label-sm text-on-primary-container/70">Strict non-disclosure protocol maintained.</span></div></div></div><div class="pt-space-lg border-t border-surface-container-lowest/10 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-primary-container"><span class="font-body-sm text-body-sm">© 2025 Express Consultancy Group S.A. All rights reserved.</span><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="privacy-policy" href="#">Privacy Charter</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="terms-of-engagement" href="#">Terms of Engagement</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="security-protocols" href="#">Security Protocols</a></div></div></div></footer><!-- Floating Executive Flight Telemetry HUD Widget -->
+</div></main><footer class="w-full bg-primary-container text-surface-container-highest py-space-xl mt-auto"><div class="max-w-7xl mx-auto px-margin-mobile lg:px-margin relative z-10"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-space-xl mb-space-xl"><div class="lg:col-span-2 flex flex-col gap-space-md"><div class="flex items-center gap-space-sm"><img src="assets/logo.jpg" alt="Express Consultancy Logo" class="w-9 h-9 object-contain rounded-lg bg-white p-0.5 shadow-sm border border-secondary-container/20"/><span class="font-headline-sm text-headline-sm text-surface-container-lowest font-medium">Express Consultancy</span></div><p class="font-body-md text-body-md text-on-primary-container max-w-sm">Premier international mobility advisory, diplomatic visa fast-tracking, VIP concierge logistics, and sovereign corporate travel arrangements tailored for enterprise leaders.</p><div class="flex flex-col gap-space-xs pt-space-xs"><span class="font-label-sm text-label-sm uppercase tracking-widest text-secondary-container">Accreditations &amp; Partnerships</span><div class="flex items-center gap-space-md text-on-primary-container"><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">IATA Certified</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">Virtuoso Partner</span><span class="font-label-sm text-label-sm px-space-sm py-0.5 rounded bg-surface-container-lowest/5 border border-surface-container-lowest/10">UN Global Compact</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Advisory Services</span><ul class="flex flex-col gap-space-xs"><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="services-and-visas" href="#">Visa Assistance &amp; Fast-Track</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="flight-bookings" href="#">Private &amp; Commercial Flights</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="luxury-tours" href="#">Luxury Bespoke Expeditions</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="corporate-travel" href="#">Corporate Travel Management</a></li><li class="font-body-sm text-body-sm text-on-primary-container hover:text-surface-container-lowest transition-colors"><a data-path="diplomatic-protocol" href="#">Diplomatic Courier Protocol</a></li></ul></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Global Presence</span><div class="flex flex-col gap-space-sm text-on-primary-container"><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Geneva (HQ)</span><span class="font-body-sm text-body-sm">Rue du Rhône 42, 1204 Genève</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">London Mayfair</span><span class="font-body-sm text-body-sm">Berkeley Square House, W1J 6BD</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Dubai DIFC</span><span class="font-body-sm text-body-sm">Gate Precinct 4, Level 5</span></div><div class="flex flex-col"><span class="font-label-md text-label-md text-secondary-container font-semibold">Singapore</span><span class="font-body-sm text-body-sm">Marina Bay Financial Centre Tower 2</span></div></div></div><div class="flex flex-col gap-space-sm"><span class="font-title-md text-title-md font-semibold text-surface-container-lowest">Discretionary Briefings</span><p class="font-body-sm text-body-sm text-on-primary-container">Receive monthly diplomatic immigration updates and geopolitical travel briefings.</p><div class="flex flex-col gap-space-xs"><div class="flex items-center gap-space-xs"><input class="bg-surface-container-lowest/10 border border-surface-container-lowest/20 rounded text-surface-container-lowest placeholder:text-on-primary-container/70 px-space-sm py-space-xs text-body-sm w-full focus:outline-none focus:border-secondary-container" placeholder="executive@enterprise.com" type="email"/><button class="bg-secondary-container hover:bg-secondary text-on-secondary-fixed hover:text-on-secondary font-label-sm text-label-sm uppercase px-space-md py-space-xs rounded font-bold transition-all shrink-0" type="button">Join</button></div><span class="font-label-sm text-label-sm text-on-primary-container/70">Strict non-disclosure protocol maintained.</span></div></div></div><div class="pt-space-lg border-t border-surface-container-lowest/10 flex flex-col md:flex-row items-center justify-between gap-space-md text-on-primary-container"><span class="font-body-sm text-body-sm">© 2025 Express Consultancy Group S.A. All rights reserved.</span><div class="flex items-center gap-space-lg"><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="privacy-policy" href="#">Privacy Charter</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="terms-of-engagement" href="#">Terms of Engagement</a><a class="font-body-sm text-body-sm hover:text-surface-container-lowest transition-colors" data-path="security-protocols" href="#">Security Protocols</a></div></div></div></footer><!-- Floating Executive Flight Telemetry HUD Widget -->
 <div id="flight-telemetry-hud" class="fixed bottom-6 left-6 z-40 flex items-center gap-3 bg-[#1A1F2C]/95 backdrop-blur-md border border-[#D4AF37]/50 text-white rounded-full px-4 py-2.5 shadow-2xl transition-all duration-300 hover:border-[#D4AF37] select-none">
   <!-- Radar Ping Icon -->
   <div class="relative flex items-center justify-center w-8 h-8 rounded-full bg-secondary-container/20 border border-secondary-container/40 shrink-0">
@@ -1059,249 +1060,202 @@
 
 <!-- =============================================== -->
 <!-- SCROLL-LINKED FLIGHT ANIMATION SCRIPT ENGINE    -->
+<!-- (Viewport-Centered, Aerodynamic Lag & Contrail)  -->
 <!-- =============================================== -->
 <script>
 (function initScrollFlight() {
-  const container = document.getElementById('flight-animation-wrapper');
   const svg = document.getElementById('flight-svg');
-  const pathBase = document.getElementById('flight-path-base');
-  const pathActive = document.getElementById('flight-path-active');
   const jet = document.getElementById('flight-jet');
-  const waypointsLayer = document.getElementById('flight-waypoints-layer');
-  
+  const contrailLeft = document.getElementById('contrail-left');
+  const contrailRight = document.getElementById('contrail-right');
+  const corridorArc = document.getElementById('flight-corridor-arc');
+
   const hudProgressPill = document.getElementById('hud-progress-pill');
   const hudPhaseLabel = document.getElementById('hud-phase-label');
   const hudAltLabel = document.getElementById('hud-alt-label');
   const hudProgressFill = document.getElementById('hud-progress-fill');
 
-  let pathTotalLength = 0;
   let currentProgress = 0;
   let targetProgress = 0;
-  let waypoints = [];
+  let prevPos = { x: 0, y: 0 };
+  let currentAngle = 0;
+  let trailHistory = [];
 
-  function calculateFlightPath() {
-    const docHeight = Math.max(
-      document.body.scrollHeight,
-      document.documentElement.scrollHeight,
-      document.body.offsetHeight,
-      document.documentElement.offsetHeight
-    );
-    const winWidth = window.innerWidth;
-    
-    // Set SVG container height to match full document
-    container.style.height = docHeight + 'px';
-    svg.style.height = docHeight + 'px';
-    svg.setAttribute('width', winWidth);
-    svg.setAttribute('height', docHeight);
-    svg.setAttribute('viewBox', `0 0 ${winWidth} ${docHeight}`);
+  function getViewportDimensions() {
+    return {
+      w: window.innerWidth,
+      h: window.innerHeight
+    };
+  }
 
-    // Anchor waypoints relative to actual sections on page
-    const heroSec = document.querySelector('section');
-    const servicesSec = document.getElementById('services-grid');
-    const destSec = document.getElementById('destinations');
-    const whySec = document.getElementById('why-us');
-    const bookingSec = document.getElementById('consultation-booking');
+  function resizeSvg() {
+    const { w, h } = getViewportDimensions();
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
 
-    const heroY = heroSec ? (heroSec.offsetTop + 180) : 250;
-    const servicesY = servicesSec ? (servicesSec.offsetTop + 200) : (docHeight * 0.32);
-    const destY = destSec ? (destSec.offsetTop + 250) : (docHeight * 0.52);
-    const whyY = whySec ? (whySec.offsetTop + 200) : (docHeight * 0.72);
-    const bookingY = bookingSec ? (bookingSec.offsetTop + 180) : (docHeight * 0.92);
+    // Update faint corridor horizon curve across the middle of the screen
+    const midY = h * 0.50;
+    const corridorD = `M 0 ${midY + 30} Q ${w * 0.35} ${midY - 45}, ${w * 0.55} ${midY + 10} T ${w} ${midY - 25}`;
+    if (corridorArc) corridorArc.setAttribute('d', corridorD);
+  }
 
-    // Responsive horizontal anchor coordinates
-    const isMobile = winWidth < 768;
-    const xLeft = isMobile ? winWidth * 0.15 : winWidth * 0.14;
-    const xCenterLeft = isMobile ? winWidth * 0.30 : winWidth * 0.28;
-    const xCenterRight = isMobile ? winWidth * 0.70 : winWidth * 0.72;
-    const xRight = isMobile ? winWidth * 0.85 : winWidth * 0.86;
+  function calculateTargetPosition(p, w, h) {
+    let x, y, baseAngle;
 
-    // Define Waypoints
-    waypoints = [
-      {
-        id: 'wp-add',
-        code: 'ADD',
-        title: 'Addis Ababa (Bole Int\'l)',
-        sub: 'Departure • Runway 07R • 09°00′N 38°45′E',
-        x: xLeft,
-        y: heroY,
-        t: 0.0
-      },
-      {
-        id: 'wp-redsea',
-        code: 'FL280',
-        title: 'Red Sea Airway Corridor',
-        sub: 'Climbing Through Transition • Djibouti Radar',
-        x: xRight,
-        y: servicesY,
-        t: 0.28
-      },
-      {
-        id: 'wp-dxb',
-        code: 'DXB / FL390',
-        title: 'Dubai & Gulf Transcontinental Hub',
-        sub: 'Supersonic Cruise • Groundspeed 550 kts',
-        x: xCenterLeft,
-        y: destY,
-        t: 0.55
-      },
-      {
-        id: 'wp-alps',
-        code: 'ALPS / FL240',
-        title: 'Geneva & Alpine Waypoint',
-        sub: 'Deceleration & Descent Clearance Granted',
-        x: xRight,
-        y: whyY,
-        t: 0.78
-      },
-      {
-        id: 'wp-lhr',
-        code: 'LHR',
-        title: 'London Heathrow / Geneva HQ',
-        sub: 'Arrival • VIP Executive Apron • Touchdown',
-        x: xCenterLeft,
-        y: bookingY,
-        t: 1.0
+    if (p <= 0.05) {
+      // Ground / Takeoff roll at Bole Airport (ADD)
+      const t = p / 0.05;
+      x = w * (0.16 + t * 0.08);
+      y = h * (0.74 - t * 0.06);
+      baseAngle = -16;
+    } else if (p <= 0.16) {
+      // Steep initial climb from runway into the middle of the screen
+      const t = (p - 0.05) / 0.11;
+      const ease = 1 - Math.pow(1 - t, 3);
+      x = w * (0.24 + ease * 0.18);
+      y = h * (0.68 - ease * 0.20); // Climbs from 68% up to 48% (middle of screen!)
+      baseAngle = -28 * (1 - ease) - 10 * ease;
+    } else if (p <= 0.86) {
+      // CRUISE IN THE MIDDLE OF THE SCREEN (Follows around 48% - 52% of viewport height)
+      const t = (p - 0.16) / 0.70;
+      
+      // Middle vertical zone:
+      const midY = h * 0.50;
+      const atmosphericFloat = Math.sin(t * Math.PI * 4) * (h * 0.05);
+      y = midY + atmosphericFloat;
+
+      // Smooth horizontal transcontinental weaving (Addis Ababa ➔ Red Sea ➔ Dubai ➔ Alps):
+      // Glides smoothly across the middle of the screen
+      x = w * (0.50 + 0.28 * Math.sin(t * Math.PI * 3.2 - Math.PI * 0.5));
+      baseAngle = Math.cos(t * Math.PI * 3.2 - Math.PI * 0.5) * 16;
+    } else {
+      // Final Approach & Landing into London Heathrow / Geneva (LHR/GVA)
+      const t = (p - 0.86) / 0.14;
+      const ease = t * t;
+      x = w * (0.54 + ease * 0.12);
+      y = h * (0.50 + ease * 0.22); // Descends from middle of screen (50%) to runway (72%)
+      baseAngle = -12 * (1 - t) - 2 * t;
+    }
+
+    return { x, y, baseAngle };
+  }
+
+  function updateContrails() {
+    if (trailHistory.length < 2) return;
+
+    let leftD = '';
+    let rightD = '';
+
+    for (let i = 0; i < trailHistory.length; i++) {
+      const pt = trailHistory[i];
+      const rad = (pt.angle * Math.PI) / 180;
+      const perpRad = rad + Math.PI / 2;
+
+      // Twin engines are at -18px back, and ±8px perpendicular
+      const backDist = 18;
+      const sideDist = 8;
+
+      const lx = pt.x - Math.cos(rad) * backDist + Math.cos(perpRad) * sideDist;
+      const ly = pt.y - Math.sin(rad) * backDist + Math.sin(perpRad) * sideDist;
+
+      const rx = pt.x - Math.cos(rad) * backDist - Math.cos(perpRad) * sideDist;
+      const ry = pt.y - Math.sin(rad) * backDist - Math.sin(perpRad) * sideDist;
+
+      if (i === 0) {
+        leftD = `M ${lx} ${ly}`;
+        rightD = `M ${rx} ${ry}`;
+      } else {
+        leftD += ` L ${lx} ${ly}`;
+        rightD += ` L ${rx} ${ry}`;
       }
-    ];
+    }
 
-    // Build smooth cubic Bézier flight trajectory
-    const d = `
-      M ${waypoints[0].x} ${waypoints[0].y}
-      C ${waypoints[0].x + winWidth * 0.4} ${waypoints[0].y + 150},
-        ${waypoints[1].x - winWidth * 0.1} ${waypoints[1].y - 250},
-        ${waypoints[1].x} ${waypoints[1].y}
-      C ${waypoints[1].x - winWidth * 0.1} ${waypoints[1].y + 350},
-        ${waypoints[2].x + winWidth * 0.2} ${waypoints[2].y - 300},
-        ${waypoints[2].x} ${waypoints[2].y}
-      C ${waypoints[2].x - winWidth * 0.1} ${waypoints[2].y + 350},
-        ${waypoints[3].x - winWidth * 0.2} ${waypoints[3].y - 300},
-        ${waypoints[3].x} ${waypoints[3].y}
-      C ${waypoints[3].x - winWidth * 0.3} ${waypoints[3].y + 300},
-        ${waypoints[4].x + winWidth * 0.1} ${waypoints[4].y - 200},
-        ${waypoints[4].x} ${waypoints[4].y}
-    `.replace(/\s+/g, ' ').trim();
+    if (contrailLeft) contrailLeft.setAttribute('d', leftD);
+    if (contrailRight) contrailRight.setAttribute('d', rightD);
+  }
 
-    pathBase.setAttribute('d', d);
-    pathActive.setAttribute('d', d);
+  function loop() {
+    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+    targetProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
 
-    pathTotalLength = pathActive.getTotalLength();
-    pathActive.style.strokeDasharray = `0 ${pathTotalLength}`;
+    const { w, h } = getViewportDimensions();
 
-    // Render interactive Waypoint radar beacons
-    renderWaypoints();
-    
-    // Position jet immediately
-    updateFlightPosition(currentProgress);
+    // Silky aerodynamic lag (inertia)
+    const delta = targetProgress - currentProgress;
+    currentProgress += delta * 0.055;
+
+    // Aerodynamic scroll lag offset (dips slightly with momentum when scrolling fast)
+    const lagY = -delta * (h * 0.35);
+
+    const pos = calculateTargetPosition(currentProgress, w, h);
+    pos.y += lagY;
+
+    // Calculate heading angle smoothly
+    if (prevPos.x !== 0 || prevPos.y !== 0) {
+      const dx = pos.x - prevPos.x;
+      const dy = pos.y - prevPos.y;
+      if (Math.hypot(dx, dy) > 0.4) {
+        const motionAngle = Math.atan2(dy, dx) * (180 / Math.PI);
+        // Blend base angle with motion angle
+        currentAngle += (motionAngle - currentAngle) * 0.15;
+      }
+    } else {
+      currentAngle = pos.baseAngle;
+    }
+
+    prevPos = { x: pos.x, y: pos.y };
+
+    // Update airplane transform
+    jet.setAttribute('transform', `translate(${pos.x}, ${pos.y}) rotate(${currentAngle})`);
     jet.style.opacity = '1';
-  }
 
-  function renderWaypoints() {
-    waypointsLayer.innerHTML = '';
-    waypoints.forEach((wp, index) => {
-      const isTerminal = (index === 0 || index === waypoints.length - 1);
-      const beacon = document.createElement('div');
-      beacon.className = 'flight-waypoint-beacon pointer-events-auto';
-      beacon.style.left = wp.x + 'px';
-      beacon.style.top = wp.y + 'px';
+    // Update contrail history
+    trailHistory.unshift({ x: pos.x, y: pos.y, angle: currentAngle });
+    if (trailHistory.length > 22) {
+      trailHistory.pop();
+    }
+    updateContrails();
 
-      beacon.innerHTML = `
-        <div class="relative flex items-center justify-center group cursor-pointer" onclick="jumpToWaypoint(${wp.y})">
-          <!-- Outer Pulsing Radar Rings -->
-          <div class="absolute w-10 h-10 rounded-full bg-secondary-container/20 radar-pulse-ring pointer-events-none"></div>
-          <div class="w-6 h-6 rounded-full bg-primary-container border-2 border-secondary-container flex items-center justify-center shadow-lg transition-transform group-hover:scale-125">
-            <span class="w-2 h-2 rounded-full ${isTerminal ? 'bg-secondary-container' : 'bg-white'}"></span>
-          </div>
-
-          <!-- Radar Tag Tooltip -->
-          <div class="absolute left-8 top-1/2 -translate-y-1/2 whitespace-nowrap bg-primary-container/95 backdrop-blur-md border border-secondary/40 text-surface px-3 py-1.5 rounded-lg shadow-xl text-left pointer-events-none transition-all duration-300 opacity-85 group-hover:opacity-100 group-hover:scale-105 z-30">
-            <div class="flex items-center gap-1.5 font-bold text-xs text-secondary-container font-mono">
-              <span class="material-symbols-outlined text-[13px]">${isTerminal ? (index === 0 ? 'flight_takeoff' : 'flight_land') : 'radar'}</span>
-              <span>${wp.code}</span>
-              <span class="text-[10px] text-gray-400 font-sans font-normal">• ${wp.title}</span>
-            </div>
-            <div class="text-[10px] text-gray-300 font-sans">${wp.sub}</div>
-          </div>
-        </div>
-      `;
-      waypointsLayer.appendChild(beacon);
-    });
-  }
-
-  window.jumpToWaypoint = function(y) {
-    window.scrollTo({
-      top: Math.max(0, y - window.innerHeight / 2),
-      behavior: 'smooth'
-    });
-  };
-
-  function updateFlightPosition(t) {
-    if (!pathTotalLength) return;
-
-    const currentDist = t * pathTotalLength;
-    const pt = pathActive.getPointAtLength(currentDist);
-
-    // Calculate heading angle along curve
-    const delta = 3;
-    const pNext = pathActive.getPointAtLength(Math.min(pathTotalLength, currentDist + delta));
-    const pPrev = pathActive.getPointAtLength(Math.max(0, currentDist - delta));
-    const angle = Math.atan2(pNext.y - pPrev.y, pNext.x - pPrev.x) * (180 / Math.PI);
-
-    jet.setAttribute('transform', `translate(${pt.x}, ${pt.y}) rotate(${angle})`);
-
-    // Draw active trail behind the plane
-    pathActive.style.strokeDasharray = `${currentDist} ${pathTotalLength}`;
-
-    // Update Telemetry HUD
-    const pct = Math.round(t * 100);
+    // Telemetry HUD Updates
+    const pct = Math.round(currentProgress * 100);
     if (hudProgressPill) hudProgressPill.textContent = pct + '%';
     if (hudProgressFill) hudProgressFill.style.width = pct + '%';
 
     let alt = 7625;
     let phase = "Takeoff • Addis Ababa (Bole Int'l)";
 
-    if (t < 0.12) {
-      const subT = t / 0.12;
+    if (currentProgress < 0.06) {
+      alt = 7625;
+      phase = "Runway 07R • Bole Int'l (ADD)";
+    } else if (currentProgress < 0.18) {
+      const subT = (currentProgress - 0.06) / 0.12;
       alt = Math.round(7625 + subT * (28000 - 7625));
-      phase = "Climbout • Bole Runway 07R";
-    } else if (t < 0.35) {
-      const subT = (t - 0.12) / 0.23;
-      alt = Math.round(28000 + subT * 11000);
-      phase = "Ascending FL390 • Red Sea Airway";
-    } else if (t < 0.75) {
-      alt = 39000 + Math.round(Math.sin(t * 24) * 800);
-      phase = "Supersonic Cruise • Over Global Corridors";
-    } else if (t < 0.94) {
-      const subT = (t - 0.75) / 0.19;
+      phase = "Climbing out of Addis Ababa • Gear Up";
+    } else if (currentProgress < 0.45) {
+      alt = 35000 + Math.round(Math.sin(currentProgress * 20) * 800);
+      phase = "Cruising FL350 • Red Sea Airway";
+    } else if (currentProgress < 0.85) {
+      alt = 39000 + Math.round(Math.sin(currentProgress * 25) * 600);
+      phase = "Cruising FL390 • Mach 0.85 • Transcontinental";
+    } else if (currentProgress < 0.96) {
+      const subT = (currentProgress - 0.85) / 0.11;
       alt = Math.round(39000 * (1 - subT) + 2400 * subT);
-      phase = "Descent & Vectors • Heathrow Approach";
+      phase = "Descent & Vectors • Heathrow / Geneva";
     } else {
       alt = 150;
-      phase = "Touchdown & VIP Apron Taxi • Arrival";
+      phase = "Touchdown & VIP Apron Stand • Arrival";
     }
 
     if (hudAltLabel) hudAltLabel.textContent = alt.toLocaleString() + ' FT';
     if (hudPhaseLabel) hudPhaseLabel.textContent = phase;
-  }
 
-  // Animation Loop with Smooth Lerp
-  function loop() {
-    const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
-    targetProgress = Math.min(Math.max(scrollY / maxScroll, 0), 1);
-
-    // Smooth inertia
-    currentProgress += (targetProgress - currentProgress) * 0.085;
-
-    updateFlightPosition(currentProgress);
     requestAnimationFrame(loop);
   }
 
-  // Initialize and listeners
-  window.addEventListener('DOMContentLoaded', calculateFlightPath);
-  window.addEventListener('load', calculateFlightPath);
-  window.addEventListener('resize', () => {
-    calculateFlightPath();
-  });
+  window.addEventListener('DOMContentLoaded', resizeSvg);
+  window.addEventListener('load', resizeSvg);
+  window.addEventListener('resize', resizeSvg);
+  resizeSvg();
 
   requestAnimationFrame(loop);
 })();
